@@ -1,0 +1,28 @@
+        *{
+            box-sizing: content-box;
+            border:none;
+        }
+        body,ul,li,a{
+            margin:0;
+            padding:0;
+            list-style-type: none;
+            outline:none;
+            text-decoration: none;
+        }
+        .container{
+            width:520px;
+            margin:10px auto;
+        }
+        .ct{
+            display:block;
+            margin:30px auto;
+            display:flex;
+            align-items: flex-start;
+            justify-content:space-between;
+            flex-wrap: wrap;
+        }
+        .ct a img{
+            width:240px;
+            height: 180px;
+
+        }
