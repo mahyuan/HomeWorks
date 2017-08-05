@@ -1,5 +1,7 @@
 
+        //task16-5
 
+        lazyRender();
         var clock;
         $(window).on('scroll',function(){
             if(clock){

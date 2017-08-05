@@ -67,6 +67,8 @@
 
 ######题目5： 实现视频中的图片懒加载效果
 [task16-5](https://github.com/mhy-web/HomeWorks/tree/master/Desktop/task/task16/task16-5)
+
+
 ######题目6(选做)： 实现如下[ 新闻自动懒加载效果 ](http://47.91.156.35:3001/auto-news.html)（这里是[参考代码](http://js.jirengu.com/nihi/1/edit?html,js,output)
 
 
