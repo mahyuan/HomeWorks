@@ -72,7 +72,7 @@
 
 ######题目5： 实现视频中的图片懒加载效果
 
-[task16-5](./task16/task16-5/index.html)(https://github.com/mhy-web/HomeWorks/tree/master/Desktop/task/task16/task16-5/index.html)
+[task16-5](https://github.com/mhy-web/HomeWorks/tree/master/Desktop/task/task16/task16-5/index.html)
 
 
 题目6(选做)：
