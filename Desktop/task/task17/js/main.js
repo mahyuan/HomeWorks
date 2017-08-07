@@ -32,8 +32,7 @@
             }    
         })
         
-        function playNext(len){
-            
+        function playNext(len){         
             if(isAnimate) return;
             isAnimate = true;
 
