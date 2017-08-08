@@ -142,7 +142,8 @@ function getData(callback){
 			dataType: 'jsonp',   
 			jsonp:"jsoncallback",
 			data: {
-				app_key: '1271687855',
+				// app_key: 'short',
+				app_key:'1271687855',
 				num: perPageCount,
 				page: curPage
 			}
@@ -160,7 +161,7 @@ function getData(callback){
 function getNode(item){
 	var tpl = ''
 		tpl += '<li class="item">';
-		tpl += ' <a href="'+ item.url +'" class="link"><img src="' + item.img_url + '" alt=""></a>';
+		tpl += ' <a href="'+ item.url +'" class="link"><img src="' + item.img.url + '" alt=""></a>';
 		tpl += ' <h4 class="header">'+ item.short_name +'</h4>';
 		tpl += '<p class="desp">'+item.short_intro+'</p>';
 		tpl += '</li>';
