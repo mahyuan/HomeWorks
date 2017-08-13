@@ -30,7 +30,7 @@
 		}
 		main>figure{
 			float: left;
-			padding: 5px;
+			padding: 10px;
 		}
 		main>figure img{
 			width: 100%;
@@ -87,7 +87,7 @@
 			total = data.total
 
 			data.hits.forEach(function(imgInfo){
-				imgInfo.ratio = imgInfo.webformatWidth/imgInfo.webfomatHeight
+				imgInfo.ratio = imgInfo.webformatWidth / imgInfo.webformatHeight
 				imgInfo.imgWidthAfter = imgInfo.ratio * rowHeightBase
 
 				if(rowTotalWidth + imgInfo.imgWidthAfter <= mainNodeWidth){
@@ -121,7 +121,7 @@
 					key: '5856858-0ecb4651f10bff79efd6c1044',
 					q: keyword,
 					image_type: 'photo',
-					per_page: 20
+					per_page: 80
 			}
 			return new Promise(( resolve, reject ) => {
 				var xhr = new XMLHttpRequest()
