@@ -1,4 +1,5 @@
 **问题1： OOP 指什么？有哪些特性**
+
 OOP是Object Oriented Programming（面向对象程序设计）
 特性：
 
@@ -21,8 +22,11 @@ function Person()(name,age,job){//定义构造函数，默认命名第一个字�
 var person1=new Person('jrg','22','doctor')//使用new操作符进行实例化
 ```
 **问题3： prototype 是什么？有什么特性**
+
 每创建一个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。所以也可以说prototype就是通过调用构造函数而创建的那个对象实例的原型对象，原型对象可以让所有对象实例共享它所包含的属性和方法
+
 **问题4：画出如下代码的原型图**
+
 ```
 function People (name){
     this.name = name;
@@ -69,6 +73,7 @@ var Car1 = new Car('dazhong', 'red', '0'){
 ```
 
 **问题6： 创建一个 GoTop 对象，当 new 一个 GotTop 对象则会在页面上创建一个回到顶部的元素，点击页面滚动到顶部。**
+
 拥有以下属性和方法
 ```
 1. `ct`属性，GoTop 对应的 DOM 元素的容器
