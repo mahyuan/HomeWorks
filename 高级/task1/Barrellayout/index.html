@@ -42,22 +42,18 @@
 <body>
 	<header>
 		<input id="search-ipt" placeholder="enter picture name" type="text" >
-	</header>
-	
-	<main>
-		<!-- <figure>
-			<img src="" alt="">
-		</figure> -->
-	</main>
+	</header>	
+	<main></main>
 
-	<!-- <script src="../../jquery/jquery-2.1.1.min.js"></script> -->
 	<script>
+	
 		var mainNode = document.querySelector('main')
 		var searchInput = document.querySelector('#search-ipt')
 		var mainNodeWidth = parseFloat(getComputedStyle(mainNode).width)
 		var rowHeightBase = 200
 		var rowTotaWidth = 0
 		var rowList = []
+
 
 		searchInput.oninput = throttle(function (){
 			start()
@@ -142,18 +138,21 @@
 				}
 			})
 		}
+		
+		
+        function makeFullUrl(url, json) {
+            var arr = []
+            for (key in json) {
+                arr.push(encodeURIComponent(key) + '=' + encodeURIComponent(json[key]))
+            }
+            return url + '?' + arr.join('&')
+        }
 
-		function makeFullUrl(url, json){
-			var arr =[]
-			for (key in json){
-				arr.push(encodeURICompont(key) + '=' + encodeURIComponent(json[key]))
-			}
-			return url + '?' +arr.json('&')
-			console.log(JSON)
+
+
+		function isBottom(){
+			return document.body.scrollHeight - document.body.scrollTop - document.documentElement.clientHeight < 5
 		}
-		// function isBottom(){
-		// 	return document.body.scrollHeight - document.body.scrollTop - document.documentElement.clientHeight < 5
-		// }
 
 
 
