@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GoTop</title>
+	<!-- 点击button后跳转至页面顶部 -->
+	<style>
+	*{
+		padding:0;
+		margin: 0;
+	}
+	nav{
+		background:#3CB371;
+		color: red;
+		height:100px;
+		width:100%;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 100px;
+	}
+	.ct{
+		height: 1200px;
+	}
+	.btn{
+		width: 100%;
+		height:100px;
+		outline: none;
+		background-color: #FFA07A;
+		text-align: center;
+		line-height: 100px;
+		color: red;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	</style>
+</head>
+<body>
+	<nav>nav bar</nav>
+	<div class="ct">
+		<!-- <button class="btn">GoTop</button> -->
+	</div>
+	<script src="../jquery/jquery-2.1.1.min.js"></script>
+	<script>
+		function GoTop(ct, target){
+			this.ct = ct
+			this.target = $('<button class="btn">Go Top</button>')
+			this.target.css({
+				'bottom':'00px',
+				'position':'fixed'
+			})
+		}
+		GoTop.prototype = {
+			constructor:GoTop,
+			creatNode:function(){
+				this.ct.append(this.target)
+				this.target.hide()
+			},
+			bindEvent:function(){
+				var _this = this
+				$(window).on('scroll',function(){
+					if($(window).scrollTop() > 100){
+						_this.target.show()
+					}else{
+						_this.target.hide()
+					}
+				})
+				this.target.on('click',function(){
+					$(window).scrollTop(0)
+				})
+			}
+		}
+		var	Top = new GoTop($('body'))
+		Top.creatNode()
+		Top.bindEvent()
+	</script>
+</body>
+</html>
