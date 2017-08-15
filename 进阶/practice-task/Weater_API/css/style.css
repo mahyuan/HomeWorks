@@ -46,11 +46,8 @@ ul,li{
     width: 720px;
     height: 360px;
     border-radius: 5px  5px  0 0;
-    /* box-shadow: 0px 0px 3px 1px rgba(34,79,117,0.4), 0px 0px 3px 1px rgba(211,188,164,0.6); */
     background: linear-gradient(to right top, rgba(211,188,164,0.3) 20%, rgba(34,79,117, 0.4) 80%);
 }
-
-
 .topbar .info{
     position: absolute;
     right: 20px;
@@ -87,13 +84,8 @@ ul,li{
 .info .icon{
     font-size: 15px;
     line-height: 22px;
-    color:#fff;
-    
+    color:#fff;  
 }
-
-
-
-
 
 .navbar{
     position: absolute;
@@ -130,18 +122,6 @@ ul,li{
     margin-right:2px;
 }
 
-
-.sidebar{
-    /* width: 720px;
-    height: 120px;   */
-    border-radius: 0 0 5px  5px;
-/*     
-    display: flex;
-    justify-content: space-between; */
-    /* box-shadow: 0px 0px 3px 1px rgba(34,79,117,0.4), 0px 0px 3px 1px rgba(211,188,164,0.6); */
-}
-
-
 .date{
     width: 720px;
     height: 120px;
@@ -150,11 +130,8 @@ ul,li{
     line-height: 0;
     margin: 0;
     padding:0
-    
-
 }
 .date>li{
-    /* display: inline-block; */
     width: 160px;
     height: 120px;
     float: left;
@@ -162,8 +139,6 @@ ul,li{
     line-height: 120px;
     margin: 0;
     padding:0;
-
-    /* outline: 1px dashed red; */
 }
 .date>li:last-child{
     border-right: none;
