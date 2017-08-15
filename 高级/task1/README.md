@@ -119,6 +119,6 @@ var Car1 = new Car('dazhong', 'red', '0'){
 
 **问题7： 使用木桶布局实现一个图片墙**
 
-[代码](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task1/Barrellayout/index.html/)
+[代码预览](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task1/Barrellayout/index.html/)
 
-[预览](https://mhy-web.github.io//HomeWorks/高级/task1/Barrellayout/)
+[效果预览](https://mhy-web.github.io//HomeWorks/高级/task1/Barrellayout/index.html)
