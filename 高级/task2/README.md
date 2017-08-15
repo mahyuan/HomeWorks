@@ -27,7 +27,7 @@ fn2.apply(obj1);
 
 
 
-####问题2： 以下代码输出什么?
+#### 问题2： 以下代码输出什么?
 
 var john = { 
   firstName: "John" 
@@ -38,14 +38,14 @@ function func() {
 john.sayHi = func
 john.sayHi()
 
-###问题3： 下面代码输出什么，为什么
+### 问题3： 下面代码输出什么，为什么
 
 func() 
 function func() { 
   alert(this)
 }
 
-####问题4：下面代码输出什么
+#### 问题4：下面代码输出什么
 
 document.addEventListener('click', function(e){
     console.log(this);
@@ -54,7 +54,7 @@ document.addEventListener('click', function(e){
     }, 200);
 }, false);
 
-####问题5：下面代码输出什么，why
+#### 问题5：下面代码输出什么，why
 
 var john = { 
   firstName: "John" 
@@ -65,7 +65,7 @@ function func() {
 }
 func.call(john)
 
-####问题6： 以下代码有什么问题，如何修改
+#### 问题6： 以下代码有什么问题，如何修改
 
 var module= {
   bind: function(){
@@ -80,9 +80,9 @@ var module= {
   }
 }
 
-##原型链相关问题
+## 原型链相关问题
 
-####问题7：有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。
+#### 问题7：有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。
 
 function Person(name){
     this.name = name;
@@ -93,20 +93,24 @@ Person.prototype.sayName = function(){
 var p = new Person("若愚")
 p.sayName();
 
-####问题8： 上例中，对对象 p可以这样调用 p.toString()。toString是哪里来的? 画出原型图?并解释什么是原型链。
+#### 问题8： 上例中，对对象 p可以这样调用 p.toString()。toString是哪里来的? 画出原型图?并解释什么是原型链。
 
-####问题9：对String做扩展，实现如下方式获取字符串中频率最高的字符
+#### 问题9：对String做扩展，实现如下方式获取字符串中频率最高的字符
 
 var str = 'ahbbccdeddddfg';
 var ch = str.getMostOften();
 console.log(ch); //d , 因为d 出现了5次
 
-####问题10： instanceOf有什么作用？内部逻辑是如何实现的？
-继承相关问题
+#### 问题10： instanceOf有什么作用？内部逻辑是如何实现的？
 
-####问题11：继承有什么作用?
 
-####问题12： 下面两种写法有什么区别?
+
+
+## 继承相关问题
+
+#### 问题11：继承有什么作用?
+
+#### 问题12： 下面两种写法有什么区别?
 
 //方法1
 function People(name, sex){
@@ -129,11 +133,11 @@ Person.prototype.printName = function(){
 }
 var p1 = new Person('若愚', 27);
 
-####问题13： Object.create 有什么作用？兼容性如何？
+#### 问题13： Object.create 有什么作用？兼容性如何？
 
-####问题14： hasOwnProperty有什么作用？ 如何使用？
+#### 问题14： hasOwnProperty有什么作用？ 如何使用？
 
-####问题15：如下代码中call的作用是什么?
+#### 问题15：如下代码中call的作用是什么?
 
 function Person(name, sex){
     this.name = name;
@@ -144,7 +148,7 @@ function Male(name, sex, age){
     this.age = age;
 }
 
-####问题16： 补全代码，实现继承
+#### 问题16： 补全代码，实现继承
 
 function Person(name, sex){
     // todo ...
