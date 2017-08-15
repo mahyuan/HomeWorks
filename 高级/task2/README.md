@@ -38,7 +38,7 @@ function func() {
 john.sayHi = func
 john.sayHi()
 
-### 问题3： 下面代码输出什么，为什么
+#### 问题3： 下面代码输出什么，为什么
 
 func() 
 function func() { 
@@ -80,7 +80,7 @@ var module= {
   }
 }
 
-## 原型链相关问题
+### 原型链相关问题
 
 #### 问题7：有如下代码，解释Person、 prototype、__proto__、p、constructor之间的关联。
 
@@ -106,7 +106,7 @@ console.log(ch); //d , 因为d 出现了5次
 
 
 
-## 继承相关问题
+### 继承相关问题
 
 #### 问题11：继承有什么作用?
 
