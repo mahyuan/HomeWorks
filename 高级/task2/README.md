@@ -1,6 +1,8 @@
 ## 高级任务2（主线任务）：this_原型链_继承
-###this 相关问题
-####问题1： apply、call 、bind有什么作用，什么区别
+
+### this 相关问题
+
+#### 问题1： apply、call 、bind有什么作用，什么区别
 
 
 `Function.prototype.bind`
