@@ -69,7 +69,7 @@ foo.apply(obj);
     * 借用别的对象的方法
     
     eg:求数组中的最大值
-    
+
 ```
 var arr = [123,34,5,23,3434,23];
 //方法一
@@ -336,6 +336,10 @@ JavaScript 对象有一个指向一个原型对象的链。当试图访问一个
     p1.sayName();//hunger 
     p1.sayAge();//20
 ```
+Male.prototype = Object.create(Person.prototype)
+
+我们通过Object.create方法clone了一个新的prototype而不是直接把Person.prtotype直接赋值，将Person.prototype克隆后赋值给Object.prototype.
+
 兼容性：
 
 ![](./images/兼容性.jpg)
