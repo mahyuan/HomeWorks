@@ -46,6 +46,7 @@ sum.apply(null,[1,2]);
 作用　　
 
     * 调用函数
+
 ```
 var info = 'tom';
 function foo(){   
@@ -64,9 +65,11 @@ var obj = {
 foo.call(obj);    //这里foo函数里面的this就指向了obj
 foo.apply(obj);
 ```
+
     * 借用别的对象的方法
     
     eg:求数组中的最大值
+    
 ```
 var arr = [123,34,5,23,3434,23];
 //方法一
