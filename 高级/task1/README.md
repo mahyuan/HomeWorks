@@ -11,7 +11,7 @@ OOP是Object Oriented Programming（面向对象程序设计）
 
 **问题2： 如何通过构造函数的方式创建一个拥有属性和方法的对象?**
 ```
-function Person()(name,age,job){//定义构造函数，默认命名第一个字母为大写
+function Person(name,age,job){//定义构造函数，默认命名第一个字母为大写
     this.name=name;
     this.age=age;
     this.job=job;//直接将属性和方法赋给this对象
