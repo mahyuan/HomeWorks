@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+<style>
+    ul,li{
+        margin:0;
+        padding:0;
+    }
+    li{
+        list-style:none;
+    }
+    .clearfix:after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+    .tab{
+        width:600px;
+        margin:20px auto;
+        border:1px dashed #ccc;
+        padding:20px 10px;
+        border-radius:5px;
+    }
+    .tab-header{
+        border-bottom:1px solid #ccc;
+    }
+    .tab-header>li{
+        display: inline-block;
+        color:#cfcfcf;
+        border-top:1px solid #fff;
+        border-left:1px solid #fff;
+        border-right:1px solid #fff;
+        padding:5px 10px;
+        cursor:pointer;
+    }
+    .tab-header .active{
+        border:1px solid #ccc;
+        border-bottom:#fff;
+        border-radius:5px 5px 0  0;
+        color:#333;
+        background:#c3c3ce;
+        margin-bottom:-1px;
+    }
+    .tab-body{
+        padding:20px 10px;
+
+    }
+    .tab-body>li{
+        display:none;
+        padding:5px 10px;
+    }
+    .tab-body>.active{
+        display:block;
+    }
+    .box{
+        height:1000px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="tab">
+        <ul class="tab-header clearfix">
+            <li class="active" data-index='0'>tab0</li>
+            <li data-index='1'>tab2</li>
+            <li data-index='2'>tab3</li>
+        </ul>
+        <ul class="tab-body">
+            <li class="active" data-index='0'>内容1</li>
+            <li data-index='1'>内容2</li>
+            <li data-index='2'>内容3</li>
+        </ul>
+    </div>
+
+    <div class="tab">
+        <ul class="tab-header clearfix">
+            <li class="active" data-index='0'>tab0</li>
+            <li data-index='1'>tab2</li>
+            <li data-index='2'>tab3</li>
+        </ul>
+        <ul class="tab-body">
+            <li class="active" data-index='0'>内容1</li>
+            <li data-index='1'>内容2</li>
+            <li data-index='2'>内容3</li>
+        </ul>
+    </div>
+
+    <div class="tab">
+        <ul class="tab-header clearfix">
+            <li class="active" data-index='0'>tab0</li>
+            <li data-index='1'>tab2</li>
+            <li data-index='2'>tab3</li>
+            <li data-index='3'>tab4</li>
+            <li data-index='4'>tab5</li>
+        </ul>
+        <ul class="tab-body">
+            <li class="active" data-index='0'>内容1</li>
+            <li data-index='1'>内容2</li>
+            <li data-index='2'>内容3</li>
+            <li data-index='3'>内容4</li>
+            <li data-index='4'>内容5</li>
+        </ul>
+    </div>
+<script src="../../jquery/jquery-2.1.1.min.js"></script>
+<script>
+    var Tab = function(headerDom,bodyDom){
+        debugger;
+        this.headerDom = headerDom.find('li')
+        this.bodyDom = bodyDom.find('li')
+        this.addEvent()
+    }
+    Tab.prototype.addEvent = function(){
+        var that = this
+        this.headerDom.on('click',function(){
+            var index = $(this).data('index')
+            //当前tab高亮
+            that.highLight(index)
+            //内容区切换
+            that.bodySwith(index)
+        })
+    }
+    Tab.prototype.highLight = function(index){
+        var headerLi = this.headerDom
+        headerLi.removeClass('active')
+        headerLi.eq(index).addClass('active')
+    }
+    Tab.prototype.bodySwith = function(index){
+        var bodyLi = this.bodyDom
+        bodyLi.removeClass('active')
+        bodyLi.eq(index).addClass('active')
+    }
+    new Tab($('.tab-header').eq(0),$('.tab-body').eq(0))
+    new Tab($('.tab-header').eq(1),$('.tab-body').eq(1))
+    new Tab($('.tab-header').eq(2),$('.tab-body').eq(2))
+
+</script>
+</body>
+</html>

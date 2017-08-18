@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 懒加载：首屏优化；
+节省网站和用户流量；
+避免图片加载失败
+
+1.事件层面：
+    scroll 监听 懒加载
+    图片的onload加载成功
+2.默认图、布局 -->
+    <meta charset="UTF-8">
+    <title>lazyload</title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        .container{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container li{
+            float: left;
+            margin: 10px 10px;
+        }
+        .container li img{
+            width: 380px;
+            height: 380px;
+        }
+        p{
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="container"></ul>
+
+<script src="../../jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+var range_16 = Array.from(Array(16).keys())
+var imgPlaceholder = "https://resource.iwjw.com/iwjw-pc/img/common/placeholder.png";
+var imgListDOM = range_16.map(function(value, index){
+    return ['<li>',
+            '<img data-src=" ' + imgPlaceholder + '" src=" ' + imgPlaceholder + '"/>',
+            '</li>'
+            ].join('');
+})
+var containerDom = document.querySelectorAll('.container')[0];
+containerDom.innerHTML = imgListDOM.join('');
+</script>
+<script type="text/javascript">
+    var lazyload = function(img){
+        this.target = img
+        this.addEvent()
+    }
+
+    lazyload.prototype.addEvent = function(){
+        var that = this
+        var target = this.target
+        $(window).on('scroll',function(){
+            //检查是否加载当前照片
+            //检查当前图片是否在需要的显示区域
+            //滚动高度
+
+            var scrollTop = $(document).scrollTop()
+            var offsetTop = target.offset().Top
+            var height = target.height()
+            var condition = offsetTop +height> scrollTop&&offsetTop < scrollTop + windowHeight
+            var windowHeight = screen.availHeight
+            if(condition){
+                //加载图片
+                that.triggerLoad()
+            }
+        })
+    }
+
+    lazyload.prototype.triggerLoad = function(){
+        var target = this.target
+        var realImg = target.attr('data-src')
+        var img = new Image()
+        img.onload =functinon(){
+            target.attr('src',realImg)
+        }
+        img.src =realImg
+    }
+    $('.container').find('img').each(function(){
+        new lazyload($(this))
+    })
+</script>
+</body>
+</html>
