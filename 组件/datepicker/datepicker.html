@@ -346,7 +346,6 @@
         return new Date(year, month, 1);
       },
 
-
       getYYMMDD: function(date){
         var yy = date.getFullYear(),
             mm = date.getMonth()+1
@@ -357,19 +356,13 @@
       toFixed: function(n){
         return (n+'').length === 1 ? ('0'+ n+'') : (n+'');
       }
-
-
     }
-
 
 
   // 创建对象的方式
   // $('.date-ipt').each(function(){
   //   new DatePicker($(this));
   // })
-
-
-
 
     //变成 jquery 插件
     $.fn.datePicker = function() {
@@ -381,5 +374,4 @@
     $('.date-ipt').datePicker();
   </script>
 </body>
-
 </html>
