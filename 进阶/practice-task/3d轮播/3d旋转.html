@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D-transform</title>
+    <style type="text/css">
+      .wrap{
+          width: 200px;
+          height: 200px;
+          position: relative;
+          margin: 100px auto;
+          perspective: 1200px;
+
+      }
+      .box{
+          display: block;
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          border-radius:50px;
+          line-height: 196px;
+      /*  font-size: 120px;
+          font-weight: bold;
+          color: white;
+          text-align: center;
+          margin: 0; */
+          transform-style:preserve-3d;
+      }
+
+      .front{
+        transform: translateZ(100px);
+        background:#7FFF00;
+      }
+      .back{
+          transform: rotateY(180deg) translateZ(100px);
+          background:#00FFFF;
+      }
+      .left{
+          transform: rotateY(-90deg) translateZ(100px);
+          background:#DC143C;
+      }
+      .right{
+          transform: rotateY(90deg) translateZ(100px);
+          background:#9932CC;
+      }
+
+      .top{
+          transform:  rotateX(90deg) translateZ(100px);
+          background:#EE82EE;
+      }
+      .bottom{
+          transform: rotateX(-90deg) translateZ(100px);
+          background:#FFFF00;
+      }
+
+      .item{
+          width:50px;
+          height:50px;
+          border-radius: 50%;
+          /* background-color: #fff; */
+          /* font-size: 20px; */
+          animation: shineChange 2s linear infinite;
+
+      }
+
+      @keyframes shineChange {
+        from {
+          background-color: #FF00FF;
+          box-shadow:inset 0 0 10px #39ba1f;
+        }
+        50% {
+           background-color: #4169E1;
+          box-shadow: inset 0 0 70px #FF00FF;
+        }
+        to {
+          background-color: #FFA500;
+          box-shadow:inset 0 0 10px #FF6347;
+        }
+      }
+
+      .item-ct{
+          position:absolute;
+          left:20px;
+          top:20px;
+          right:20px;
+          bottom:20px;
+          display:flex;
+          transform-style:preserve-3d;
+      }
+      .content{
+          position: absolute;
+          transform-style:preserve-3d;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          transform:translateZ(100px) rotateY(45deg) rotateZ(45deg) rotateX(90deg);
+          animation: rotating 4s linear infinite;
+
+      }
+      @keyframes rotating{
+          0%{
+            transform:translateZ(100px) rotateY(0deg) rotateZ(0deg) rotateX(0deg);
+          }
+          100%{
+            transform:translateZ(100px) rotateY(360deg) rotateZ(360deg) rotateX(360deg);
+          }
+      }
+
+      .front .item-ct{
+          justify-content:center;
+          align-items:center;
+      }
+      .left .item-ct{
+          justify-content:space-between;
+          align-items:flex-start;
+      }
+      .left .item:nth-child(2){
+          align-self:flex-end;
+      }
+      .right .item-ct{
+          justify-content:space-between;
+      }
+      .right .item:nth-child(2){
+          align-self:center;
+      }
+      .right .item:nth-child(3){
+          align-self:flex-end;
+      }
+      .back .item-ct{
+          flex-wrap:wrap;
+          align-content:space-between;
+      }
+      .back .column:nth-child(1){
+        display:flex;
+        align-items:flex-start;
+        justify-content:space-between;
+        flex-basis:100%;
+      }
+      .back .column:nth-child(2){
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-end;
+        flex-basis:100%;
+      }
+
+      .top .item-ct{
+          flex-wrap:wrap;
+          align-content:space-between;
+      }
+      .top .column:nth-child(1){
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        flex-basis:100%;
+      }
+      .top .column:nth-child(2){
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-basis:100%;
+        height:20px;
+      }
+      .top .column:nth-child(3){
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-end;
+        flex-basis:100%;
+      }
+
+      .bottom .item-ct{
+          flex-wrap:wrap;
+          align-content:space-between;
+      }
+      .bottom .column:nth-child(1){
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        flex-basis:100%;
+      }
+      .bottom .column:nth-child(2){
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-end;
+        flex-basis:100%;
+      }
+     </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="content">
+    <div class="box front">
+        <div class="item-ct">
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box left">
+        <div class="item-ct">
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box right">
+        <div class="item-ct">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box back">
+        <div class="item-ct">
+            <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+           </div>
+           <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box top">
+        <div class="item-ct">
+            <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+           </div>
+           <div class="column">
+              <div class="item"></div>
+           </div>
+           <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+        </div>
+    </div>
+    <div class="box bottom">
+        <div class="item-ct">
+            <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+           </div>
+           <div class="column">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+ </body>
+ </html>
