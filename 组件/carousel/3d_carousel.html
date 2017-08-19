@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d_carousel</title>
+    <style>
+    .container{
+        position: relative;
+        width: 300px; 
+        height: 180px;
+        margin: 50px auto 40px; 
+        border: 1px solid #ccc; 
+        perspective: 1200px; 
+        border:1px solid #ccc;
+        transform-style:preserve-3d;
+        padding:0;
+    }
+
+    .carousel{
+        position:absolute;
+        width:100%;
+        height:100%;
+        transform-style:preserve-3d;
+        backface-visibility:hidden;
+        transform: translateZ(-362px) rotateX(90deg);
+        transition: transform 1s;
+        animation: scroll 8s infinite;
+    }
+
+    @keyframes scroll{
+    0%{
+        transform:translateZ(-362px) rotateY(0deg) rotateX(0deg);
+    }
+    100%{
+        transform:translateZ(-362px) rotateY(360deg) rotateX(0deg);
+    }
+    }
+    .carousel figure{
+        display:block;
+        position:absolute;
+        width:280px;
+        height:160px; 
+        margin:0;
+        top:10px;
+        left:10px;
+        right:10px;
+        bottom:10px;
+        font-size:100px;
+        text-align: center;
+        color:#fff;
+        line-height: 150px;
+        font-weight: bold;
+        opacity:0.8;
+    }
+    .carousel figure:nth-child(1){
+        transform:rotateY(0deg) translateZ(362px) ; 
+        background:#FFD700;
+    }
+    .carousel figure:nth-child(2){
+        transform:rotateY(45deg) translateZ(362px); 
+        background:#00008B;
+    }
+    .carousel figure:nth-child(3){
+        transform: rotateY(90deg) translateZ(362px); 
+        background:#FF00FF;
+    }
+    .carousel figure:nth-child(4){
+        transform: rotateY(135deg)translateZ(362px); 
+        background:#008B8B;
+    }
+    .carousel figure:nth-child(5){
+        transform: rotateY(180deg) translateZ(362px); 
+        background:#DC143C;
+    }
+    .carousel figure:nth-child(6){
+        transform: rotateY(225deg)translateZ(362px); 
+        background:#7FFF00;
+    }
+    .carousel figure:nth-child(7){
+        transform: rotateY(270deg) translateZ(362px); 
+    background:#FF7F50;
+    }
+    .carousel figure:nth-child(8){
+        transform: rotateY(315deg) translateZ(362px);
+        background:#00CED1;   
+    }
+    </style>
+</head>
+<body>
+  <section class="container">
+    <div class="carousel">
+      <figure>1</figure>
+      <figure>2</figure>
+      <figure>3</figure>
+      <figure>4</figure>
+      <figure>5</figure>
+      <figure>6</figure>
+      <figure>7</figure>
+      <figure>8</figure>
+      <figure>9</figure>          
+    </div>    
+  </section>   
+</body>
+</html>
