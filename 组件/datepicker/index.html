@@ -5,16 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>datepicker</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style type="text/css">
     
     </style>
 </head>
 <body>
-    <div>
-        
+    <input class="date-ipt" type="text" placeholder="有初始值" data-init="2017/08/20">
+    <input class="date-ipt" type="text" placeholder="无初始值">
+
+    <div class="ui-date-picker">
+        <div class="header">
+            <span class="pre caret-left"></span>
+            <span class="header-date">2017年8/月</span>
+            <span class="next caret-right"></span>
+        </div>
+        <table class="panel">
+            <thead>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pre-mouth">30</td>
+                    <td class="pre-mouth">31</td>
+                    <td class="cur-mouth">1</td>
+                    <td class="cur-mouth">2</td>
+                    <td class="cur-mouth">3</td>
+                    <td class="cur-mouth">4</td>
+                    <td class="cur-mouth">5</td>
+                </tr>
+                <tr>
+                    <td class="cur-mouth">6</td>
+                    <td class="cur-mouth">7</td>
+                    <td class="cur-mouth">8</td>
+                    <td class="cur-mouth">9</td>
+                    <td class="cur-mouth">10</td>
+                    <td class="cur-mouth">11</td>
+                    <td class="cur-mouth">12</td>
+
+                </tr>
+                    <td class="cur-mouth">13</td>
+                    <td class="pre-mouth">14</td>
+                    <td class="cur-mouth">15</td>
+                    <td class="cur-mouth">16</td>
+                    <td class="cur-mouth">17</td>
+                    <td class="cur-mouth">18</td>
+                    <td class="cur-mouth">19</td>
+
+                </tr>
+                <tr>
+                    <td class="cur-mouth cur-date">20</td>
+                    <td class="cur-mouth">21</td>
+                    <td class="cur-mouth">22</td>
+                    <td class="cur-mouth">23</td>
+                    <td class="cur-mouth">24</td>
+                    <td class="cur-mouth">25</td>
+                    <td class="cur-mouth">26</td>
+                </tr>
+                <tr>
+                    <td class="cur-mouth">27</td>
+                    <td class="cur-mouth">28</td>
+                    <td class="cur-mouth">29</td>
+                    <td class="cur-mouth">30</td>
+                    <td class="cur-mouth">31</td>
+                    <td class="next-mouth">01</td>
+                    <td class="next-mouth">02</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <script>
-        
-    </script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

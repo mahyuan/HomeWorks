@@ -1,0 +1,10 @@
+
+
+
+.caret-left{
+    margin-left:10px;
+    margin-top: 5px;
+    border-right: 5px solid red;
+    border-top:5px solid transparent;
+    border-bottom:5px solid transparent;
+}

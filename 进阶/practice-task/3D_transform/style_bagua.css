@@ -2,7 +2,8 @@
     position: relative;
     width: 180px; 
     height: 120px;
-    margin: 380px auto 40px; 
+    margin-left:400px;
+    margin-top:400px;
     transform-style:preserve-3d; 
     background:rgba(0,0,0,0); 
 }
@@ -87,7 +88,6 @@ background:#FF7F50;
   box-shadow:0 0 400px #FFD700;
 
 }
-
 svg{
   display:block;
   position: absolute;
@@ -102,10 +102,6 @@ svg{
   /* opacity:0.9;  */
   box-shadow: 0 0 100px #F4A460;
 }
-
-
-
-
 .carousel figure{
     display: flex; 
     justify-content: center; 
@@ -127,7 +123,6 @@ svg{
 #row-ct{
     background:rgba(0,0,0,0);
 }
-
 .carousel .row .column{
     width:60px;
     height:10px;
