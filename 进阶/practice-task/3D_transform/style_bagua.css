@@ -28,20 +28,14 @@
       box-shadow:0 0 100px #2F4F4F;
   }
 }
-.carousel>figure{
+.carousel figure{
     display:block;
     position:absolute;
     width:180px;
     height:120px;   
     margin:0;
-
-    font-size:50px;
-    text-align: center;
     color:#fff;
-    line-height: 100px;
-    font-weight: bold;
     opacity:1;
-    text-shadow: 0 0 20px #00008B;
     box-shadow:1px 1px 100px #2F4F4F;
 }
 
@@ -49,11 +43,10 @@
 .carousel figure:nth-child(1){
     transform:rotateX(0deg) rotateZ(0deg) translateY(-284px); 
     background:#FFD700;
-    /* border:#FFD700; */
 }
 .carousel figure:nth-child(2){
     transform:rotateX(0deg) rotateZ(45deg) translateY(-284px); 
-    background:#00008B;
+    background:#fff8dc;
 }
 .carousel figure:nth-child(3){
     transform:rotateX(0deg) rotateZ(90deg) translateY(-284px); 
@@ -106,4 +99,37 @@ svg{
   border-radius:50%; 
   opacity:0.9; 
   box-shadow: 0 0 100px #F4A460;
+}
+
+.carousel figure{
+    display: flex; 
+    justify-content: center; 
+    align-content:space-around;
+    flex-wrap: wrap;
+    box-sizing:border-box;
+    padding:20px 20px;
+    border-radius: 3px;
+}
+.carousel figure .row{
+    width: 150px;
+    height: 10px;
+    background:#555;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+#row-ct{
+    background:rgba(0,0,0,0);
+}
+
+.carousel .row .column{
+    width:60px;
+    height:10px;
+    background:#555;
+    border-radius: 3px;
+     box-shadow: 0 0 5px #00008B;
+}
+.row-s{
+    box-shadow: 0 0 5px #00008B;
 }
