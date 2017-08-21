@@ -5,7 +5,7 @@ var Slider = function (container){
     this.next = container.find('#next')
     this.currentIndex = 0
     this.bind()
-    // this.continuous()
+    this.continuous()
 }
 Slider.prototype.bind = function(){
     var that = this
@@ -26,7 +26,7 @@ Slider.prototype.calculateIndex = function(isRight){
     if(isRight){
         this.currentIndex++
     }else{
-         this.currentIndex --
+         this.currentIndex--
     }
     console.log(this.currentIndex)
     return this.currentIndex;
@@ -34,15 +34,11 @@ Slider.prototype.calculateIndex = function(isRight){
 
 Slider.prototype.slider = function(index){
     var that = this 
+    var obj = {'transform':'translateZ(-724px) rotateY('+ index*45 +'deg) rotateX(0deg)'}
     if(this.animating) return;
     this.animating = true
-    this.imgContent.css({
-            'transform':'translateZ(-724px) rotateY('+ index*45 +'deg) rotateX(0deg)'
-    },function () {  
-        this.animating = false
-        console.log('ggg0')
-       }
-)  
+    this.imgContent.css(obj) 
+    this.animating = false  
 }
 Slider.prototype.continuous = function() {
     var that = this
