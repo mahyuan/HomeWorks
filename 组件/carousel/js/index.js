@@ -1,4 +1,4 @@
-
+    // js for index   
     function Carousel($ct){
         this.$ct = $ct;
         this.init();

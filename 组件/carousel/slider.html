@@ -5,74 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>slider</title>
-    <!-- <link href="css/style2.0.css" type="text/css" rel="stylesheet"> -->
-    <style type="text/css">
-        *{
-            /* background:#90EE90; */
-            padding: 0;
-            margin: 0;
-            overflow: visible;
-        }
-        .img-wrapper{
-            overflow: hidden;
-            width: 320px;
-            height:180px;
-            position: relative;
-            margin: 200px auto;
-            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
-        }
-        .img-wrapper ul,
-        .img-wrapper li{
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            outline: none;
-        }
-        .img-wrapper .img-ct{
-            width: 1280px;
-            /*height: 184px;*/
-            overflow: visible;
-            position: absolute;
-            /* left: -960px; */
-        }
-        .img-wrapper .img-ct .image-item{
-            display: inline-block;
-            /*float: left;*/
-        }
-        .img-wrapper .img-ct img{
-            width: 320px;
-            height: 180px;
-            display: inline-block;
-        }
-        .img-wrapper .btn{
-            width: 30px;
-            height: 30px;
-            border: 1px solid #666;
-            border-radius: 50%;
-            display: inline-block;
-            position: absolute;
-            top: 50%;
-            margin-top: -15px;
-            text-align: center;
-            line-height: 30px;
-            font-weight:normal;
-            font-size: 20px;
-            text-decoration: none;
-            background: #666;
-            color: #fff;
-            opacity: 0.3;
-        }
-        .img-wrapper .btn:hover{
-            opacity: 1;
-        }
-        .img-wrapper #pre{
-            left: 10px;
-        }
-        .img-wrapper #next{
-            right: 10px;
-        }
-
-    </style>
+    <link href="./css/style_slider.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="img-wrapper">
@@ -89,73 +22,9 @@
         <a href="#" id="pre" class="btn">&lt;</a>
         <a href="#" id="next" class="btn">&gt;</a>
 </div>
-<!-- <script src="../../jquery/jquery-2.1.1.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script>
-    var images = [1,2,3,4,5].map(function(ele,index){
-        return '<li class="image-item">'+
-                '<img src="http://cdn.jirengu.com/book.jirengu.com/img/'+ele+'.jpg"/>'+
-                '</li>'
-    }).join('')
-    $('.img-ct').html(images)
-    console.log(images)
-</script>
-<script>
-var Slider = function(container){
-    this.pre = container.find('#pre')
-    this.next = container.find('#next')
-    this.imgWrapper = container.find('.img-ct')
-    this.addEvent()
-    //当前的叙述号
-    this.currentIndex = 0
-    this.imgLength = container.find('.image-item').length-1
-    debugger;
-}
-Slider.prototype.addEvent = function(){
-    var that = this
-    this.pre.on('click',function(){
-        if(that.animating){
-            return;
-        }
-        var index = that.calculateIndex(true)
-        debugger;
-        that.slider(index)
-    })
-    this.next.on('click',function(){
-        if(that.animating){
-            return;
-        }
-        var index = that.calculateIndex(false)
-        that.slider(index)
-    })
-}
-Slider.prototype.calculateIndex = function(isRight){
-    if(isRight){
-        this.currentIndex++
-    }else{
-        this.currentIndex--
-    }
-    if(this.currentIndex == -1){
-        this.currentIndex = this.imgLength
-    }
-    if(this.currentIndex > this.imgLength){
-        this.currentIndex = 0
-    }
-    debugger;
-    return this.currentIndex
-}
-Slider.prototype.slider = function(index){
-    var  that = this
-    this.animating = true
-    this.imgWrapper.animate({
-        'left': index * (-320) + 'px'
-    },function(){
-        debugger;
-        that.animating = false
-    })
-}
-new Slider($('.img-wrapper').eq(0))
-new Slider($('.img-wrapper').eq(1))
-</script>
+<script src="./js/jquery-2.1.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+<script src="js/main_slider.js"></script>
+
 </body>
 </html>
