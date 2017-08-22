@@ -4,21 +4,29 @@ var Slider = function (container){
     this.pre = container.find('#pre')
     this.next = container.find('#next')
     this.currentIndex = 0
+    // this.isMoving=false
+	// this.int = 0
     this.bind()
+ 
     this.continuous()
 }
 Slider.prototype.bind = function(){
     var that = this
     this.pre.on('click', function(){
+        this.clearInterval(continuous)
         if(that.animating) return;
+        // if(that.isMoving) return;
         var index = that.calculateIndex(true)
-        that.slider(index)        
+        that.slider(index)
+        
     })
     this.next.on('click', function(){
         if(that.animating) return;
+        // if(that.isMoving) return
         var index = that.calculateIndex(false)
-        that.slider(index)          
+        that.slider(index) 
     })
+    // this.isMoving = false
 }
 
 Slider.prototype.calculateIndex = function(isRight){
@@ -28,6 +36,7 @@ Slider.prototype.calculateIndex = function(isRight){
     }else{
          this.currentIndex--
     }
+    
     console.log(this.currentIndex)
     return this.currentIndex;
 }
@@ -42,10 +51,17 @@ Slider.prototype.slider = function(index){
 }
 Slider.prototype.continuous = function() {
     var that = this
-    var int = setInterval(function(){
+    // if(isMoving) return;
+    // isMoving = false
+    setInterval(function(){
         var index = that.calculateIndex(true)
         that.slider(index) 
+        // that.isMoving = true
     }, 3000)
+    // if(this.isMoving){
+    //     clearInterval()
+    // }
+
 }
 
 new Slider($('.container'))

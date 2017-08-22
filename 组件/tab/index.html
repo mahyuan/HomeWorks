@@ -27,23 +27,24 @@
         }	
         .tab-header{
             border-bottom:1px solid #ccc;
+            z-index: -1;
         }
         .tab-header>li{
             float:left;
             color:#cfcfcf;
-            border-top:1px solid #fff;
-            border-left:1px solid #fff;
-            border-right:1px solid #fff;
             padding:10px 20px;
             cursor:pointer;
         }
         .tab-header .active{
-            border:1px solid #ccc;
-            border-bottom:#fff;
             border-radius:5px 5px 0  0;
+            border-top:1px solid #ccc;
+            border-left:1px solid #ccc;
+            border-right:1px solid #ccc;
+            border-bottom:none;
             color:#333;
             background:#c3c3ce;
-            margin-bottom:-1px;
+            position: relative; 
+            bottom:-1px;
         }
         .tab-container{
             padding:20px 10px;

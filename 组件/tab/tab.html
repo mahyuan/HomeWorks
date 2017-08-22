@@ -29,19 +29,18 @@
     .tab-header>li{
         display: inline-block;
         color:#cfcfcf;
-        border-top:1px solid #fff;
-        border-left:1px solid #fff;
-        border-right:1px solid #fff;
         padding:5px 10px;
         cursor:pointer;
     }
     .tab-header .active{
-        border:1px solid #ccc;
-        border-bottom:#fff;
+        border-top:1px solid #c3c3ce;
+        border-left:1px solid #c3c3ce;
+        border-right:1px solid #c3c3ce;
         border-radius:5px 5px 0  0;
         color:#333;
         background:#c3c3ce;
-        margin-bottom:-1px;
+        position: relative;
+        bottom: -1px;
     }
     .tab-body{
         padding:20px 10px;
@@ -73,20 +72,6 @@
             <li data-index='2'>内容3</li>
         </ul>
     </div>
-
-    <div class="tab">
-        <ul class="tab-header clearfix">
-            <li class="active" data-index='0'>tab0</li>
-            <li data-index='1'>tab2</li>
-            <li data-index='2'>tab3</li>
-        </ul>
-        <ul class="tab-body">
-            <li class="active" data-index='0'>内容1</li>
-            <li data-index='1'>内容2</li>
-            <li data-index='2'>内容3</li>
-        </ul>
-    </div>
-
     <div class="tab">
         <ul class="tab-header clearfix">
             <li class="active" data-index='0'>tab0</li>

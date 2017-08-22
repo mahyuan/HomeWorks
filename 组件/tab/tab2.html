@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab调试</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+         ul,li{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        .clearfix:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        #root{
+            width:620px;
+            margin:20px auto;
+            border:1px dashed #ccc;
+            padding:10px 5px;
+            border-radius:5px;
+        }
+        .tab-item{
+            float:left;
+            color:#cfcfcf;
+            padding:5px 10px;
+            cursor:pointer;
+            width:200px;
+            border-bottom:1px solid #ccc;
+        }
+        .active{
+            border-top:1px solid #fff;
+            border-left:1px solid #fff;
+            border-right:1px solid #fff;
+            border-radius:5px 5px 0  0;
+            color:#333;
+            background:#c3c3ce;
+            margin-bottom:-1px;
+        }
+        .tab-body{
+            padding:20px 10px;
+    
+        }
+        .tab-body>.active{
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="./js/tab2.js"></script>
+</body>
+</html>
