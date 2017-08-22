@@ -22,7 +22,7 @@ var TabFactory = function(tabConfig){
     //es6方法，后面的参数一次覆盖前面的参数
     this.tabConfig = Object.assign({}, baseConfig, tabConfig);
     //高亮的是哪一个
-	this.activeIndex =0;
+	this.activeIndex =this.tabConfig.indexTab;
    
 };
 

@@ -84,7 +84,7 @@ containerDom.innerHTML = imgListDOM.join('');
         var target = this.target
         var realImg = target.attr('data-src')
         var img = new Image()
-        img.onload =functinon(){
+        img.onload =function(){
             target.attr('src',realImg)
         }
         img.src =realImg
