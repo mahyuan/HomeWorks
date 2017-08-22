@@ -41,46 +41,50 @@
 <body>
     <ul class="container"></ul>
 
-<script src="../../jquery/jquery-2.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-var range_16 = Array.from(Array(16).keys())
-var imgPlaceholder = "https://resource.iwjw.com/iwjw-pc/img/common/placeholder.png";
-var imgListDOM = range_16.map(function(value, index){
-    return ['<li>',
-            '<img data-src=" ' + imgPlaceholder + '" src=" ' + imgPlaceholder + '"/>',
-            '</li>'
-            ].join('');
-})
-var containerDom = document.querySelectorAll('.container')[0];
-containerDom.innerHTML = imgListDOM.join('');
+    var range_16 = Array.from(Array(16).keys())
+    var imgPlaceholder = "https://resource.iwjw.com/iwjw-pc/img/common/placeholder.png";
+    var imgListDOM = range_16.map(function(value, index){
+        return ['<li>',
+                '<img data-src="httpS://cdn.jirengu.com/book.jirengu.com/img/'+(value+1)+'.jpg "',
+                'src="'+ imgPlaceholder+'"/>',
+                '</li>'
+                ].join('');
+    })
+    debugger;
+    var containerDom = document.querySelectorAll('.container')[0];
+    containerDom.innerHTML = imgListDOM.join('');
 </script>
 <script type="text/javascript">
-    var lazyload = function(img){
+    var LazyLoad = function(img){
         this.target = img
         this.addEvent()
     }
-
-    lazyload.prototype.addEvent = function(){
+    debugger;
+    LazyLoad.prototype.addEvent = function(){
         var that = this
         var target = this.target
-        $(window).on('scroll',function(){
+        $(window).on('scroll', function(){
             //检查是否加载当前照片
             //检查当前图片是否在需要的显示区域
             //滚动高度
-
+            debugger;
             var scrollTop = $(document).scrollTop()
+            var windowHeight = screen.availHeight
             var offsetTop = target.offset().Top
             var height = target.height()
-            var condition = offsetTop +height> scrollTop&&offsetTop < scrollTop + windowHeight
-            var windowHeight = screen.availHeight
-            if(condition){
+            var condition1 = offsetTop + height > scrollTop
+            var condition2 = offsetTop < scrollTop + windowHeight
+            if(condition1 && condition2){
                 //加载图片
                 that.triggerLoad()
+                debugger;
             }
         })
     }
 
-    lazyload.prototype.triggerLoad = function(){
+    LazyLoad.prototype.triggerLoad = function(){
         var target = this.target
         var realImg = target.attr('data-src')
         var img = new Image()
@@ -88,9 +92,10 @@ containerDom.innerHTML = imgListDOM.join('');
             target.attr('src',realImg)
         }
         img.src =realImg
+        debugger;
     }
     $('.container').find('img').each(function(){
-        new lazyload($(this))
+        new LazyLoad($(this))
     })
 </script>
 </body>

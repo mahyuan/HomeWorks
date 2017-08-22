@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tab3</title>
+    <style type="text/css">
+        .tab-header{
+            border-bottom: 1px solid red;
+        }
+        .tab-header .clear-fix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .tab-header li, 
+        .tab-body li{
+            display: inline-block;
+            padding:5px 20px;
+        }
+        .tab-header li{
+            cursor: pointer;
+        }
+        .tab-header .active{
+            color: red;
+        }
+        .tab-body li.active{
+            display: block;
+        }
+        .tab-body li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <ul class="tab-header">
+            <li data-index="0" class="active">
+                tab1
+            </li>
+            <li data-index="1">tab2</li>
+            <li data-index="2">tab3</li>
+        </ul>
+        <ul class="tab-body">
+            <li data-index="0" class="active">
+                tab1内容
+            </li>
+            <li data-index="1">tab2内容</li>
+            <li data-index="2">tab3内容</li>
+        </ul>
+    </div>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    var Tab = function(headerDom, bodyDom){
+        this.headerDom = headerDom.find('li')
+        this.bodyDom = bodyDom.find('li')
+        this.addEvent()
+    }
+    Tab.prototype.addEvent = function(){
+        var that = this
+        this.headerDom.on('click', function(){
+			//this指向headerDom
+            var index = $(this).data('index')
+            that.highLight(index)
+            that.bodySwith(index)
+        })
+    }
+    Tab.prototype.highLight = function(index){
+        var headerLi = this.headerDom
+        headerLi.removeClass('active')
+        headerLi.eq(index).addClass('active')
+    }
+    Tab.prototype.bodySwith = function(index){
+        var bodyLi = this.bodyDom
+        bodyLi.removeClass('active')
+		bodyLi.eq(index).addClass('active')
+		//eq()从0开始取
+    }
+	new Tab($('.tab-header'), $('.tab-body'))
+
+</script>
+</body>
+</html>
