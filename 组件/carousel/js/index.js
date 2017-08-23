@@ -1,9 +1,117 @@
     // js for index   
-    function Carousel($ct){
+    var Carousel = function ($ct){
         this.$ct = $ct;
         this.init();
         this.bind();
-        this.playNT();
+        // this.playNT();
+    }
+    
+    Carousel.prototype.init = function(){
+        var $imgCt = this.$imgCt = this.$ct.find('.img-ct');
+        var $pre = this.$pre = this.$ct.find('.pre');
+        var $next = this.$next = this.$ct.find('.next');
+        var $bullet = this.$bullet = this.$ct.find('.bullet');
+        var $bulletLi = this.$bulletLi = this.$bullet.find('li');
+
+        var $firstImg = $imgCt.find('li').first();
+        var $lastImg = $imgCt.find('li').last();
+        var $imgWidth = $imgCt.find('li').find('img').width();
+
+        this.curPageIndex = 0;
+        this.imgLength = $imgCt.find('li').length;
+        this.isAnimate = false;
+
+        $imgCt.prepend($lastImg.clone());
+        $imgCt.append($firstImg.clone());
+
+        $imgCt.width = $imgWidth * this.imgLength ;
+        // $imgCt.css({
+        //     'left' : 0+'px'
+        // })
+    }
+    
+    Carousel.prototype.bind = function(){
+        var that = this;
+        this.$next.click(function(e){
+            e.preventDefault();
+            that.playNext();
+        })
+        this.$pre.click(function(e){
+            e.preventDefault();
+            that.playPre();
+        })
+    }
+
+    Carousel.prototype.slider = function(index){
+        var that = this
+        this.isAnimate = true
+        this.$imgCt.animate({
+            'left': index*(-320) +'px'  
+        },function(){
+            that.isAnimate = false
+        })
+        this.setBullet()     
+    }
+
+    Carousel.prototype.playPre = function(){
+        var that = this
+        this.curPageIndex--
+        if(this.curPageIndex < 0){
+            that.curPageIndex = this.imgLength-1
+        }
+        var index = this.curPageIndex
+        console.log(index)
+        this.slider(index)
+    }
+
+    Carousel.prototype.playNext = function(){
+        var that = this
+        this.curPageIndex++
+        if(this.curPageIndex == this.imgLength){
+            that.curPageIndex = 0
+        }
+        var index = this.curPageIndex
+        console.log(index)
+        this.slider(index)
+    }
+
+    Carousel.prototype.setBullet = function(){
+        this.$bullet.children()
+            .removeClass('active')
+            .eq(this.curPageIndex)
+            .addClass('active')
+    }
+
+    Carousel.prototype.playNT = function(){
+        var _this = this
+        this.setInterval(function(){
+            _this.playNext(1)
+        },2000)
+    }
+
+    new Carousel($('.carousel').eq(0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    var Carousel = function ($ct){
+        this.$ct = $ct;
+        this.init();
+        this.bind();
+        // this.playNT();
     }
     
     Carousel.prototype.init = function(){
@@ -41,17 +149,7 @@
             e.preventDefault();
             _this.playPre();
         })
-    //     this.$bulletLi.click(function(){
-    //         var _this = this;
-    //         var $index = $bulletLi.eq();
-    //         if(index < curPageIndex){
-    //             _this.playPre(_this.curPageIndex - $index)
-    //         }
-    //         else if( $index > _this.curPageIndex){
-    //             _this.playNext($index - _this.curPageIndex)
-    //         }
-    //     })
-     }
+    }
 
     Carousel.prototype.playPre = function(){
         var _this = this ;
@@ -106,93 +204,84 @@
 
     new Carousel($('.carousel').eq(0))
     // new Carousel($('.carsousel')[1])
+*/
+/*
+     $(function(){
+        var $imgCt=$('.carousel .img-ct');
+        var $imgs=$('.carousel .img-ct>li');
 
-/* $(function(){
-    function 
+        var $nextBtn=$('.carousel .next');
+        var $preBtn=$('.carousel .pre');
+        var $bullets=$('.bullet li');
 
+        var pageIndex=0;
+        var isAnimate=false;
+        var imgCount=$imgs.length;
+        var imgWidth=$imgs.width();
 
-    var $imgCt=$('.container .img-ct');
-    var $imgs=$('.container .img-ct>li');
-    var $preBtn=$('.container .pre');
-    var $nextBtn=$('.container .next');
-    var $stopBtn=$('.container .stop');
-    var $startBtn=$('.container .start');
-    var $bullets=$('.bullet li');
-
-
-    var pageIndex=0;
-    var imgWidth=$imgs.width();
-    var imgCount=$imgs.length;
-    var isAnimate=false;
-
-
-    $imgCt.append($imgs.first().clone());
-    $imgCt.prepend($imgs.last().clone());
-    $imgCt.width((imgCount + 2) * imgWidth );
-    $imgCt.css({left: - imgWidth})
-
-    $nextBtn.click(function(){
-        playNext(1)
-    })
-    $preBtn.click(function(){
-        playPre(1)
-    })
-    
-    $bullets.click(function(){
-        var index=$(this).index();
-        console.log(index);
-        if(index < pageIndex){
-            playPre(pageIndex - index)
-        }
-        else if( index > pageIndex){
-            playNext(index - pageIndex)
-        }
-    })
-
-    function playNext(len){
-        if(isAnimate) return;
-        isAnimate = true ;
-        $imgCt.animate({
-            left: '-=' + len*imgWidth
-        },function(){
-            pageIndex += len;
-            if( pageIndex === imgCount ){
-                pageIndex = 0;
-                $imgCt.css({left : - imgWidth})
-            }
-            console.log(pageIndex);
-            setBullet();
-            isAnimate = false;
+        $imgCt.append($imgs.first().clone());
+        $imgCt.prepend($imgs.last().clone());
+        $imgCt.width((imgCount + 2) * imgWidth );
+        $imgCt.css({left: - imgWidth});
+        
+        $nextBtn.click(function(){
+            playNext(1)
         })
-    }
-
-    function playPre(len){
-        $imgCt.animate({
-            left : '+=' +len*imgWidth
-        },function(){
-            pageIndex -= len;
-            if(pageIndex < 0){
-                pageIndex = imgCount - 1;
-                $imgCt.css({
-                    left: - imgCount*imgWidth
-                })
-            }
-            console.log(pageIndex)
-            setBullet()
+        $preBtn.click(function(){
+            playPre(1)
         })
-    }
-    function setBullet(){
-        $bullets.removeClass('active')
-                 .eq(pageIndex)
-                 .addClass('active')
-    }
+        $bullets.click(function(){
+            var index = $(this).index();
+            console.log(index);
+            if(index > pageIndex){
+                playNext(index - pageIndex)
+            }else if( index < pageIndex ){
+                playPre(pageIndex - index);
+            }    
+        })
+        
+        function playNext(len){         
+            if(isAnimate) return;
+            isAnimate = true;
 
-    playNT();
+            $imgCt.animate({
+                left:'-=' + len*imgWidth
+            },function(){
+                pageIndex += len;
+                if(pageIndex === imgCount){
+                    pageIndex = 0;
+                    $imgCt.css({left: - imgWidth})
+                }
+                console.log(pageIndex)
+                setBullet()
+                isAnimate = false
+            })
+        }
 
-    function playNT(){
+        function playPre(len){
+            $imgCt.animate({
+                left:'+=' +len* imgWidth 
+            },function(){
+                pageIndex -= len;
+                if( pageIndex < 0 ){
+                    pageIndex = imgCount - 1;
+                    $imgCt.css({
+                        left: - imgCount*imgWidth
+                    })
+                }
+                console.log(pageIndex)
+                setBullet()
+            })
+        }
+
+        function setBullet(){
+            $bullets.removeClass('active')
+                    .eq(pageIndex)
+                    .addClass('active')
+        }
+
         setInterval(function(){
             playNext(1)
-        },2000)
-    }
-})
+        },5000)
+    })
 */

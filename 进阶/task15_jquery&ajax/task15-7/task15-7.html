@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta charset="utf-8">
+<title>JS Bin</title>
+<link rel="stylesheet" href="./task15-7.css">
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div class="contanier">
+    <div class="show">
+        <p class="title">垂直滚动距离:</p>
+        <span class="distance">0</span>
+    </div>  
+    <div class="wrap ct1">
+        <button class="btn">点击</button>  
+    </div>
+    <div class="wrap ct2">
+        <div class="over">鼠标滑一下</div>   
+    </div> 
+    <div class="wrap">
+        <label for="input">输入:  </label>
+        <input id="input" type="text">
+    </div>
+    <div class="wrap">
+        <select id="city">
+            <option value="北京" class="chose">北京</option>
+            <option value="上海" class="chose">上海</option>
+            <option value="广州" class="chose">广州</option>
+            <option value="深圳" class="chose">深圳</option>
+        </select>
+        <div class="result">
+            选中的是：<span class="chosed">北京</span>
+        </div>
+    </div>
+
+
+  <script>
+    /*1*/
+    $(function(){  
+        setInterval(function(){
+            $('.distance').text($(window).scrollTop());
+        },0);
+    });
+    /*2*/
+    $(function(){ 
+        $('.btn').click(function(){ 
+            $('.ct1').css({backgroundColor:'red'});
+            setTimeout(function(){
+                $('.ct1').css({backgroundColor:'blue'}) 
+            },500)       
+        })
+        // $('.btn').off('click',function())     
+    });
+    $(function(){
+        $('.wrap>.over').mouseenter(function(){  
+             $('.ct2').css({background:'red'})         
+        })
+        $('.wrap>.over').mouseleave(function(){
+           $('.ct2').css({background:'blue'})        
+        })
+    })
+    $(function(){
+        $('#input').on('focus',function(){
+            $(this).css({
+                borderColor:'#00f'
+            })
+        }).on('input',function(){
+            if(/[a-z]/.test($(this).val())){
+                $(this).val(function(index,val){
+                    return val.toUpperCase()
+                })
+            }
+        }).on('blur',function(){
+            $(this).css({
+                borderColor:'#ff0300'
+            })
+            console.log('输入内容：'+$(this).val())
+        })
+    })    
+    $(function(){
+        $('#city').on('change',function(){
+            $('.chosed').text($(this).val())
+        })
+    })
+  </script>
+</body>
+</html>
+

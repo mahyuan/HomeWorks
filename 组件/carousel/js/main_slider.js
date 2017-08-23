@@ -14,7 +14,6 @@ var Slider = function(container){
     //当前的叙述号
     this.currentIndex = 0
     this.imgLength = container.find('.image-item').length-1
-    // debugger;
 }
 Slider.prototype.addEvent = function(){
     var that = this
@@ -46,7 +45,6 @@ Slider.prototype.calculateIndex = function(isRight){
     if(this.currentIndex > this.imgLength){
         this.currentIndex = 0
     }
-    // debugger;
     return this.currentIndex
 }
 Slider.prototype.slider = function(index){

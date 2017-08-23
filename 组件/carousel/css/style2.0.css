@@ -19,17 +19,20 @@
     margin: 0;
     padding: 0;
 }
-.carousel .img-ct{
-    width: 1280px;
+.carousel>.img-ct{
+    width: 1600px;
     height: 180px;
     overflow: visible;
     position: absolute;
-    /* left: -960px; */
+    left: 0px;
+    top:0;
 }
-.carousel .img-ct>li{
+.carousel>.img-ct>li{
+    /* position: relative; */
     float: left;
+    /* display:inline-block; */
 }
-.carousel .img-ct img{
+.carousel>.img-ct img{
     width: 320px;
     height: 180px;
 }

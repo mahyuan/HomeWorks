@@ -1,0 +1,109 @@
+body{
+    /* background:#90EE90; */
+    padding: 0;
+    margin: 0;
+}
+.container{
+    overflow: hidden;
+    width: 320px;
+    height:180px;
+    position: relative;
+    margin: 200px auto;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8); 
+    /* background: #90EE90; */
+}
+.container ul,
+.container li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.container .img-ct{
+    width: 1280px;
+    overflow: hidden;
+    position: absolute;
+    left: -960px;
+}
+.container .img-ct>li{
+    float: left;
+}
+.container .img-ct img{
+    width: 320px;
+    height: 180px;
+}
+.container .btn{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #666;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px; 
+    text-align: center;
+    line-height: 30px;
+    font-weight:normal;
+    font-size: 20px; 
+    text-decoration: none;
+    background: #666;
+    color: #fff;
+    opacity: 0.3;
+}
+.container .btn:hover{
+    opacity: 1;
+}
+.container .pre{
+    left: 10px;
+}
+.container .next{
+    right: 10px;
+}
+/* .container .bt{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #666; 
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    line-height: 30px;
+    font-weight:normal;
+    font-size: 20px; 
+    text-decoration: none;
+    position: absolute;
+    top: 10px; 
+    border-radius: 50%;   
+    display: inline-block;
+    opacity: 0.005;
+} */
+/* .container .start{
+    right:50px;
+}
+.container .stop{
+    right: 10px;
+} */
+/* .container .bt:hover{
+    opacity: 1;
+} */
+.container .bullet{
+    /* width: 100px; */
+    /* height: 20px; */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0;
+}
+.container .bullet>li{
+    width: 25px;
+    height: 4px;
+    background:#fff;
+    float: left;
+    /* display: inline-block; */
+    margin:2px;
+    border-radius:2px;
+}
+.container .bullet .active{
+    background:#999;
+}
