@@ -55,38 +55,46 @@ DatePick.prototype.setDate = function(){
         dateArr.push({type: 'pre', date:d })
     }
 
+	for(var j = 0; j<lastDay.getDate() -firstDay.getDate() + 1; j++){
+		var d = new Date(firstDay.getTime() + j*24*60*60*1000);
+		dateArr.push({type:'cur', date:d})
+	}
 
+	this.$datepicker.find('.header-date').text(this.watchDate.getFullYear()+ '年'+(this.watchDate.getMonth()+1)+'月');
+
+	var tpl = '';
+	for(var i = 0; i<dateArr.length; i++){
+		if(i%7 === 0){
+			tpl = '<tr>' + tpl;
+		}
+
+		tpl += '<td class="';
+		
+		if(dateArr[i].type ==='pre'){
+			tpl += 'pre-month';
+		}else if(dateArr[i].type === 'cur'){
+			tpl += 'cur-month';
+		}else{
+			tpl += 'next-month';
+		}
+
+
+		if(this.getYYMMDD(this.date) === this.getYYMMDD(dateArr[i].date)){
+			tpl += 'cur-date';
+		}
+		tpl += '"';
+		tpl += ' date-date="' + this.getYYMMDD(dateArr[i].date) + '">';
+		tpl += this.toFixed( dateArr[i].date.getDate()) + '</td>';
+
+		if(i%7 ===6){
+			tpl = tpl + '</tr>';
+		}
+	}
+	this.$datepicker.find('tbody').html(tpl);
 }
 
 DatePick.prototype.bind = function(){
 
 }
-
-
 var datepick = new datepick($('#date-start'))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

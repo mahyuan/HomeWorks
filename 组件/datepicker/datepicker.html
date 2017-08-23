@@ -158,7 +158,7 @@
 
 
 
-  <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>
     function DatePicker($target) {
       //初始化当前日期
@@ -179,8 +179,10 @@
       init: function($target) {
         this.$target = $target;
         if (this.isValidDate($target.attr('date-init'))) {
-          this.date = new Date($target.attr('date-init'));   //当前日期或者指定的要展示的日期
-          this.watchDate = new Date($target.attr('date-init'));  //用户在切换月份时所看到的日期,初始为当前日期
+          this.date = new Date($target.attr('date-init'));   
+          //当前日期或者指定的要展示的日期
+          this.watchDate = new Date($target.attr('date-init'));  
+          //用户在切换月份时所看到的日期,初始为当前日期
         } else {
           this.date = new Date();
           this.watchDate = new Date();
