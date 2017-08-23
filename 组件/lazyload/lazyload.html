@@ -47,7 +47,7 @@
     var imgPlaceholder = "https://resource.iwjw.com/iwjw-pc/img/common/placeholder.png";
     var imgListDOM = range_16.map(function(value, index){
         return ['<li>',
-                '<img data-src="httpS://cdn.jirengu.com/book.jirengu.com/img/'+(value+1)+'.jpg "',
+                '<img data-src="https://cdn.jirengu.com/book.jirengu.com/img/'+(value+1)+'.jpg "',
                 'src="'+ imgPlaceholder+'"/>',
                 '</li>'
                 ].join('');
@@ -69,7 +69,7 @@
             //检查是否加载当前照片
             //检查当前图片是否在需要的显示区域
             //滚动高度
-            debugger;
+            // debugger;
             var scrollTop = $(document).scrollTop()
             var windowHeight = screen.availHeight
             var offsetTop = target.offset().Top
@@ -79,7 +79,7 @@
             if(condition1 && condition2){
                 //加载图片
                 that.triggerLoad()
-                debugger;
+                // debugger;
             }
         })
     }
@@ -92,7 +92,7 @@
             target.attr('src',realImg)
         }
         img.src =realImg
-        debugger;
+        // debugger;
     }
     $('.container').find('img').each(function(){
         new LazyLoad($(this))
