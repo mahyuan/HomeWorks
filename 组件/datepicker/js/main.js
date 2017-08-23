@@ -1,6 +1,6 @@
 
 
-function DatePick($target){
+function DatePicker($target){
     //初始化当前日期
     this.init($target)
 
@@ -8,14 +8,14 @@ function DatePick($target){
     this.render()
 
     // 设置模板里面的数据
-    this.setDate()
+    this.setData()
 
     // 绑定事件
     this.bind()
 
 }
 
-DatePick.prototype.init = function($target){
+DatePicker.prototype.init = function($target){
     this.target = $target
     if(this.isValidDate($target.attr('date-init'))){
         //当前日期或者指定的要展示的日期
@@ -28,7 +28,7 @@ DatePick.prototype.init = function($target){
     }
 }
 
-DatePick.prototype.render = function() {
+DatePicker.prototype.render = function() {
     var tpl = '<div class="ui-date-picker" style="display:none">'
         + '<div class="header"><span class="pre caret-left"></span><span class="cur header-date"></span><span class="next caret-right"></span></div>'
         + '<table class="panel">'
@@ -43,7 +43,7 @@ DatePick.prototype.render = function() {
             'top': this.$target.offset().top + this.$target.height(true)
         })
 }
-DatePick.prototype.setDate = function(){
+DatePicker.prototype.setData = function(){
     this.$datepicker.find('tbody').html('')
 
     var firstDay = this.getFirstDay(this.watchDate),
@@ -93,8 +93,100 @@ DatePick.prototype.setDate = function(){
 	this.$datepicker.find('tbody').html(tpl);
 }
 
-DatePick.prototype.bind = function(){
+DatePicker.prototype.bind = function(){
+	var self = this;
+	this.$datepicker.find('.pre').on('click',function(){
+		self.watchDate = self.getPreMonth(self.watchDate);
+		self.setData();
+	});
+	this.$datepicker.find('.next').on('click',function(){
+		self.watchDate = self.getNextMonth(self.watchDate);
+		self.setData();
+	});
+	this.$datepicker.on('click', '.cur-month', function(){
+		self.$target.val($(this).attr('data-date'));
+		self.$datepicker.hide();
+	});
+	this.$target.on('click',function(e){
+		e.stopPropagation();
+		self.$datepicker.show();
+	})
 
+	//下面设置点击页面其他部分隐藏 datepicker
+	this.$datepicker.on('click',function(e){
+		e.stopPropagation();
+	});
+	$(window).on('click',function(e){
+		self.$datepicker.hide();
+	})
 }
-var datepick = new datepick($('#date-start'))
 
+DatePicker.prototype.isValidDate = function(dateStr){
+	return new Date(dateStr).toString() !== 'Invalid Date';
+}
+
+//获取 date 所在月份的第一天的时间对象
+DatePicker.prototype.getFirstDay = function(date){
+	var year = date.getFullYear(),
+		month = date.getMonth();
+	return newDate = new Date(year, month, 1);
+}
+//获取 date 所在月份最后一天的时间对象
+DatePicker.prototype.lastDay = function(date){
+	var year = date.getFullYear(),
+		month = date.getMonth();
+	month++;
+
+	if(month > 11){
+		month = 0;
+		year++;
+	}
+	var newDate = new Date(year, month, 1);
+	return new Date(newDate.getTime() -1000*60*60*24);
+}
+
+//获取date 上月1号时间对象
+DatePicker.prototype.getPreMonth = function(date){
+	var year = date.getFullYear(),
+		month = date.getMonth();
+
+	month--;
+	if(month < 0 ){
+		month = 11;
+		year --;
+	}
+	return new Date(year,month,1);
+}
+
+// 获取date 下月1号时间对象
+DatePicker.prototype.getNextMonth = function(date){
+	var year = date.getFullYear(),
+		month = date.getMonth();
+
+	month++;
+	if(month >11){
+		month = 0;
+		year++;
+	}
+	return new Date(year, month, 1);
+}
+
+DatePicker.prototype.getYYMMDD = function(date){
+	var yy = date.getFullYear(),
+		mm = date.getMonth()+1;
+
+	return date.getFullYear() + "/" + this.toFixed(date.getMonth() + 1)	+"/" +this.toFixed(date.getDate());
+}
+
+//eg:  1 -> "01"  11 -> "11"
+DatePicker.prototype.toFixed = function(n){
+	return (n+'').length === 1 ? ('0' + n + '') : (n+ '');
+}
+
+
+$.fn.datePicker = function(){
+	this.each(function(){
+		new DatePicker($(this));
+	});
+}
+$('.date-ipt').datePicker();
