@@ -80,7 +80,7 @@ $(function(){
     function playNT(){
         setInterval(function(){
             playNext(1)
-        },2000)
+        },4000)
     }
 
     // $stopBtn.click(function(){

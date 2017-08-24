@@ -1,9 +1,11 @@
-    // js for index   
+    // js for index  
+(function _Carousel(){
+
+
     var Carousel = function ($ct){
         this.$ct = $ct;
         this.init();
         this.bind();
-        // this.playNT();
     }
     
     Carousel.prototype.init = function(){
@@ -25,20 +27,29 @@
         $imgCt.append($firstImg.clone());
 
         $imgCt.width = $imgWidth * this.imgLength ;
-        // $imgCt.css({
-        //     'left' : 0+'px'
-        // })
     }
     
     Carousel.prototype.bind = function(){
         var that = this;
         this.$next.click(function(e){
             e.preventDefault();
-            that.playNext();
+            that.playNext(1);
         })
         this.$pre.click(function(e){
             e.preventDefault();
-            that.playPre();
+            that.playPre(1);
+        })
+
+        this.$bulletLi.click(function(e){
+            var index=$(this).index();
+            e.preventDefault();
+            console.log('bulletLi index:'+index);
+            if(index > that.curPageIndex){
+                that.playNext(index - that.curPageIndex)
+            }else if( index < that.curPageIndex ){
+                that.playPre(that.curPageIndex - index);
+            }
+            that.slider(that.curPageIndex)
         })
     }
 
@@ -50,60 +61,37 @@
         },function(){
             that.isAnimate = false
         })
-        this.setBullet()     
+        this.setBullet(index) 
     }
 
-    Carousel.prototype.playPre = function(){
+    Carousel.prototype.playPre = function(len){
         var that = this
-        this.curPageIndex--
+        this.curPageIndex-=len
         if(this.curPageIndex < 0){
             that.curPageIndex = this.imgLength-1
         }
         var index = this.curPageIndex
-        console.log(index)
         this.slider(index)
     }
 
-    Carousel.prototype.playNext = function(){
+    Carousel.prototype.playNext = function(len){
         var that = this
-        this.curPageIndex++
+        this.curPageIndex+=len
         if(this.curPageIndex == this.imgLength){
             that.curPageIndex = 0
         }
         var index = this.curPageIndex
-        console.log(index)
         this.slider(index)
     }
 
     Carousel.prototype.setBullet = function(){
-        this.$bullet.children()
+        this.$bulletLi
             .removeClass('active')
             .eq(this.curPageIndex)
             .addClass('active')
     }
-
-    Carousel.prototype.playNT = function(){
-        var _this = this
-        this.setInterval(function(){
-            _this.playNext(1)
-        },2000)
-    }
-
     new Carousel($('.carousel').eq(0))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})()
 
 
 /*

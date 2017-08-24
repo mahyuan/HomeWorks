@@ -16,7 +16,7 @@ function DatePicker($target){
 }
 
 DatePicker.prototype.init = function($target){
-    this.target = $target
+    this.$target = $target
     if(this.isValidDate($target.attr('date-init'))){
         //当前日期或者指定的要展示的日期
         this.date = new Date($target.attr('date-init'))
@@ -41,13 +41,14 @@ DatePicker.prototype.render = function() {
             'position': 'absolute',
             'left': this.$target.offset().left,
             'top': this.$target.offset().top + this.$target.height(true)
-        })
+        });
 }
 DatePicker.prototype.setData = function(){
-    this.$datepicker.find('tbody').html('')
+    this.$datepicker.find('tbody').html('');
 
     var firstDay = this.getFirstDay(this.watchDate),
-        lastDay = this.getLastDay(this.watchDate);
+		lastDay = this.getLastDay(this.watchDate);
+		
     var dateArr = [];
 
     for (var i = firstDay.getDay(); i > 0; i--){
@@ -58,6 +59,11 @@ DatePicker.prototype.setData = function(){
 	for(var j = 0; j<lastDay.getDate() -firstDay.getDate() + 1; j++){
 		var d = new Date(firstDay.getTime() + j*24*60*60*1000);
 		dateArr.push({type:'cur', date:d})
+	}
+
+	for(var k = 1; k < 7-lastDay.getDay(); k++){
+		var d = new Date( lastDay.getTime() + k*24*60*60*1000);
+		dateArr.push({type:'next', date:d})
 	}
 
 	this.$datepicker.find('.header-date').text(this.watchDate.getFullYear()+ '年'+(this.watchDate.getMonth()+1)+'月');
@@ -132,7 +138,7 @@ DatePicker.prototype.getFirstDay = function(date){
 	return newDate = new Date(year, month, 1);
 }
 //获取 date 所在月份最后一天的时间对象
-DatePicker.prototype.lastDay = function(date){
+DatePicker.prototype.getLastDay = function(date){
 	var year = date.getFullYear(),
 		month = date.getMonth();
 	month++;

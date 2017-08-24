@@ -71,12 +71,12 @@
     font-size: 0;
 }
 .carousel .bullet>li{
-    width: 25px;
-    height: 4px;
+    width: 10px;
+    height: 10px;
     background:#fff;
     float: left;
-    margin:2px;
-    border-radius:2px;
+    margin:5px;
+    border-radius:50%;
 }
 .carousel .bullet .active{
     background:#999;

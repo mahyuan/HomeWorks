@@ -1,10 +1,69 @@
 
-
-
+.ui-date-picker{
+    /* position: absolute; */
+    border:1px solid #ccc;
+    width:240px;
+    font-size:14px;
+    font-family: serif, cursive, fantasy;
+}
+.header{
+    background:#ca2b2b;
+    height: 30px;
+    line-height:30px;
+    width:240px;
+    color:#fff;
+    text-align:center;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
 .caret-left{
+    display:inline-block;
     margin-left:10px;
-    margin-top: 5px;
-    border-right: 5px solid red;
-    border-top:5px solid transparent;
-    border-bottom:5px solid transparent;
+    width:0px;
+    height:0px;
+    border-right: 7px solid #fff;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    cursor: pointer;
+}
+.caret-right{
+    display:inline-block;
+    margin-right:10px;
+    width:0px;
+    height:0px;
+    border-left: 7px solid #fff;
+    border-top:7px solid transparent;
+    border-bottom:7px solid transparent;
+    cursor: pointer;
+}
+.header-date{
+    display: block;
+}
+.panel{
+    width: 100%;
+    text-align: center;
+    background:#fff;
+    color:#000;
+}
+.panel th{
+    font-size:16px;
+    line-height:2;
+}
+.panel td{
+    line-height:1.2;
+}
+.panel .cur-date{
+    color: #ca2b2b;
+}
+.panel .pre-month,
+.panel .next-month{
+    color: #eee;
+}
+.panel .cur-month{
+    cursor:pointer;
+}
+.panel .cur-month:hover{
+    background-color: #cccccc;
+    color:fff;
 }
