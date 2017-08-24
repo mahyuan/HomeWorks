@@ -51,7 +51,7 @@ var Dialog = (function(){
                     +           '<div class="dialog-content"></div>'
                     +           '<div class="dialog-footer">'
                     +               '<a href="#" class="btn btn-close">取消</a>'
-                    +               '<a href="#" class="btn btn-confirm">确定<>'
+                    +               '<a href="#" class="btn btn-confirm">确定</a>'
                     +           '</div>'
                     +       '</div>'
                     +  '</div>';
