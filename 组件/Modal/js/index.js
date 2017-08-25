@@ -47,7 +47,10 @@ var Dialog = (function(){
             var tpl =  '<div class="dialog" style="display:none">'
                     +       '<div class="dialog-overlay"></div>'  
                     +       '<div class="dialog-box">'
-                    +           '<div class="dialog-header"><h3></h3><span class="btn-close">x</span></div>'
+                    +           '<div class="dialog-header">'
+                    +               '<h3></h3>'
+                    +               '<i class="btn-close iconfont">&#xe64c;</i>'
+                    +           '</div>'
                     +           '<div class="dialog-content"></div>'
                     +           '<div class="dialog-footer">'
                     +               '<a href="#" class="btn btn-close">取消</a>'
@@ -65,18 +68,21 @@ var Dialog = (function(){
             }else{
                 $dialog.find('.dialog-header').show();
             }
+
             if(!this.opts.isShowCloseBtn){
                 $dialog.find('.dialog-footer .btn-close').hide();
             }else{
                 $dialog.find('.dialog-footer .btn-close').show();
             }
+
             if(!this.opts.isShowConfirmBtn){
-                $dialog.find('.btn-confirm').hide();
+                $dialog.find('.dialog-footer .btn-confirm').hide();
             }else{
-                $dialog.find('.dialog-confirm').show();
+                $dialog.find('.dialog-footer .btn-confirm').show();
             }
+
             $dialog.find('.dialog-header h3').text(this.opts.title);
-            $dialog.find('.dialog-content').text(this.opts.message);
+            $dialog.find('.dialog-content').html(this.opts.message);
         },
         showDialog: function(){
             this.$dialog.show();
@@ -85,7 +91,6 @@ var Dialog = (function(){
             this.$dialog.hide();
         },    
     };
-
     return new Modal();
 })();
 
@@ -94,7 +99,7 @@ $('#open1').on('click', function(){
     Dialog.open('hello world')
 });
 $('#open2').on('click', function(){
-    Dialog.open('<a href="https://github.com/mhy-web"></a>')
+    Dialog.open('<a href="https://github.com/mhy-web">我的github</a>')
 });
 $('#open3').on('click', function(){
     Dialog.open({
