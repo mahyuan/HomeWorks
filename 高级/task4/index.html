@@ -5,39 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>入门15</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>模块化</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/carousel.css">
+	
 </head>
 <body>
  <div class="contaner">
   <!-- 导航栏 -->
-	<nav class="clearfix">
-	  <div class="to-top">
-	  <a href="#top" name="top"></a></div>
-	  <div id="nav-right">
-			<ul id="navbar">
-				<li><a href="#servies" class="servies-top" name="servies-top">服务</a></li>
-				<li><a href="#product" class="product-top" name="product-top">产品</a></li>
-				<li><a href="#about" class="about-top" name="about-top">关于</a></li>
-				<li><a href="#team" class="team-top" name="team-top">团队</a></li>
-				<li><a href="#contact" class="contact-top" name="contact-top">联系</a></li>
-			</ul>  	
-	  </div>
-		
+	<nav class="clearfix" >
+		<div class="layout">
+			<div class="top-logo">
+				<a href="#navbar" class="iconfont">&#xe604;</a>
+		  	</div>
+		   	<div id="nav-right">
+			  <ul id="navbar" >
+				  <li><a href="#servies">服务</a></li>
+				  <li><a href="#product">产品</a></li>
+				  <li><a href="#about"  >关于</a></li>
+				  <li><a href="#team" >团队</a></li>
+				  <li><a href="#contact" >联系</a></li>
+			  </ul>  	
+			</div>
+		</div>
 	</nav>
-
 	<!-- 头部 -->
 	<header>
+		<div class="img-wrapper">
+			<ul class="img-ct" >
+				
+			</ul>
+			<span href="#" id="pre" class="btn">&lt;</span>
+			<span href="#" id="next" class="btn">&gt;</span>
+			<ul class="bullet">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 		<div class="box-h">
 			<h2> Welcome To Our Studio!</h2>
 			<h1>IT'S NICE TO MEET YOU TELL ME MORE</h1>
 			<button><a href="#">TELL ME MORE</a></button>
 		</div>
 	</header>
-	<!-- 服务 -->
-	<div class="servies">
+	<!-- 服务 name="servies" -->
+	<div id="servies">
 		<div class="ser-h">
-			<h1><a href="#top" name="servies">SERVICES</a></h1>
+			<h1><a href="#top">SERVICES</a></h1>
 			<p>Lorem ipsum dolor sit amet consectetur.</p>
 		</div>
 		<div class="ser-main">
@@ -59,7 +76,6 @@
 
 		</div>	
 	</div>
-
 	<!-- 产品 -->
 	<!-- 产品-标题 -->
 	<div id="product">
@@ -68,14 +84,13 @@
 			<p>Lorem ipsum dolor sit amet consectetur.
 			</p>
 		</div>
-  <!-- 产品展示 -->
-		
+  <!-- 产品展示 -->		
 		<ul class="pro-main">
 			<li class="pro-list pro-1">
 				<a href="#" class="pro-a">
 					<div class="list-cover">
 						 <div class="cover-icon"></div>		
-						<img src="../../images/84.jpg">
+						<img src="../../images/34.jpg">
 					</div>
 				</a>
 				<h5>Round Icons</h5>
@@ -133,11 +148,6 @@
 			</li>	
 		</ul>
 	</div>
-
-
-
-
-
 <!-- about -->
 	<div id="about" class="clearfix">			
 		<div class="abt-h">
@@ -157,11 +167,7 @@
 					<h5>Our Humble Beginnings</h5>
 					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>			
 				</div>
-			</li>			
-
-
-
-			
+			</li>						
 <!-- li-timeline-2 -->
 			<li class="clearfix">
 				<div class="timeline-p">
@@ -205,9 +211,6 @@
 			</li>
 		</ul>	
 	</div>
-
-
-
 <!-- 团队 -->
 	<div id="team">
 		<div class="team-h">
@@ -232,9 +235,7 @@
 				</div>
 				<!-- 成员2 -->
 				<div class="team-1">
-					<div class="img"><img src="../../images/12.jpg"></div>
-					
-
+					<div class="img"><img src="../../images/25.jpg"></div>
 					<div class="team-h5">
 						<h5>Kay Garland</h5>
 						<p>Lead Designer</p>
@@ -247,7 +248,7 @@
 				</div>
 				<!-- 成员3 -->
 				<div class="team-1">
-					<div class="img"><img src="../../images/13.jpg"></div>
+					<div class="img"><img src="../../images/45.jpg"></div>
 					<div class="team-h5">
 						<h5>Kay Garland</h5>
 						<p>Lead Designer</p>
@@ -259,7 +260,6 @@
 					</div>
 				</div>			
 			</div>
-
 	<!-- team words	 -->
 			<div class="team-words">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
@@ -267,37 +267,32 @@
 
 		</div>
 	</div>
-
 	<!-- aside -->
 	<aside>
 		<div class="aside-contaner">
-			<div class="sponsor"><a class="icon-sponsor icon-sp1" href="#"></a></div>
+			<div class="sponsor"><a class="icon-sponsor icon-sp1" href="#" name="contact" ></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp2" href="#"></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp3" href="#"></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp4" href="#"></a></div>
 		</div>
 	</aside>
-
-
-
-
 	<!-- 联系我们 -->
-	<div class="contact">
+	<div id="contact" >
 		<div class="contact-main">
 			<div class="cont-h">
-				<h1><a href="#top" name="contact">CONTACT US</a></h1>
+				<h1><a href="">CONTACT US</a></h1>
 				<p>Lorem ipsum dolor sit amet consectetur.
 				</p>				
 			</div>
 			<!-- 表单大盒子 -->
 			<div class="cont-form">
 				<div class="cont-inf1">
-					<input type="text" name="uername" value="your name">
-					<input type="text" name="email" value="your email">
-					<input type="text" name="phone" value="your phone">
+					<input type="text" name="uername" value="" placeholder="your name">
+					<input type="text" name="email" value="" placeholder="your email">
+					<input type="text" name="phone" value="" placeholder="your phone">
 				</div>
 				<div class="cont-inf2">
-					<input type="textarea" name="message" value="your message">
+					<textarea rows="" cols="" wrap="hard" placeholder="your message"></textarea>
 				</div>
 			</div>
 			<div class="cont-send">
@@ -324,3 +319,5 @@
 	</div>
 </body>
 </html>
+<script src="../jquery/jquery-2.1.1.min.js"></script>
+<script src="./js/js/main_slider.js"></script>
