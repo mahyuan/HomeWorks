@@ -98,7 +98,7 @@ nav{
 
 /*header*/
 header{
-	background-image: url("../../images/15.jpg");
+	/* background-image: url("../../images/15.jpg"); */
 	background-size: cover;
 	width:100%;
 	height:640px;

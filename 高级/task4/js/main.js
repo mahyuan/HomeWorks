@@ -52,18 +52,7 @@
                     that.slider(that.curPageIndex)
                 })
             }
-        
-            Carousel.prototype.slider = function(index){
-                var that = this
-                this.isAnimate = true
-                this.$imgCt.animate({
-                    'left': index*(-320) +'px'  
-                },function(){
-                    that.isAnimate = false
-                })
-                this.setBullet(index) 
-            }
-        
+       
             Carousel.prototype.playPre = function(len){
                 var that = this
                 this.curPageIndex-=len
@@ -82,6 +71,16 @@
                 }
                 var index = this.curPageIndex
                 this.slider(index)
+            }
+            Carousel.prototype.slider = function(index){
+                var that = this
+                this.isAnimate = true
+                this.$imgCt.animate({
+                    'left': index*(-320) +'px'  
+                },function(){
+                    that.isAnimate = false
+                })
+                this.setBullet(index) 
             }
         
             Carousel.prototype.setBullet = function(){
@@ -167,7 +166,7 @@
                 },function(){
                     _this.curPageIndex ++;
                     if( _this.curPageIndex === _this.imgLength ){ 
-                        _this.curPageIndex = 0;                  
+                        _this.curPageIndex = 0; 
                         $imgCt.css({ 'left' : '- ($imgWidth)'  }) ;   
                     }              
                 })

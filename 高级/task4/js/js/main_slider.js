@@ -7,55 +7,100 @@ var images = [1,2,3,4,5].map(function(ele,index){
         console.log(images)
 
 var Slider = function(container){
-    this.pre = container.find('#pre')
-    this.next = container.find('#next')
-    this.imgCt = container.find('.img-ct')
+    // var container = this.container
+    var $pre = container.find('#pre')
+    var $next = container.find('#next')
+    var $imgCt = container.find('.img-ct')
+    var $bullet = container.find('.bullet')
+
+    var $firstImg = $imgCt.find('.image-item').first()
+    var $lastImg = $imgCt.find('image-item').last()
+
+    var $itemWidth = $imgCt.find('image-item').width()
+
     this.curPageIndex = 0
-    this.imgLength = container.find(image-item).length+1
+    this.imgLength = $imgCt.find('.image-item').length
+    this.isAnimating = false
+
+    $imgCt.width($itemWidth*(this.imgLength +2) )
+
+    $imgCt.prepend($lastImg.clone())
+    $imgCt.append($firstImg.clone())
+    $imgCt.css({
+        'left': '-$itemWidth'
+    })
+
     this.bind()
 }
 Slider.prototype.bind = function(){
     var that = this
-    this.pre.on('click',function(e){
+    debugger
+    this.$pre.click(function(e){
         e.preventDefault()
-        that.playPre(1)
-    }
-    this.next.on('click',function(e){
+        that.playPre()
+    })
+    this.$next.click(function(e){
         e.preventDefault()
-        that.playNext(1)
-    }) 
-    
+        that.playNext()
+    })    
 }
-Slider.prototype.playPre = function(){
+Slider.prototype.playPre = function(len){
     var that = this
-    this.curPageIndex -= len
-    if(this.curPageIndex < 0){
-        that.curPageIndex = that.imgLength -1
-    }
-    this.slider(index)
+    if(isAnimating) return;
+    this.isAnimating = true
+    this.$imgCt.animate({
+        'left': '-=' + len*$itemWidth
+    },function(){
+        that.curPageIndex -= len
+        if(that.curPageIndex < 0){
+            that.curPageIndex = that.imgLength - 1
+            $imgCt.css({
+                'left' : '-$itemWidth*that.imgLength'
+            })
+        }
+    })
+    this.isAnimating = false
+    this.setBullet()
 }
 Slider.prototype.plyNext = function(len){
     var that = this
-    this.curPageIndex +=len
-    if(this.curPageIndex == this.imgLenth){
-        that.cuePageIndex = 0
-    }
-}
+    if(this.isAnimating) return;
+    this.isAnimating = true
+    this.$imgCt.animate({
+        'left': '-=' + len*$itemWidth
+    },function(){
+        this.curPageIndex += len
+        if(that.curPageIndex === that.imgLenth){
+            that.curPageIndex = 0
+            that.$imgCt.css({
+                'left': '-*$itemWidth'
+            })
+        }
+    })
 
+    this.isAnimating = false
+    this.setBullet()
+}
+/*
 Slider.prototype.slider = function(index){
     var that = this 
     this.isAnimating = true
-    this.imgCt.animate({
-        'left': index*(-1920) + 'px'
+    this.$imgCt.animate({
+        'left': index*(-this.itemWidth) + 'px'
     },function(){
         that.isAnimating = false
     })
     this.setBullet(index)
 }
-Slider.prototype.setBullet = function(){
 
+*/
+Slider.prototype.setBullet = function(){
+    this.$bullet.children()
+        .removeClass('.active')
+        .eq(this.curPageIndex)
+        .addClass('active')
 }
-new Slider()
+new Slider($('.img-wrapper'))
 
 
 /*
@@ -67,8 +112,7 @@ var images = [1,2,3,4,5].map(function(ele,index){
         $('.img-ct').html(images)
         console.log(images)
 
-var Slider = function(container){
-    this.pre = container.find('#pre')
+var Slider = function(container$ = container.find('#pre')
     this.next = container.find('#next')
     this.imgWrapper = container.find('.img-ct')
     // this.bulletCt = container.find('.bullet')
@@ -110,11 +154,11 @@ Slider.prototype.addEvent = function(){
     
 }
 
-Slider.prototype.calculateIndex = function(isRight,len){
+Slider.prototype.calculateIndex = function(isRight){
     if(!isRight){
-        this.currentIndex+=len
+        this.currentIndex++
     }else{
-        this.currentIndex-=len
+        this.currentIndex--
     }
     if(this.currentIndex == -1){
         this.currentIndex = this.imgLength

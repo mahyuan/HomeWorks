@@ -21,12 +21,12 @@
     padding: 0;
     outline: none;
 }
-.img-wrapper .img-ct{
+.img-wrapper>.img-ct{
     width: 9600px;
     height: 1080px;
     overflow: visible;
     position: absolute;
-    left: 0px;
+    /* left: -1920px; */
 }
 .img-wrapper .img-ct .image-item{
     display: inline-block;

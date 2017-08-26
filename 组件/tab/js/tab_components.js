@@ -42,21 +42,19 @@ Tab.prototype.init = function(){
 }
 
 Tab.prototype.bind = function(){
-    var _this = this;
+    var that = this;
     this.tabLis.forEach(function(tabli){
-        tabli.onclick = function(e){
-            var target = e.target;
-            var index = [].indexOf.call(_this.tabLis, target);
-            _this.tabLis.forEach(function(li){
-                li.classList.remove('active');
-            });
-            target.classList.add('active');
+        var target = e.target;
+        var index = [].indexOf.call(that.tabLis, target);
+        that.tabLis.forEach(function(li){
+            li.classList.remove('active');
+        });
+        target.classList.add('active');
 
-            _this.tabPanels.forEach(function(panel){
-                panel.classList.remove('active')
-            });
-            _this.tabPanels[index].classList.add('active')
-        }
+        that.tabPanels.forEach(function(panel){
+            panel.classList.remove('active')
+        });
+        that.tabPanels[index].classList.add('active')       
     })
 }
 
@@ -146,4 +144,4 @@ TabFactory.prototype.addEvent = function(){
 }
 var container = document.getElementById('root');
 var tabInstance = new TabFactory({});
-tabInstance.render(container)
+tabInstance.render(container)  
