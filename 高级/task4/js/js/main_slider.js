@@ -7,7 +7,6 @@ var images = [1,2,3,4,5].map(function(ele,index){
         console.log(images)
 
 var Slider = function(container){
-    // var container = this.container
     var $pre = container.find('#pre')
     var $next = container.find('#next')
     var $imgCt = container.find('.img-ct')
