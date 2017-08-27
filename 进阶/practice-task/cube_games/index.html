@@ -6,18 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cube_games</title>
     <style type="text/css" >
+        html{
+            font-size: 10px;
+        }
         *{
             padding: 0;
             margin: 0;
             transform-style: preserve-3d;
         }
         .container{
-            width:0px;
-            height:0px;
-            margin: 400px auto;
+            width:0;
+            height:0;
+            margin: 50% auto;
             position: relative;
             transform-style: preserve-3d;
-
         }
         .ct{
             position: absolute;
@@ -25,19 +27,19 @@
             transform-origin: center center ;
         }
         .ct-1{
-            left: -150px;
-            top: -150px;
-            right: -150px;
-            bottom: -150px;
+            left: -15rem;
+            top: -15rem;
+            right: -15rem;
+            bottom: -15rem;
+    /*        width: 30rem;
+            height: 30rem;*/
             transform: rotateX(-35deg);
         }
         .ct-2{
-            left: -50px;
-            top: -50px;
-            right: -50px;
-            bottom: -50px;
-            width: 100px;
-            height:100px;
+            left: -5rem;
+            top: -5rem;
+            right: -5rem;
+            bottom: -5rem;
             transform: rotateX(-35deg);
         }
         .carousel{
@@ -49,18 +51,18 @@
             transform-style: preserve-3d;
         }
         .carousel-1{
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-1 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;;
+            animation: carousel-1 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
         }
         .carousel-2{
-            height: 100px;
-            height: 100px;
+            height: 10rem;
+            height: 10rem;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-2 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;;
+            animation: carousel-2 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
         }
         @keyframes carousel-1{
             0%{
@@ -126,65 +128,66 @@
             right: 0;
             bottom: 0;
             color: #fff;
+            margin: 0;
             font-weight: bold;
             text-align: center;
             box-sizing: border-box;
             box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
         }
         .carousel-1 figure{
-            width: 300px;
-            height: 300px;
-            font-size: 80px;
-            line-height: 300px;
+            width: 100%;
+            height: 100%;
+            /*font-size: 10rem;*/
+            /*line-height: 10rem;*/
             opacity: 0.2;
             animation:background-color-change-1 3s  infinite;
         }
 
         .carousel-2 figure{
-            width: 100px;
-            height: 100px;
-            font-size: 50px;
-            line-height: 100px;
+            width: 10rem;
+            height: 10rem;
+            /*font-size: 5rem;*/
+            /*line-height: 5rem;*/
             opacity: 0.8;
             animation:background-color-change-2 3s  infinite;
         }
        .carousel-1 figure:nth-child(1){
-            transform: translateZ(150px);
+            transform: translateZ(15rem);
         }
         .carousel-1 figure:nth-child(2){
-            transform: translateZ(-150px);
+            transform: translateZ(-15rem);
         }
         .carousel-1 figure:nth-child(3){
-            transform: rotateY(90deg)  translateZ(150px);
+            transform: rotateY(90deg)  translateZ(15rem);
         }
         .carousel-1 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-150px);
+            transform: rotateY(90deg)  translateZ(-15rem);
         }
         .carousel-1 figure:nth-child(5){
-            transform: rotateX(90deg)  translateZ(150px);
+            transform: rotateX(90deg)  translateZ(15rem);
         }
         .carousel-1 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-150px);
+            transform: rotateX(90deg)  translateZ(-15rem);
         }
 
 
         .carousel-2 figure:nth-child(1){
-            transform:  translateZ(50px);
+            transform:  translateZ(5rem);
         }
         .carousel-2 figure:nth-child(2){
-            transform:  translateZ(-50px);
+            transform:  translateZ(-5rem);
         }
         .carousel-2 figure:nth-child(3){
-            transform: rotateY(90deg)  translateZ(50px);
+            transform: rotateY(90deg)  translateZ(5rem);
         }
         .carousel-2 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-50px);
+            transform: rotateY(90deg)  translateZ(-5rem);
         }
         .carousel-2 figure:nth-child(5){
-            transform: rotateX(90deg)  translateZ(50px);
+            transform: rotateX(90deg)  translateZ(5rem);
         }
         .carousel-2 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-50px);
+            transform: rotateX(90deg)  translateZ(-5rem);
         }
 
     </style>
