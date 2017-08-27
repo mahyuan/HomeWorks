@@ -53,14 +53,14 @@
             height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-1 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+            animation: carousel-1 15s cubic-bezier(0.8, 0.4, 0.25, 1) infinite;
         }
         .carousel-2{
             height: 100%;
             height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-2 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+            animation: carousel-2 15s cubic-bezier(0.8, 0.4, 0.25, 1) infinite;
         }
         @keyframes carousel-1{
             0%{
@@ -127,7 +127,6 @@
             bottom: 0;
             color: #fff;
             margin: 0;
-
             font-weight: bold;
             text-align: center;
             box-sizing: border-box;
@@ -139,6 +138,7 @@
             font-size: 2rem;
             line-height: 6rem;
             opacity: 0.5;
+            border: 0.01rem solid #0f0;
             animation:background-color-change-1 3s  infinite;
         }
 
@@ -147,6 +147,7 @@
             height: 100%;
             font-size: 1rem;
             line-height: 3rem;
+            border: 0.05rem solid #0f0;
             opacity: 0.9;
             animation:background-color-change-2 3s  infinite;
         }
@@ -154,20 +155,20 @@
             transform: translateZ(3rem);
         }
         .carousel-1 figure:nth-child(2){
-            transform: translateZ(-3rem);
+            transform: rotateY(180deg) translateZ(3rem);
         }
         .carousel-1 figure:nth-child(3){
             transform: rotateY(90deg)  translateZ(3rem);
         }
         .carousel-1 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-3rem);
+            transform: rotateY(-90deg)  translateZ(3rem);
         }
         .carousel-1 figure:nth-child(5){
             transform: rotateX(90deg)  translateZ(3rem);
             opacity: 0.4;
         }
         .carousel-1 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-3rem);
+            transform: rotateX(-90deg)  translateZ(3rem);
             opacity: 0.4;
         }
 
@@ -176,20 +177,20 @@
             transform:  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(2){
-            transform:  translateZ(-1.5rem);
+            transform: rotateY(180deg) translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(3){
             transform: rotateY(90deg)  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-1.5rem);
+            transform: rotateY(-90deg)  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(5){
             transform: rotateX(90deg)  translateZ(1.5rem);
             opacity: 0.7;
         }
         .carousel-2 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-1.5rem);
+            transform: rotateX(-90deg)  translateZ(1.5rem);
             opacity: 0.7;
         }
 
