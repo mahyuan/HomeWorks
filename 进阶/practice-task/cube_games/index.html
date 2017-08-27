@@ -7,7 +7,7 @@
     <title>cube_games</title>
     <style type="text/css" >
         html{
-            font-size: 10px;
+            font-size: 20px;
         }
         *{
             padding: 0;
@@ -17,7 +17,7 @@
         .container{
             width:0;
             height:0;
-            margin: 50% auto;
+            margin: 10rem auto;
             position: relative;
             transform-style: preserve-3d;
         }
@@ -27,17 +27,17 @@
             transform-origin: center center ;
         }
         .ct-1{
-            left: -15rem;
-            top: -15rem;
-            right: -15rem;
-            bottom: -15rem;
+            left: -3rem;
+            top: -3rem;
+            right: -3rem;
+            bottom: -3rem;
             transform: rotateX(-35deg);
         }
         .ct-2{
-            left: -5rem;
-            top: -5rem;
-            right: -5rem;
-            bottom: -5rem;
+            left: -1.5rem;
+            top: -1.5rem;
+            right: -1.5rem;
+            bottom: -1.5rem;
             transform: rotateX(-35deg);
         }
         .carousel{
@@ -56,8 +56,8 @@
             animation: carousel-1 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
         }
         .carousel-2{
-            height: 10rem;
-            height: 10rem;
+            height: 100%;
+            height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
             animation: carousel-2 8s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
@@ -130,62 +130,62 @@
             font-weight: bold;
             text-align: center;
             box-sizing: border-box;
-            box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
+            box-shadow: inset 0 0 1rem 0.1rem rgba(0,0,0,0.2);
         }
         .carousel-1 figure{
             width: 100%;
             height: 100%;
-            font-size: 10rem;
-            line-height: 30rem;
+            font-size: 0.6rem;
+            line-height: 3rem;
             opacity: 0.2;
             animation:background-color-change-1 3s  infinite;
         }
 
         .carousel-2 figure{
-            width: 10rem;
-            height: 10rem;
-            font-size: 5rem;
-            line-height: 10rem;
+            width: 100%;
+            height: 100%;
+            font-size: 0.4rem;
+            line-height: 1rem;
             opacity: 0.8;
             animation:background-color-change-2 3s  infinite;
         }
        .carousel-1 figure:nth-child(1){
-            transform: translateZ(15rem);
+            transform: translateZ(3rem);
         }
         .carousel-1 figure:nth-child(2){
-            transform: translateZ(-15rem);
+            transform: translateZ(-3rem);
         }
         .carousel-1 figure:nth-child(3){
-            transform: rotateY(90deg)  translateZ(15rem);
+            transform: rotateY(90deg)  translateZ(3rem);
         }
         .carousel-1 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-15rem);
+            transform: rotateY(90deg)  translateZ(-3rem);
         }
         .carousel-1 figure:nth-child(5){
-            transform: rotateX(90deg)  translateZ(15rem);
+            transform: rotateX(90deg)  translateZ(3rem);
         }
         .carousel-1 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-15rem);
+            transform: rotateX(90deg)  translateZ(-3rem);
         }
 
 
         .carousel-2 figure:nth-child(1){
-            transform:  translateZ(5rem);
+            transform:  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(2){
-            transform:  translateZ(-5rem);
+            transform:  translateZ(-1.5rem);
         }
         .carousel-2 figure:nth-child(3){
-            transform: rotateY(90deg)  translateZ(5rem);
+            transform: rotateY(90deg)  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(4){
-            transform: rotateY(90deg)  translateZ(-5rem);
+            transform: rotateY(90deg)  translateZ(-1.5rem);
         }
         .carousel-2 figure:nth-child(5){
-            transform: rotateX(90deg)  translateZ(5rem);
+            transform: rotateX(90deg)  translateZ(1.5rem);
         }
         .carousel-2 figure:nth-child(6){
-            transform: rotateX(90deg)  translateZ(-5rem);
+            transform: rotateX(90deg)  translateZ(-1.5rem);
         }
 
     </style>
