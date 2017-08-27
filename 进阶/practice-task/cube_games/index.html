@@ -17,7 +17,7 @@
         .container{
             width:0;
             height:0;
-            margin: 10rem auto;
+            margin: 25vh auto;
             position: relative;
             transform-style: preserve-3d;
         }
@@ -220,10 +220,14 @@
     </div>
     </section>
     <script type="text/javescript">
-        var Cube = function(){
+            function setRemFontSize() {
+            window.screen.width
+            <!-- document.body.clientWidth -->
+                var  doc = document.documentElement
+                doc.style.fontSize=doc.clientWidth/375 * 100 +'px';
+            }
+            setRemFontSize()
 
-        }
-        new Cube()
     </script>
 </body>
 </html>
