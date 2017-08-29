@@ -1,2 +1,2 @@
 # HomeWorks
-HomeWorks of jirengu
+HomeWorks in jirengu
