@@ -6,12 +6,14 @@
         this.$ct = $ct;
         this.init();
         this.bind();
+        this.timer();
     }
     
     Carousel.prototype.init = function(){
         var $imgCt = this.$imgCt = this.$ct.find('.img-ct');
         var $pre = this.$pre = this.$ct.find('.pre');
         var $next = this.$next = this.$ct.find('.next');
+        var $stop = this.$stop = this.$ct.find('.stop');
         var $bullet = this.$bullet = this.$ct.find('.bullet');
         var $bulletLi = this.$bulletLi = this.$bullet.find('li');
 
@@ -50,7 +52,7 @@
                 that.playPre(that.curPageIndex - index);
             }
             that.slider(that.curPageIndex)
-        })
+        })       
     }
 
     Carousel.prototype.slider = function(index){
@@ -89,6 +91,16 @@
             .removeClass('active')
             .eq(this.curPageIndex)
             .addClass('active')
+    }
+    Carousel.prototype.timer = function(){
+        var that = this
+        var setTimerId = setInterval(function(){
+            that.playNext(1)
+        },3000)
+        this.$stop.click(function(){
+            clearInterval(setTimerId)
+        })
+
     }
     new Carousel($('.carousel').eq(0))
 })()
@@ -268,7 +280,7 @@
                     .addClass('active')
         }
 
-        setInterval(function(){
+        var timer = setInterval(function(){
             playNext(1)
         },5000)
     })

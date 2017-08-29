@@ -2,15 +2,15 @@ var images = [1,2,3,4,5].map(function(ele,index){
     return '<li class="image-item">'+
             '<img src="./images/'+ele+'.jpg"/>'+
             '</li>'
-        }).join('')
-        $('.img-ct').html(images)
-        console.log(images)
+        }).join('');
+    $('.img-ct').html(images)
+    console.log(images)
 
 var Slider = function(container){
     var $pre = container.find('#pre')
     var $next = container.find('#next')
     var $imgCt = container.find('.img-ct')
-    var $bullet = container.find('.bullet')
+    var $bulletLi = container.find('.bullet').find('li')
 
     var $firstImg = $imgCt.find('.image-item').first()
     var $lastImg = $imgCt.find('image-item').last()
@@ -28,21 +28,99 @@ var Slider = function(container){
     $imgCt.css({
         'left': '-$itemWidth'
     })
-
-    this.bind()
+    this.addEvent()
+    this.timer()
 }
+
+Slider.prototype.addEvent = function(){
+    var that = this
+    this.$pre.on('click',function(){
+        if(that.animating){
+            return;
+        }
+        var index = that.calculateIndex(true)
+        // debugger;
+        that.slider(index)
+    })
+    this.$next.on('click',function(){
+        if(that.animating){
+            return;
+        }
+        var index = that.calculateIndex(false)
+        that.slider(index)
+    })
+    
+    this.$bulletLi.click(function(e){
+        var index=$(this).index();
+        e.preventDefault();
+        if(index > that.currentIndex){
+            that.playNext(index - that.currentIndex)
+        }else if( index < that.currentIndex ){
+            that.playPre(that.currentIndex - index);
+        }
+        that.slider(that.currentIndex)
+    })
+}
+Slider.prototype.calculateIndex = function(isRight){
+    if(!isRight){
+        this.currentIndex++
+    }else{
+        this.currentIndex--
+    }
+    if(this.currentIndex == -1){
+        this.currentIndex = this.imgLength
+    }
+    if(this.currentIndex == this.imgLength){
+        this.currentIndex = 0
+    }
+    return this.currentIndex
+}
+Slider.prototype.slider = function(index){
+    var that = this 
+    if(this.isAnimating) return;
+    this.isAnimating = true
+    this.$imgCt.animate({
+        'left': index*(-this.itemWidth) + 'px'
+    },function(){
+        that.isAnimating = false
+    })   
+    this.setBullet(index)
+}
+
+Slider.prototype.setBullet = function(){
+    this.$bullet.children()
+        .removeClass('.active')
+        .eq(this.curPageIndex)
+        .addClass('active')
+}
+Slider.prototype.timer = function(){
+    var that = this 
+    var timerId = setInterval(function(){
+        that.playNext(1)
+    },3000)
+}
+
+new Slider($('.img-wrapper'))
+
+
+/*
 Slider.prototype.bind = function(){
     var that = this
-    debugger
+    // debugger
     this.$pre.click(function(e){
         e.preventDefault()
-        that.playPre()
+        that.playPre(1)
     })
     this.$next.click(function(e){
         e.preventDefault()
-        that.playNext()
-    })    
+        that.playNext(1)
+    }) 
+    this.$bulletLi.click(function(e){
+        e.preventDefault()
+        that.slider(index)
+    })  
 }
+
 Slider.prototype.playPre = function(len){
     var that = this
     if(isAnimating) return;
@@ -72,7 +150,7 @@ Slider.prototype.plyNext = function(len){
         if(that.curPageIndex === that.imgLenth){
             that.curPageIndex = 0
             that.$imgCt.css({
-                'left': '-*$itemWidth'
+                'left': '-index*$itemWidth'
             })
         }
     })
@@ -80,26 +158,7 @@ Slider.prototype.plyNext = function(len){
     this.isAnimating = false
     this.setBullet()
 }
-/*
-Slider.prototype.slider = function(index){
-    var that = this 
-    this.isAnimating = true
-    this.$imgCt.animate({
-        'left': index*(-this.itemWidth) + 'px'
-    },function(){
-        that.isAnimating = false
-    })
-    this.setBullet(index)
-}
-
 */
-Slider.prototype.setBullet = function(){
-    this.$bullet.children()
-        .removeClass('.active')
-        .eq(this.curPageIndex)
-        .addClass('active')
-}
-new Slider($('.img-wrapper'))
 
 
 /*

@@ -63,6 +63,11 @@
 .carousel .next{
     right: 10px;
 }
+/* .carousel .stop{
+    left: 100px;
+    bottom:10px;
+    background: red;
+} */
 .carousel .bullet{
     position: absolute;
     bottom: 10px;
