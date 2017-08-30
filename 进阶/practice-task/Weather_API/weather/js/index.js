@@ -1,5 +1,5 @@
 (function() {
-    const HOST = 'http://weixin.jirengu.com';
+    const HOST = 'https://weixin.jirengu.com';
     const DAYTIME_SEPERATOR = 12;
     const ENTER_KEY = 13;
     const DAY_MAPS = {
@@ -25,7 +25,7 @@
     }
 
     function getImgUrl(code) {
-        return `http://weixin.jirengu.com/images/weather/code/${code}.png`;
+        return `https://weixin.jirengu.com/images/weather/code/${code}.png`;
     }
 
     function setupTime() {
