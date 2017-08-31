@@ -26,7 +26,7 @@
             this.$imgCt.append(this.$firstImg.clone())
 
             this.bind()
-            // this.timer()
+            this.timer()
     }
 
 
