@@ -18,7 +18,7 @@ Carousel.prototype = {
             _this.showPre()
         })
         this.$next.on('click',function(){
-            _this.shouNext()
+            _this.showNext()
         })
     },
     showPre: function(){

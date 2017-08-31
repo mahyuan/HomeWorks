@@ -28,9 +28,7 @@ $(function(){
         return {
             init: init
         }
-
     })()
-
     WaterFall.init()
 })
 

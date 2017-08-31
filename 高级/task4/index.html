@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>模块化</title>
-	<link rel="stylesheet" href="./css/index.css">
-	<link rel="stylesheet" href="./css/carousel.css">
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/waterfull.css">
 </head>
 <body>
  <div class="contaner">
   <!-- 导航栏 -->
-	<nav class="clearfix" >
+	<nav class="clearfix">
 		<div class="layout">
 			<div class="top-logo">
-				<a href="#navbar" class="iconfont">&#xe604;</a>
-		  	</div>
-		   	<div id="nav-right">
-			  <ul id="navbar" >
-				  <li><a href="#servies">服务</a></li>
-				  <li><a href="#product">产品</a></li>
-				  <li><a href="#about"  >关于</a></li>
-				  <li><a href="#team" >团队</a></li>
-				  <li><a href="#contact" >联系</a></li>
-			  </ul>  	
+				<a href="#">logo</a>
+			</div>
+			<div id="nav-right">
+				<ul id="navbar">
+					<li><a href="#servies" class="servies-top" name="servies-top">服务</a></li>
+					<li><a href="#product" class="product-top" name="product-top">产品</a></li>
+					<li><a href="#about" class="about-top" name="about-top">关于</a></li>
+					<li><a href="#team" class="team-top" name="team-top">团队</a></li>
+					<li><a href="#contact" class="contact-top" name="contact-top">联系</a></li>
+				</ul>
 			</div>
 		</div>
 	</nav>
+
 	<!-- 头部 -->
 	<header>
 		<div class="img-wrapper">
-			<ul class="img-ct" >
+			<ul id="img-ct" class="img-ct">
 
 			</ul>
-			<span href="#" id="pre" class="btn">&lt;</span>
-			<span href="#" id="next" class="btn">&gt;</span>
+			<span class="btn" id="pre"><</span>
+			<span class="btn" id="next">></span>
 			<ul class="bullet">
 				<li class="active"></li>
 				<li></li>
@@ -51,10 +51,10 @@
 			<button><a href="#">TELL ME MORE</a></button>
 		</div>
 	</header>
-	<!-- 服务 name="servies" -->
+	<!-- 服务 -->
 	<div id="servies">
 		<div class="ser-h">
-			<h1><a href="#top">SERVICES</a></h1>
+			<h1><a href="#top" name="servies">SERVICES</a></h1>
 			<p>Lorem ipsum dolor sit amet consectetur.</p>
 		</div>
 		<div class="ser-main">
@@ -74,8 +74,9 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
 			</div>
 
-		</div>	
+		</div>
 	</div>
+
 	<!-- 产品 -->
 	<!-- 产品-标题 -->
 	<div id="product">
@@ -84,72 +85,200 @@
 			<p>Lorem ipsum dolor sit amet consectetur.
 			</p>
 		</div>
-  <!-- 产品展示 -->		
-		<ul class="pro-main">
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						 <div class="cover-icon"></div>		
-						<img src="../../images/34.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
-			</li>	
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						<div class="cover-icon"></div>	
-						<img src="../../images/2.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
-			</li>	
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						<div class="cover-icon"></div>	
-						<img src="../../images/3.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
+		<ul class="pro-maim clearfix" id="pro-main">
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/1.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
 			</li>
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						<div class="cover-icon"></div>	
-						<img src="../../images/24.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/2.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
 			</li>
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						<div class="cover-icon"></div>	
-						<img src="../../images/5.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/3.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
 			</li>
-			<li class="pro-list pro-1">
-				<a href="#" class="pro-a">
-					<div class="list-cover">
-						<div class="cover-icon"></div>	
-						<img src="../../images/36.jpg">
-					</div>
-				</a>
-				<h5>Round Icons</h5>
-				<p>Graphic Design</p>
-			</li>	
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/4.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/5.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/6.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/7.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/8.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/9.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/10.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/11.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<li class="pro-item">
+				<div class="pro-img-ct">
+					<a href="" class="link pro-a">
+						<img src="../../images/12.jpg" alt="">
+					</a>
+					<h4 class="pro-title">Round Icons</h4>
+					<p class="desp">Graphic Design</p>
+				</div>
+			</li>
+			<div id="load">我是看不见的</div>
 		</ul>
+
+		<!-- <ul id="pic-ct" class="clearfix"> -->
+			<!--<li class="item">
+				<a href="#" class="link">
+					<img src="https://s.img.mix.sina.com.cn/auto/resize?img=http%3A%2F%2Fwww.sinaimg.cn%2Fdy%2Fslidenews%2F5_img%2F2016_09%2F453_75615_657883.jpg&size=250_0" alt="">
+				</a>
+				<h4 class="header">标题</h4>
+				<p class="desp">
+					当地时间2016年3月1日，在东部与亲俄武装作战中受伤的乌克兰士兵接受海豚治疗。
+				</p>
+			</li>-->
+
+				<!-- 用于计算 item 宽度和列数，但不展示出来-->
+				<!-- <li class="item hide"></li>
+		</ul> -->
+  		<!-- 产品展示 -->
+		<!-- <ul class="pro-main">
+
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						 <div class="cover-icon"></div>
+						<img src="../../images/25.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						<div class="cover-icon"></div>
+						<img src="../../images/26.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						<div class="cover-icon"></div>
+						<img src="../../images/27.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						<div class="cover-icon"></div>
+						<img src="../../images/28.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						<div class="cover-icon"></div>
+						<img src="../../images/29.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+			<li class="pro-list pro-1">
+				<a href="#" class="pro-a">
+					<div class="list-cover">
+						<div class="cover-icon"></div>
+						<img src="../../images/30.jpg">
+					</div>
+				</a>
+				<h5>Round Icons</h5>
+				<p>Graphic Design</p>
+			</li>
+		</ul> -->
 	</div>
+
 <!-- about -->
-	<div id="about" class="clearfix">			
+	<div id="about" class="clearfix">
 		<div class="abt-h">
 			<h1><a href="#top" name="about">about</a></h1>
 			<p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -160,57 +289,64 @@
 <!-- li-timeline-1 -->
 			<li class="clearfix">
 				<div class="timeline-p">
-					<img src="../../images/7.jpg">
+					<img src="../../images/t1.jpg">
 				</div>
 				<div class="timeline-words timeline-1">
 					<h5>2009-2011</h5>
 					<h5>Our Humble Beginnings</h5>
-					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>			
+					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>
 				</div>
-			</li>						
+			</li>
+
+
+
+
 <!-- li-timeline-2 -->
 			<li class="clearfix">
 				<div class="timeline-p">
-					<img src="../../images/8.jpg">
+					<img src="../../images/t2.jpg">
 				</div>
 				<div class="timeline-words timeline-2">
 					<h5>2009-2011</h5>
 					<h5>Our Humble Beginnings</h5>
-					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>			
+					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>
 				</div>
 			</li>
 
 <!-- li-timeline-3 -->
 			<li class="clearfix">
 				<div class="timeline-p">
-					<img src="../../images/9.jpg">
+					<img src="../../images/t3.jpg">
 				</div>
 				<div class="timeline-words timeline-3">
 					<h5>2009-2011</h5>
 					<h5>Our Humble Beginnings</h5>
-					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>			
+					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>
 				</div>
 			</li>
 				<!-- li-timeline-4 -->
 			<li class="clearfix">
 				<div class="timeline-p">
-					<img src="../../images/10.jpg">
+					<img src="../../images/t4.jpg">
 				</div>
 				<div class="timeline-words timeline-4">
 					<h5>2009-2011</h5>
 					<h5>Our Humble Beginnings</h5>
-					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>			
+					<p class="timeline-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur</p>
 				</div>
 			</li>
 			<li class="clearfix">
 				<div class="timeline-p timeline-last">
 					<p>BE PART</p>
 					<p>OF OUR</p>
-					<p>STORY!</p>  
+					<p>STORY!</p>
 				</div>
 			</li>
-		</ul>	
+		</ul>
 	</div>
+
+
+
 <!-- 团队 -->
 	<div id="team">
 		<div class="team-h">
@@ -218,48 +354,51 @@
 			<p>Lorem ipsum dolor sit amet consectetur.
 			</p>
 		</div>
-	<div class="team-main">	
+	<div class="team-main">
 		<div class="team-per">
 			<!-- 成员1 -->
 				<div class="team-1">
-					<div class="img"><img src="../../images/11.jpg"></div>
+					<div class="img"><img src="../../images/t1.jpg"></div>
 					<div class="team-h5">
 						<h5>Kay Garland</h5>
 						<p>Lead Designer</p>
 						<div class="icon-team">
 							<a href="#" class="icon-ftr1"></a>
 							<a href="#" class="icon-ftr2"></a>
-							<a href="#" class="icon-ftr3"></a>				
+							<a href="#" class="icon-ftr3"></a>
 						</div>
 					</div>
 				</div>
 				<!-- 成员2 -->
 				<div class="team-1">
-					<div class="img"><img src="../../images/25.jpg"></div>
+					<div class="img"><img src="../../images/t2.jpg"></div>
+
+
 					<div class="team-h5">
 						<h5>Kay Garland</h5>
 						<p>Lead Designer</p>
 						<div class="icon-team">
 							<a href="#" class="icon-ftr1"></a>
 							<a href="#" class="icon-ftr2"></a>
-							<a href="#" class="icon-ftr3"></a>				
+							<a href="#" class="icon-ftr3"></a>
 						</div>
 					</div>
 				</div>
 				<!-- 成员3 -->
 				<div class="team-1">
-					<div class="img"><img src="../../images/45.jpg"></div>
+					<div class="img"><img src="../../images/t3.jpg"></div>
 					<div class="team-h5">
 						<h5>Kay Garland</h5>
 						<p>Lead Designer</p>
 						<div class="icon-team">
 							<a href="#" class="icon-ftr1"></a>
 							<a href="#" class="icon-ftr2"></a>
-							<a href="#" class="icon-ftr3"></a>				
+							<a href="#" class="icon-ftr3"></a>
 						</div>
 					</div>
-				</div>			
+				</div>
 			</div>
+
 	<!-- team words	 -->
 			<div class="team-words">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
@@ -270,19 +409,19 @@
 	<!-- aside -->
 	<aside>
 		<div class="aside-contaner">
-			<div class="sponsor"><a class="icon-sponsor icon-sp1" href="#" name="contact" ></a></div>
+			<div class="sponsor"><a class="icon-sponsor icon-sp1" href="#"></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp2" href="#"></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp3" href="#"></a></div>
 			<div class="sponsor"><a class="icon-sponsor icon-sp4" href="#"></a></div>
 		</div>
 	</aside>
 	<!-- 联系我们 -->
-	<div id="contact" >
+	<div id="contact">
 		<div class="contact-main">
 			<div class="cont-h">
-				<h1><a href="">CONTACT US</a></h1>
+				<h1><a href="#top" >CONTACT US</a></h1>
 				<p>Lorem ipsum dolor sit amet consectetur.
-				</p>				
+				</p>
 			</div>
 			<!-- 表单大盒子 -->
 			<div class="cont-form">
@@ -292,8 +431,9 @@
 					<input type="text" name="phone" value="" placeholder="your phone">
 				</div>
 				<div class="cont-inf2">
-					<textarea rows="" cols="" wrap="hard" placeholder="your message"></textarea>
+					<textarea name="message" id="" cols="" rows="" placeholder="your message"></textarea>
 				</div>
+
 			</div>
 			<div class="cont-send">
 				<button>send message</button>
@@ -314,10 +454,11 @@
 				<a href="#">Terms of Use</a>
 			</div>
 		</div>
-	</fo oter>
+	</footer>
 	</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="./js/js/main_slider.js"></script>
+<script src="../jquery/jquery-2.1.1.min.js"></script>
+<script src="./js/js/main_slider.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

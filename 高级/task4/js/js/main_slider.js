@@ -1,3 +1,105 @@
+/* js for slider in header */
+(function _Slider(){
+   var images = [1,2,3,4,5].map(function(ele, index){
+        return '<li class="image-item">'+
+                    '<img src="./images/' + ele + '.jpg"/>'+
+                '</li>'
+                }).join('')
+    $('#img-ct').html(images)
+
+    var Slider = function($container){
+            this.$container = $container
+            this.$imgCt = this.$container.find('#img-ct')
+            this.$pre = this.$container.find('#pre')
+            this.$next = this.$container.find('#next')
+            this.$bulletLi = this.$container.find('.bullet>li')
+
+            this.$itemWidth = this.$imgCt.find('.image-item').width()
+            this.$firstImg = this.$imgCt.find('.image-item').first()
+            this.$lastImg = this.$imgCt.find('.image-item').last()
+
+            this.curPageIndex = 0
+            this.isAnimating = false
+            this.imgLength = this.$imgCt.find('.image-item').length
+
+            this.$imgCt.prepend(this.$lastImg.clone())
+            this.$imgCt.append(this.$firstImg.clone())
+
+            this.bind()
+            // this.timer()
+    }
+
+
+    Slider.prototype.bind = function(){
+        var that = this
+        this.$pre.click(function(e){
+            e.preventDefault()
+            that.playPre(1)
+        })
+        this.$next.click(function(e){
+            e.preventDefault()
+            that.playNext(1)
+        })
+        this.$bulletLi.click(function(e){
+            var index = $(this).index()
+            console.log($(this))
+            console.log('bulletLi index:'+index);
+            debugger;
+            e.preventDefault()
+            that.curPageIndex = index
+            that.slider(that.curPageIndex)
+        })
+    }
+    Slider.prototype.playPre = function(){
+        var that = this
+        this.curPageIndex --
+        if(this.curPageIndex < 0){
+            that.curPageIndex = that.imgLength-1
+        }
+        this.slider(this.curPageIndex)
+        console.log('playpre: '+this.curPageIndex)
+    }
+    Slider.prototype.playNext = function(){
+        var that = this
+        this.curPageIndex ++
+        if(this.curPageIndex == this.imgLength){
+            that.curPageIndex = 0
+        }
+        this.slider(this.curPageIndex)
+        console.log('playnext: '+this.curPageIndex)
+    }
+    Slider.prototype.setBullet = function(){
+        this.$bulletLi
+            .removeClass('active')
+            .eq(this.curPageIndex)
+            .addClass('active')
+            console.log('setbullet: '+this.curPageIndex)
+    }
+    Slider.prototype.slider = function(index){
+        var that = this
+        if(this.isAnimating) return;
+        this.isAnimating = true
+        this.$imgCt.animate({
+            'left' : (index+1) * (-this.$itemWidth) + 'px'
+        },500, function(){
+            that.isAnimating = false
+        })
+        console.log('slider: '+index)
+        this.setBullet(index)
+
+    }
+    Slider.prototype.timer = function(){
+        var that = this
+        setInterval(function(){
+            that.playNext(1)
+        },3000)
+    }
+
+    new Slider($('.img-wrapper').eq(0))
+})()
+
+
+/*
 var images = [1,2,3,4,5].map(function(ele,index){
     return '<li class="image-item">'+
             '<img src="./images/'+ele+'.jpg"/>'+
@@ -7,21 +109,21 @@ var images = [1,2,3,4,5].map(function(ele,index){
     console.log(images)
 
 var Slider = function(container){
+    var $imgCt = container.find('#img-ct')
     var $pre = container.find('#pre')
     var $next = container.find('#next')
-    var $imgCt = container.find('.img-ct')
-    var $bulletLi = container.find('.bullet').find('li')
+    var $bulletLi = container.find('.bullet>li')
 
     var $firstImg = $imgCt.find('.image-item').first()
-    var $lastImg = $imgCt.find('image-item').last()
+    var $lastImg = $imgCt.find('.image-item').last()
 
-    var $itemWidth = $imgCt.find('image-item').width()
+    var $itemWidth = $imgCt.find('.image-item').width()
 
     this.curPageIndex = 0
     this.imgLength = $imgCt.find('.image-item').length
     this.isAnimating = false
 
-    $imgCt.width($itemWidth*(this.imgLength +2) )
+    $imgCt.width = $itemWidth*(this.imgLength + 2)
 
     $imgCt.prepend($lastImg.clone())
     $imgCt.append($firstImg.clone())
@@ -34,7 +136,8 @@ var Slider = function(container){
 
 Slider.prototype.addEvent = function(){
     var that = this
-    this.$pre.on('click',function(){
+    this.$pre.click(function(e){
+        e.preventDefault();
         if(that.animating){
             return;
         }
@@ -42,14 +145,15 @@ Slider.prototype.addEvent = function(){
         // debugger;
         that.slider(index)
     })
-    this.$next.on('click',function(){
+    this.$next.click(function(e){
+        e.preventDefault();
         if(that.animating){
             return;
         }
         var index = that.calculateIndex(false)
         that.slider(index)
     })
-    
+
     this.$bulletLi.click(function(e){
         var index=$(this).index();
         e.preventDefault();
@@ -67,8 +171,8 @@ Slider.prototype.calculateIndex = function(isRight){
     }else{
         this.currentIndex--
     }
-    if(this.currentIndex == -1){
-        this.currentIndex = this.imgLength
+    if(this.currentIndex < 0){
+        this.currentIndex = this.imgLength - 1
     }
     if(this.currentIndex == this.imgLength){
         this.currentIndex = 0
@@ -76,14 +180,14 @@ Slider.prototype.calculateIndex = function(isRight){
     return this.currentIndex
 }
 Slider.prototype.slider = function(index){
-    var that = this 
+    var that = this
     if(this.isAnimating) return;
     this.isAnimating = true
     this.$imgCt.animate({
         'left': index*(-this.itemWidth) + 'px'
     },function(){
         that.isAnimating = false
-    })   
+    })
     this.setBullet(index)
 }
 
@@ -94,7 +198,7 @@ Slider.prototype.setBullet = function(){
         .addClass('active')
 }
 Slider.prototype.timer = function(){
-    var that = this 
+    var that = this
     var timerId = setInterval(function(){
         that.playNext(1)
     },3000)
@@ -102,7 +206,7 @@ Slider.prototype.timer = function(){
 
 new Slider($('.img-wrapper'))
 
-
+*/
 /*
 Slider.prototype.bind = function(){
     var that = this
@@ -114,11 +218,11 @@ Slider.prototype.bind = function(){
     this.$next.click(function(e){
         e.preventDefault()
         that.playNext(1)
-    }) 
+    })
     this.$bulletLi.click(function(e){
         e.preventDefault()
         that.slider(index)
-    })  
+    })
 }
 
 Slider.prototype.playPre = function(len){
@@ -197,7 +301,7 @@ Slider.prototype.addEvent = function(){
         var index = that.calculateIndex(false)
         that.slider(index)
     })
-    
+
     this.bulletLi.click(function(e){
         var index=$(this).index();
         e.preventDefault();
@@ -209,7 +313,7 @@ Slider.prototype.addEvent = function(){
         }
         that.slider(that.currentIndex)
     })
-    
+
 }
 
 Slider.prototype.calculateIndex = function(isRight){
