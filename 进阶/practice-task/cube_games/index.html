@@ -7,7 +7,7 @@
     <title>cube_games</title>
     <style type="text/css" >
         html{
-            font-size: 1.2em;
+            font-size: 1em;
         }
         *{
             padding: 0;
@@ -53,21 +53,21 @@
             height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-1 15s cubic-bezier(0.8, 0.4, 0.25, 1) infinite;
+            animation: carousel-1 10s cubic-bezier(0, 1.2, 0, 1) infinite;
         }
         .carousel-2{
             height: 100%;
             height: 100%;
             transform-origin: center center;
             transform: rotateY(45deg);
-            animation: carousel-2 15s cubic-bezier(0.8, 0.4, 0.25, 1) infinite;
+            animation: carousel-2 10s cubic-bezier(0, 1.2, 0, 1) infinite;
         }
         @keyframes carousel-1{
             0%{
                transform: rotateY(45deg);
             }
             100%{
-                transform:  rotateY(405deg);
+                transform:  rotateY(135deg);
             }
         }
         @keyframes carousel-2{
@@ -75,7 +75,7 @@
                 transform:  rotateY(45deg);
             }
             100%{
-                transform: rotateY(-405deg);
+                transform: rotateY(-135deg);
             }
         }
         @keyframes background-color-change-1{
@@ -200,34 +200,57 @@
     <section class="container">
     <div class="ct ct-1">
         <div class="carousel carousel-1">
-            <figure>1</figure>
-            <figure>2</figure>
-            <figure>3</figure>
-            <figure>4</figure>
-            <figure>5</figure>
-            <figure>6</figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
         </div>
     </div>
     <div class="ct ct-2">
         <div class="carousel carousel-2">
-            <figure>1</figure>
-            <figure>2</figure>
-            <figure>3</figure>
-            <figure>4</figure>
-            <figure>5</figure>
-            <figure>6</figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
         </div>
     </div>
     </section>
-    <script type="text/javescript">
-            function setRemFontSize() {
-            window.screen.width
-            <!-- document.body.clientWidth -->
-                var  doc = document.documentElement
-                doc.style.fontSize=doc.clientWidth/375 * 100 +'px';
-            }
-            setRemFontSize()
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+/*
 
+            var $car1 = $('.carousel-1')
+            var $car2 = $('.carousel-2')
+            var cur1 = 0
+            var cur2 = 0
+            timer()
+            function timer(){
+                cur1 += 90
+                cur2 -= 90
+                setInterval(function(){
+                   $car1.animate({
+                        'transform' : 'rotateY(' +cur1 +'deg)'
+                    },500)
+                    debugger
+                   $car2.animate({
+                        'transform' : 'rotateY('+cur2 +'deg)'
+                    },500)
+                },1000)
+            }
+*/
+
+
+        function setRemFontSize() {
+        window.screen.width
+        document.body.clientWidth
+            var  doc = document.documentElement
+            doc.style.fontSize=doc.clientWidth/375 * 10 +'px';
+        }
+        setRemFontSize()
     </script>
 </body>
 </html>
