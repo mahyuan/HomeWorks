@@ -21,7 +21,7 @@
   margin-bottom: 0.8rem;
   display: block;
   cursor: pointer;
-	/* border: 1px dashed red; */
+
 }
 .icon-vol{
   font-size:2rem;
@@ -42,7 +42,6 @@
 #list-next{
 	color: #fff;
   cursor: pointer;
-  /* border: 1px dashed red; */
 }
 #list-pre{
   text-align: left;
@@ -78,7 +77,6 @@ figure .iconfont{
   font-size:2rem;
   color: #333;
   cursor: pointer;
-  /* border: 1px dashed red; */
 }
 #play{
   font-size: 3rem;
