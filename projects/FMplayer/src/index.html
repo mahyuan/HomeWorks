@@ -6,13 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="referrer" content="never">
 	<link rel="stylesheet" href="./css/layout.css">
+	<link rel="stylesheet" href="./css/incnfont/icon.css">
 	<title>音乐播放器</title>
 </head>
 <body>
 	<div class="container">
 		<header>
-			<span id="volume-btn">
-				<i class="iconfont icon-vol"></i>
+			<span id="logo">Player</span>
+			<span id="volume">
+				<i class="iconfont icon-vol ">&#xe604;</i>
+				<i class="iconfont icon-vol vol-show ">&#xe72b;</i>
 			</span>
 			<!-- <div class="tab">
 
@@ -20,15 +23,19 @@
 		</header>
 		<nav>
 			<ul class="navbar">
-				<li id="list-pre" ><</li>
+				<li id="list-pre" >
+					<i class="iconfont icon-list-pre">&#xe63d;</i>
+				</li>
 				<li id="list-ct">
 					<ul id="s-list">
 						拼接
-						<li class="list-item"><a href=""></a></li>
+						<li class="list-item"><a href="">degeg</a></li>
 						<!-- 拼接 -->
 					</ul>
 				</li>
-				<li id="list-next">></li>
+				<li id="list-next">
+					<i class="iconfont icon-list-next">&#xe641;</i>
+				</li>
 			</ul>
 		</nav>
 		<section>
@@ -39,20 +46,21 @@
 			</figure>
 			<figure id="play-ct">
 				<div class="extra-btn-ct">
-					<span id="collect-btn" class="extra-btn:d">收藏</span>
-					<span id="load-btn"  class="extra-btn:d"></span>
-					<span id="Thumb-btn"  class="extra-btn:d">点赞</span>
+					<span id="Thumb-btn"  class="iconfont extra-btn">&#xe612;</span>
+					<span id="collect-btn" class="iconfont extra-btn collected">&#xe72d;</span>
+					<span id="load-btn"  class="iconfont extra-btn">&#xe63b;</span>
+					<span id="review-btn"  class="iconfont extra-btn">&#xe647;</span>
 				</div>
-				<div class="play-btn-ct">
-					<span id="loop"></span>
-					<span id="pre-btn"></span>
-					<span id="play"></span>
-					<span id="next-btn"></span>
-					<span id="list-btn"></span>
+				<div id="perc"></div>
+				<div class="play-wrap">
+					<span id="loop" class="iconfont">&#xe615;</span>
+					<span id="pre-btn" class="iconfont">&#xe650;</span>
+					<span id="play" class="iconfont">&#xe618;</span>
+					<span id="next-btn" class="iconfont">&#xe617;</span>
+					<span id="list-btn" class="iconfont">&#xe640;</span>
 				</div>
 			</figure>
-
-
+			<!-- <div class="lyric ">gegddddddddddddddddddddddddddddddddd</div> -->
 			<aside>
 				<ul>
 					<li></li>
