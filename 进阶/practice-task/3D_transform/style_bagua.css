@@ -1,11 +1,12 @@
 .container{
     position: relative;
-    width: 180px; 
+    width: 180px;
     height: 120px;
-    margin-left:400px;
     margin-top:400px;
-    transform-style:preserve-3d; 
-    background:rgba(0,0,0,0); 
+    margin-left: auto;
+    margin-right: auto;
+    transform-style:preserve-3d;
+    background:rgba(0,0,0,0);
 }
 
 .carousel{
@@ -21,11 +22,11 @@
 }
 
 @keyframes scroll{
-  100%{
+  0%{
       transform:translateZ(0px) rotateX(60deg) rotateZ(0deg);
       box-shadow:0 0 200px #DAA520;
   }
-  0%{
+  100%{
       transform:translateZ(0px) rotateX(60deg) rotateZ(360deg);
       box-shadow:0 0 100px #2F4F4F;
   }
@@ -34,46 +35,45 @@
     display:block;
     position:absolute;
     width:180px;
-    height:120px;   
+    height:120px;
     margin:0;
     background:rgba(0,0,0,0);
-    /* color:#fff; */
     opacity:1;
     box-shadow:1px 1px 100px #2F4F4F;
 }
 
 
 .carousel figure:nth-child(1){
-    transform:rotateX(0deg) rotateZ(0deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(0deg) translateY(-284px);
     background:#FFD700;
 }
 .carousel figure:nth-child(2){
-    transform:rotateX(0deg) rotateZ(45deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(45deg) translateY(-284px);
     background:#fff8dc;
 }
 .carousel figure:nth-child(3){
-    transform:rotateX(0deg) rotateZ(90deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(90deg) translateY(-284px);
     background:#FF00FF;
 }
 .carousel figure:nth-child(4){
-    transform:rotateX(0deg) rotateZ(135deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(135deg) translateY(-284px);
     background:#008B8B;
 }
 .carousel figure:nth-child(5){
-    transform:rotateX(0deg) rotateZ(180deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(180deg) translateY(-284px);
     background:#DC143C;
 }
 .carousel figure:nth-child(6){
-    transform:rotateX(0deg) rotateZ(225deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(225deg) translateY(-284px);
     background:#7FFF00;
 }
 .carousel figure:nth-child(7){
-    transform:rotateX(0deg) rotateZ(270deg) translateY(-284px); 
+    transform:rotateX(0deg) rotateZ(270deg) translateY(-284px);
 background:#FF7F50;
 }
 .carousel figure:nth-child(8){
     transform:rotateX(0deg) rotateZ(315deg) translateY(-284px);
-    background:#00CED1;   
+    background:#00CED1;
 }
 
 #circle-outer{
@@ -83,7 +83,7 @@ background:#FF7F50;
   width:760px;
   height:760px;
   background:#FFF8DC;
-  border-radius:50%; 
+  border-radius:50%;
   opacity:0.5;
   box-shadow:0 0 400px #FFD700;
 
@@ -98,13 +98,13 @@ svg{
   width:340px;
   height:340px;
   background:#fff;
-  border-radius:50%; 
+  border-radius:50%;
   /* opacity:0.9;  */
   box-shadow: 0 0 100px #F4A460;
 }
 .carousel figure{
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-content:space-around;
     flex-wrap: wrap;
     box-sizing:border-box;
@@ -115,7 +115,7 @@ svg{
     width: 150px;
     height: 10px;
     background:#555;
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 3px;
