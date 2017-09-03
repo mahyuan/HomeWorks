@@ -9,7 +9,6 @@ html{
     margin-left: auto;
     margin-right: auto;
     transform-style:preserve-3d;
-    background:rgba(0,0,0,0);
 }
 
 .carousel{
@@ -19,20 +18,27 @@ html{
     background:#fff;
     transform-style:preserve-3d;
     backface-visibility:hidden;
-    /* transform: rotateX(0deg)  translateY(0px); */
-    transition:all transform 1s;
-    animation: scroll 8s linear infinite;
+    animation: scroll 6s ease-in-out infinite;
 }
 
 @keyframes scroll{
   0%{
       transform:translateZ(0rem) rotateX(60deg) rotateZ(0deg);
-      box-shadow:0 0 200px #DAA520;
   }
   100%{
       transform:translateZ(0rem) rotateX(60deg) rotateZ(360deg);
-      box-shadow:0 0 8rem #2F4F4F;
   }
+}
+@keyframes shadowchange{
+    0%{
+        box-shadow:0rem 0rem 3rem #401ACA;
+    }
+    50%{
+        box-shadow:1rem 1rem 8rem #CB3326, -1rem -1rem 8rem #CB3326;
+    }
+    100%{
+        box-shadow:0rem 0rem 3rem #401ACA;
+    }
 }
 .carousel figure{
     display:block;
@@ -46,12 +52,13 @@ html{
     background:rgba(0,0,0,0);
     opacity:1;
     box-shadow:0.1rem 0.1rem 5rem #2F4F4F;
+    animation: shadowchange 2s cubic-bezier(0.54, 0.19, 0.49, 0.81) infinite;
 }
 
 
 .carousel figure:nth-child(1){
     transform:rotateX(0deg) rotateZ(0deg) translateY(-22rem);
-    background:#FFD700;
+    background:#Ff0000;
 }
 .carousel figure:nth-child(2){
     transform:rotateX(0deg) rotateZ(45deg) translateY(-22rem);
@@ -63,49 +70,49 @@ html{
 }
 .carousel figure:nth-child(4){
     transform:rotateX(0deg) rotateZ(135deg) translateY(-22rem);
-    background:#008B8B;
+    background:#0000ff;
 }
 .carousel figure:nth-child(5){
     transform:rotateX(0deg) rotateZ(180deg) translateY(-22rem);
-    background:#DC143C;
+    background:#00ff00;
 }
 .carousel figure:nth-child(6){
     transform:rotateX(0deg) rotateZ(225deg) translateY(-22rem);
-    background:#7FFF00;
+    background:#444;
 }
 .carousel figure:nth-child(7){
     transform:rotateX(0deg) rotateZ(270deg) translateY(-22rem);
-background:#FF7F50;
+    background:#ff0;
 }
 .carousel figure:nth-child(8){
     transform:rotateX(0deg) rotateZ(315deg) translateY(-22rem);
-    background:#00CED1;
+    background:#0ff;
 }
 
 #circle-outer{
-  left:50%;
-  top:50%;
-  transform:rotateX(0deg) rotateZ(0deg) translate3D(-50%,-50%,-2rem);
-  width:60rem;
-  height:60rem;
-  background:#E3F50A;
-  border-radius:50%;
-  opacity:0.5;
-  box-shadow: 2rem 2rem 10rem #d45a39, -2rem -2rem 10rem #d4a339;
+    left:50%;
+    top:50%;
+    transform:rotateX(0deg) rotateZ(0deg) translate3D(-50%,-50%,-2rem);
+    width:60rem;
+    height:60rem;
+    background:#E32888;
+    border-radius:50%;
+    opacity:0.5;
+    box-shadow: 2rem 2rem 10rem #d45a39, -2rem -2rem 10rem #d4a339;
 
 }
 /* svg{
-  display:block;
-  position: absolute;
-  left:50%;
-  top:50%;
-  box-sizing:border-box;
-  transform:rotateX(0deg) rotateZ(0deg) translate3D(-50%,-50%,1rem);
-  width:34rem;
-  height:34rem;
-  background:#fff;
-  border-radius:50%;
-  box-shadow: 0 0 10rem #F4A460;
+    display:block;
+    position: absolute;
+    left:50%;
+    top:50%;
+    box-sizing:border-box;
+    transform:rotateX(0deg) rotateZ(0deg) translate3D(-50%,-50%,1rem);
+    width:34rem;
+    height:34rem;
+    background:#fff;
+    border-radius:50%;
+    box-shadow: 0 0 10rem #F4A460;
 } */
 .carousel figure{
     display: flex;
@@ -119,37 +126,98 @@ background:#FF7F50;
 .carousel figure .row{
     width: 12rem;
     height: 0.6rem;
-    background:#555;
+    /* background:#555; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 0.3rem;
+    border:none;
 }
-#row-ct{
-    background:rgba(0,0,0,0);
-}
+
 .carousel .row .column{
     width:3rem;
     height:0.6rem;
-    background:#555;
+    background:#EDE107;
     border-radius: 0.3rem;
-     box-shadow: 0 0 0.5rem #00008B;
+    border:none;
+    /* box-shadow:inset 1rem 1rem  #EDE107, inset -1rem  -1rem  #EDE107; */
+    animation: shadowchange2 4s cubic-bezier(0.54, 0.19, 0.49, 0.81) infinite;
 }
 .row-s{
-    box-shadow: 0 0 0.5rem #00008B;
+    /* background:#EDE107; */
+    /* box-shadow:inset 1rem 1rem  #EDE107, inset -1rem  -1rem  #EDE107; */
+    animation: shadowchange2 4s cubic-bezier(0.54, 0.19, 0.49, 0.81) infinite;
 }
 
+@keyframes shadowchange2{
+    0%{
+        background: rgba(64, 26, 202, 0);
+    }
+    10%{
+        background: rgba(57, 9, 235, 1);
+    }
+    20%{
+        background: rgba(57, 9, 235, 0);
+    }
+    30%{
+        background: rgba(255, 0, 0, 0.93);
+    }
+    40%{
+        background: rgba(64, 26, 202, 0);
+    }
+    50%{
+        background: rgb(233, 3, 178);
+    }
+    60%{
+        background: rgba(57, 9, 235, 0);
+    }
+    70%{
+        background: rgba(225, 255, 0, 0.96);
+    }
+    80%{
+        background: rgba(203, 51, 38, 0);
+    }
+    90%{
+        background: rgb(2, 249, 252);
+    }
+    100%{
+        background: rgba(64, 26, 202, 0);
+    }
+}
 
+#circle-inner{
+    position: absolute;
+    left: 0;
+    top:0;
+    width:0px;
+    height:0px;
+    transform: translateZ(1rem);
+}
+#circle-inner::after{
+    /* content:""; */
+    display: block;
+    position: absolute;
+    left:-10rem;
+    top:-10rem;
+    height: 20rem;
+    width: 20rem;
+    background:#f00;
+    box-shadow: 1rem 1rem 5rem #ff0, -1rem -1rem 5rem #ff0;
+    z-index: 20;
+    border-radius: 50%;
+}
 .black{
     position: absolute;
-    right:-10rem;
+    left:-10rem;
     top:-10rem;
-    width:10rem;
-    height:20rem;
-    border-radius:0 10rem 10rem 0 ;
+    height: 20rem;
+    width: 20rem;
+    border-radius:50% ;
     background:#000;
-    border: 0.0001px solid  rgba(0,0,0, 0);
+    border: 0.0001px solid  rgba(229, 192, 192, 0.2);
     box-sizing: border-box;
+    box-shadow: 1rem 1rem 5rem #ff0, -1rem -1rem 5rem #ff0;
+
 }
 .white{
     position: absolute;
@@ -161,10 +229,12 @@ background:#FF7F50;
     background:#eee;
     border: 0.0001px solid  rgba(0,0,0, 0);
     box-sizing: border-box;
+
 }
+
 .black-l{
     position: absolute;
-    left:-5rem;
+    left:5rem;
     top:10rem;
     width:5rem;
     height:10rem;
