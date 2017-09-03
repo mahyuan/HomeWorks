@@ -88,13 +88,13 @@ background:#FF7F50;
   transform:rotateX(0deg) rotateZ(0deg) translate3D(-50%,-50%,-2rem);
   width:60rem;
   height:60rem;
-  background:#CBB251;
+  background:#E3F50A;
   border-radius:50%;
   opacity:0.5;
-  box-shadow:0 0 30rem #FFD700;
+  box-shadow: 2rem 2rem 10rem #d45a39, -2rem -2rem 10rem #d4a339;
 
 }
-svg{
+/* svg{
   display:block;
   position: absolute;
   left:50%;
@@ -105,9 +105,8 @@ svg{
   height:34rem;
   background:#fff;
   border-radius:50%;
-  /* opacity:0.9;  */
   box-shadow: 0 0 10rem #F4A460;
-}
+} */
 .carousel figure{
     display: flex;
     justify-content: center;
@@ -149,7 +148,8 @@ svg{
     height:20rem;
     border-radius:0 10rem 10rem 0 ;
     background:#000;
-    border:0px transparent;
+    border: 0.0001px solid  rgba(0,0,0, 0);
+    box-sizing: border-box;
 }
 .white{
     position: absolute;
@@ -159,7 +159,8 @@ svg{
     height:20rem;
     border-radius:10rem 0 0 10rem  ;
     background:#eee;
-    border:0px transparent;
+    border: 0.0001px solid  rgba(0,0,0, 0);
+    box-sizing: border-box;
 }
 .black-l{
     position: absolute;
@@ -169,8 +170,9 @@ svg{
     height:10rem;
     border-radius: 5rem 0 0 5rem  ;
     background:#000;
-    border:0px transparent;
+    border: 0.001px solid  rgba(0,0,0, 0);
     z-index:1;
+    box-sizing: border-box;
 }
 .white-l{
     position: absolute;
@@ -180,8 +182,9 @@ svg{
     height:10rem;
     border-radius: 0 5rem  5rem  0;
     background:#eee;
-    border:0px transparent;
+    border: 0.001px solid  rgba(0,0,0, 0);
     z-index:1;
+    box-sizing: border-box;
 }
 .black-s{
     position: absolute;
@@ -192,6 +195,7 @@ svg{
     border-radius: 50%  ;
     background:#000;
     z-index:2;
+    box-sizing: border-box;
 }
 .white-s{
     position: absolute;
@@ -202,4 +206,5 @@ svg{
     border-radius:50%;
     background:#eee;
     z-index:2;
+    box-sizing: border-box;
 }
