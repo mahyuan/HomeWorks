@@ -16,10 +16,8 @@ html{
 	width: 400px;
 	min-height:236px;
 	margin:50px auto;
-	/* border:1px solid red; */
 	border-radius: 1.5rem;
 	box-shadow: 0 0 1rem rgba(102, 89, 89, 0.4), -0.3rem -0.3rem 1rem rgba(102, 89, 89, 0.4);
-
 }
 header{
 	background-color:#00A8A1;
@@ -76,7 +74,6 @@ nav{
 }
 .navbar{
 	width: 100%;
-
 	font-size:2rem;
 	overflow: hidden;
 	padding:0;
@@ -97,7 +94,6 @@ nav{
 	padding: 0;
 	text-align: center;
 	display: inline-block;
-	/* background:#0ff; */
 	border: 1px solid blueviolet;
 	overflow: hidden;
 }
@@ -106,7 +102,6 @@ nav{
 	left: 0;
 	top: 0;
 	width: 400px;
-	/* border: 1px solid blueviolet; */
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: nowrap;
