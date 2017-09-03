@@ -10,7 +10,7 @@
 
 [单例模式](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task6/singleton.js);
 
-[发布订阅模式的范例](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task6/pubsub.js)
+[发布订阅模式](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task6/pubsub.js)
 
 2. 使用发布订阅模式写一个事件管理器，可以实现如下方式调用
 
@@ -21,3 +21,4 @@ Event.on('change', function(val){
 Event.fire('change', '饥人谷');
 Event.off('changer');
 ```
+[demo](https://github.com/mhy-web/HomeWorks/tree/master/%E9%AB%98%E7%BA%A7/task6/demo.js)

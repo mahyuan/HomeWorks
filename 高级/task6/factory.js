@@ -1,11 +1,11 @@
 // 工厂模式
 function createPerson(opts){
     var person = {
-        name: opts.name || 'mhy'
+        name: opts.name || 'mhy',
+        sayName: function(){
+            console.log(this.name)
+        }
     };
-    person.sayName: function(){
-        console.log(this.name);
-    }
     return person;
 }
 var p1 = createPerson({name : 'mhy'});

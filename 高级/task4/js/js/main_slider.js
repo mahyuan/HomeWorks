@@ -44,7 +44,6 @@
             var index = $(this).index()
             console.log($(this))
             console.log('bulletLi index:'+index);
-            debugger;
             e.preventDefault()
             that.curPageIndex = index
             that.slider(that.curPageIndex)

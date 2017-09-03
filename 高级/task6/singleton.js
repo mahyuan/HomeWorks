@@ -9,7 +9,7 @@ var People = (function(){
         };
     } //词法作用域
     return {
-        createPerple: function(name){
+        createPeople: function(name){
             if(!instance){
                 instance = init(name);
             }
