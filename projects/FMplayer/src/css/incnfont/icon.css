@@ -14,11 +14,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 #volume{
-	float: right;
-	margin-right:0.8rem;
-	height: 3rem;
-  margin-top:0.8rem;
-  margin-bottom: 0.8rem;
   display: block;
   cursor: pointer;
 
@@ -35,7 +30,7 @@
 .icon-list-pre,
 .icon-list-next{
   font-size:2rem;
-  margin:0;
+  margin:0;                   
 }
 
 #list-pre,
