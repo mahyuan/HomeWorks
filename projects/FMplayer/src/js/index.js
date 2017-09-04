@@ -27,5 +27,5 @@ prot.init = function(){
 }
 var prot =  Music.prototype
 prot.init = function(){
-
+	var 
 }
