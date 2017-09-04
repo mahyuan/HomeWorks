@@ -7,7 +7,7 @@ var Music = function(){
 }
 
 prot.init = function(){
-	this.login = document.querySelector('#login')
+	this.login = document.querySelector('#loginbtn')
 	this.avatar = document.querySelector('#avatar')
 	this.volume = document.querySelector('volumn')
 

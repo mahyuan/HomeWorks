@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="referrer" content="never">
+	<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="./css/layout.css">
 	<link rel="stylesheet" href="./css/incnfont/icon.css">
 	<title>音乐播放器</title>
@@ -12,7 +13,7 @@
 <body>
 	<div class="container">
 		<header>
-			<span class="user" id="login">
+			<span class="user" id="loginbtn">
 				<img id="avatar" src="../../../images/t1.jpg" alt="user">
 			</span>
 			<span id="logo">Player</span>
@@ -20,9 +21,6 @@
 				<i class="iconfont icon-vol ">&#xe604;</i>
 				<i class="iconfont icon-vol vol-show ">&#xe72b;</i>
 			</span>
-			<!-- <div class="tab">
-
-			</div> -->
 		</header>
 		<nav>
 			<ul class="navbar">
@@ -30,14 +28,14 @@
 					<i class="iconfont icon-list-pre">&#xe63d;</i>
 				</li>
 				<li id="list-ct">
-					<ul id="s-list">
-						<li class="list-item">1拼接</li>
-						<li class="list-item">2拼接</li>
-						<li class="list-item">3拼接</li>
-						<li class="list-item">4拼接</li>
-						<li class="list-item">5拼接</li>
+					<section id="s-list">
+						<option class="list-item">1拼接</option>
+						<option class="list-item">2拼接</option>
+						<option class="list-item selected" >3拼接</option>
+						<option class="list-item">4拼接</option>
+						<option class="list-item">5拼接</option>
 						<!-- 拼接 -->
-					</ul>
+					</section>
 				</li>
 				<li id="list-next">
 					<i class="iconfont icon-list-next">&#xe641;</i>
@@ -68,9 +66,20 @@
 			</figure>
 			<!-- <div class="lyric ">gegddddddddddddddddddddddddddddddddd</div> -->
 		</section>
+		<div class="loginct">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
 		<aside>
 			<ul>
-				<li></li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
 			</ul>
 		</aside>
 
