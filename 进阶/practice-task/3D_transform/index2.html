@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="style_bagua.css">
     <title>八卦图</title>
 </head>
 <body>
   <section class="container">
-    <div class="carousel">
+    <div id="carousel" class="carousel">
       <figure>
         <div class="row row-s"></div>
         <div class="row row-s"></div>
@@ -112,6 +112,17 @@
       <!-- </svg> -->
 
     </div>
+    <span class="pause">点我</span>
   </section>
+
+  <script>
+    (function Control(){
+        var _pause = document.querySelector(".pause")
+        var _car = document.querySelector(".carousel")
+        _pause.addEventListener('click',function(){
+           _car.classList.toggle('scroll-c')
+        })
+    })()
+  </script>
 </body>
 </html>
