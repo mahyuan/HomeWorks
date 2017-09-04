@@ -112,16 +112,26 @@
       <!-- </svg> -->
 
     </div>
-    <span class="pause">点我</span>
+    <span class="pause" id="btn1">点我</span>
+    <span class="pause" id="btn2">点我</span>
   </section>
 
   <script>
     (function Control(){
-        var _pause = document.querySelector(".pause")
+        var btn1 = document.querySelector("#btn1")
+        var btn2 = document.querySelector("#btn2")
         var _car = document.querySelector(".carousel")
-        _pause.addEventListener('click',function(){
-           _car.classList.toggle('scroll-c')
+        btn1.addEventListener('click', function(){
+            _car.classList.remove('scroll-c')
+            _car.classList.add('scroll-z')
         })
+        btn2.addEventListener('click', function(){
+            _car.classList.remove('scroll-z')
+            _car.classList.add('scroll-c')
+        })
+        // _pause.addEventListener('click',function(){
+        //    _car.classList.toggle('scroll-c')
+        // })
     })()
   </script>
 </body>

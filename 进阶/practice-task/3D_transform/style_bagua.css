@@ -23,7 +23,9 @@ html{
 .scroll-c{
  animation: scroll 8s linear infinite;
 }
-
+.scroll-z{
+    animation: scroll2 8s linear infinite;
+}
 @keyframes scroll{
   0%{
       transform:translateZ(0rem) rotateX(60deg) rotateZ(0deg);
@@ -31,6 +33,14 @@ html{
   100%{
       transform:translateZ(0rem) rotateX(60deg) rotateZ(360deg);
   }
+}
+@keyframes scroll2{
+    0%{
+        transform:translateZ(0rem) rotateX(0deg) rotateZ(0deg);
+    }
+    100%{
+        transform:translateZ(0rem) rotateX(0deg) rotateZ(360deg);
+    }
 }
 @keyframes shadowchange{
     0%{
@@ -283,12 +293,28 @@ html{
 }
 .pause{
     cursor: pointer;
-    font-size : 4rem;
+    font-size : 2.5rem;
+    line-height: 3.5rem;
+    color:#fff;
     position: absolute;
+
+    width: 6rem;
+    height: 3.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    opacity:0.3;
+}
+#btn1{
     top: -27rem;
     left: -35rem;
-    /* width: 8rem;
-    height: 2rem; */
-    background: red;
-
+    background: #3ed692;
+}
+#btn2{
+    top: -27rem;
+    left: -28rem;
+    background: #E523AF;
+}
+.pause:hover{
+    opacity: 0.9;
 }
