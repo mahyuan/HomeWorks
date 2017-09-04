@@ -1,3 +1,6 @@
 node_modules
 npm-debug.log
 .idea
+.vscode
+_config.yml
+router.js
