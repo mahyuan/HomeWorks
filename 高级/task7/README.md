@@ -34,4 +34,6 @@ email, url, number, range, Date Picker(date, mouth, week, time, datetime)
 
 题目5： 实现如下全屏图加过渡色的效果（具体效果随意）DEMO176
 
+
+
 题目6： 写出如下 loading 动画效果 DEMO1185 DEMO2173
