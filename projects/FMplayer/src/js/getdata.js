@@ -7,12 +7,7 @@
 
 	var music = new Audio()
 
-
 	getChannels()
-	// getSong()
-
-	// addEvent()
-
 	function get(url, data, callback, dataType) {
 		url += '?' + Object.keys(data).map(function(key){
 			return key + '=' + data[key]
@@ -33,7 +28,6 @@
 			console.log(ret.channels)
 		})
 	}
-
 
 	panel.onclick = function(e){
 		if(e.target.tagName.toLowerCase() !== 'li') return
@@ -98,73 +92,3 @@
 	function $(selector) {
 		return document.querySelector(selector)
 	}
-
-	/**
-	 *  var cateBtn = $('#btn-cate')
-		var cateCt = $('.cate>ul')
-		var songCt = $('.detail>dl')
-		var lrcCt = $('.lrc>pre')
-
-		var music = new Audio()
-
-		cateBtn.onclick = function(){
-			get('http://api.jirengu.com/fm/getChannels.php', {}, function(ret){
-				renderCate(ret.channels)
-			})
-		}
-
-		cateCt.onclick = function(e){
-			if(e.target.tagName.toLowerCase() !== 'li') return;
-			var channelId = e.target.getAttribute('data-channel-id')
-			get('http://api.jirengu.com/fm/getSong.php',{channel: channelId}, function(ret){
-				console.log(ret)
-				renderSong(ret.song[0])
-				getLrc(ret.song[0].lrc)
-				play(ret.song[0].url)
-			})
-		}
-
-		function renderCate(channels) {
-			var html = channels.map(function(channel){
-			return '<li data-channel-id="' + channel.channel_id + '">' + channel.name + '</li>'
-			}).join('')
-			cateCt.innerHTML = html
-		}
-
-		function renderSong(song) {
-			var html = Object.keys(song).map(function(key){
-			return '<dt>' + key + '</dt><dd>' + song[key] + '</dd>'
-			}).join('')
-			songCt.innerHTML = html
-		}
-
-		function getLrc(lrcUrl) {
-			get(lrcUrl,{},function(ret){
-				lrcCt.innerHTML = ret
-			},'text')
-		}
-
-		function play(url) {
-			music.src = url
-			music.play()
-		}
-
-
-		function get(url, data, callback, dataType) {
-			url += '?' + Object.keys(data).map(function(key){
-			return key + '=' + data[key]
-			}).join('&')
-
-			var xhr = new XMLHttpRequest()
-			xhr.responseType =  dataType||'json'
-			xhr.onload = function(){
-			callback(xhr.response)
-			}
-			xhr.open('GET', url, true)
-			xhr.send()
-		}
-
-		function $(selector) {
-			return document.querySelector(selector)
-		}
-	 */
