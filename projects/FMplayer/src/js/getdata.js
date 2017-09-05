@@ -3,7 +3,7 @@
 	var panel = document.querySelector('.panel-ct')
 	var songCt = document.querySelector('#songCt')
 	var songItem =  document.querySelector('.songCt>li')
-	var  lrcCt = document.querySelector('#lrcCt')
+	var  lrcCt = document.querySelector('.lrcCt')
 
 	var music = new Audio()
 
@@ -33,29 +33,17 @@
 			console.log(ret.channels)
 		})
 	}
-	/**
-	cateCt.onclick = function(e){
-		if(e.target.tagName.toLowerCase() !== 'li') return;
-		var channelId = e.target.getAttribute('data-channel-id')
-		get('http://api.jirengu.com/fm/getSong.php',{channel: channelId}, function(ret){
-			console.log(ret)
-			renderSong(ret.song[0])
-			getLrc(ret.song[0].lrc)
-			play(ret.song[0].url)
-		})
-	}
-	 */
-	// document.getElementsByTagName("a")[0].getAttribute("target");
+
 
 	panel.onclick = function(e){
 		if(e.target.tagName.toLowerCase() !== 'li') return
 		var channelId = e.target.getAttribute('data-channel-id')
 		debugger;
-		get('http://api.jirengu.com/fm/getSong.php?channel='+'channelId', {channel: channelId}, function(ret){
-			// http://api.jirengu.com/fm/getSong.php?channel=public_fengge_xiaoqingxin
+		get('http://api.jirengu.com/fm/getSong.php', {channel: channelId}, function(ret){
+			// 'http://api.jirengu.com/fm/getSong.php?channel='+'channelId'
 			console.log(ret)
 			console.log(channelId)
-			renderSong(ret.song)
+			renderSong(ret.songs)
 			getLrc(ret.song[0].lrc)
 			play(ret.song[0].url)
 			debugger;
@@ -88,13 +76,14 @@
 		songCt.innerHTML = html
 	}
 */
-	function renderSong(song){
-		var html2 = song.map(function(song){
-			// return '<dt>' + key + '</dt><dd>' + song[key] + '</dd>'
-			return '<li><span data-title="song.title" >'+ song.title +'</span><span data-srtist="song.artist">'+ song.artist+'</span></li>'
+	function renderSong(songs){
+		var songs = []
+		var html = songs.map(function(song){
+			return '<dt>' + key + '</dt><dd>' + song[key] + '</dd>'
+			// return '<li><span data-title="song.title" >'+ song.title +'</span><span data-srtist="song.artist">'+ song.artist+'</span></li>'
 		}).join('')
 		// debugger;
-		songCt.innerHtml = html2
+		songCt.innerHtml = html
 	}
 	function getLrc(lrcUrl){
 		get(lrcUrl, {}, function(ret){

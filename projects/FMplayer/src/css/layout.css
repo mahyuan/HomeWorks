@@ -218,29 +218,24 @@ section{
 	right:-2.2rem;
 	top:-0.4rem;
 }
-#lrcCt{
+.lrcCt{
 	position: absolute;
 	left: 50%;
-	top:100px;
+	top:50px;
 	transform: translateX(-50%);
 	width: 320px;
 	height: 60px;
-	padding: auto 0;
-	/* border: 1px solid red; */
-}
-.lyric{
-	height: 60px;
-	width: 320px;
-	display: inline-block;
 	font-size: 1.5rem;
 	line-height: 60px;
-	font-weight: bold;
-	color: #1261D2;
-	margin:auto;
+	padding: auto 0;
 	overflow: hidden;
 	text-align: center;
-	/* border: 1px solid blue; */
+	font-weight: bold;
+	display: inline-block;
+	color: #1261D2;
+
 }
+
 .play-wrap{
 	height: 3rem;
 	width: 100%;
@@ -349,12 +344,9 @@ section{
 		right:2px;
 		height: 0;
 	}
-	#lrcCt{
-		top:360px;
+
+	.lrcCt{
+		top:300px;
 		width: 280px;
-	}
-	.lyric{
-		width: 280px;
-		line-height: 60px;
 	}
 }
