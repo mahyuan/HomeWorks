@@ -50,17 +50,19 @@
     height:100px;
     border:1px dotted green;
     background-color: #f0f;
-    box-shadow: inset 5px 2px 4px 10px rgba(0, 121, 255, 0.8);
+    box-shadow: inset 5px 2px 20px 40px rgba(0, 121, 255, 0.4);
 }
 .box2 .ct2{
     width:100px;
     height:100px;
     border:1px dotted green;
      background-color: #00f;
+     box-shadow: 10px 10px  50px rgba(1, 2, 0, 0.8), -5px -5px  20px rgba(1, 2, 0, 0.8);
 }
 .box2 .ct3{
     width:100px;
     height:100px;
     border:1px dotted green;
     background-color: #ff0;
+    box-shadow: 3px 3px  10px rgba(1, 2, 0, 0.8);
 }
