@@ -31,6 +31,8 @@ email, url, number, range, Date Picker(date, mouth, week, time, datetime)
     6. 过渡效果
     7. 动画
 ```
+[demo](http://mhynet.cn/HomeWorks/高级/task7/demo.html)
+[css3练习](http://mhynet.cn/HomeWorks/%E8%BF%9B%E9%98%B6/practice-task/3D_transform/index2.html)
 
 题目5： 实现如下全屏图加过渡色的效果（具体效果随意）DEMO176
 
