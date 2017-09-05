@@ -23,14 +23,14 @@
   display: block;
   color: #fff;
 }
-.vol-show{
+.vol-hide{
   display: none;
 }
 
 .icon-list-pre,
 .icon-list-next{
   font-size:2rem;
-  margin:0;                   
+  margin:0;
 }
 
 #list-pre,

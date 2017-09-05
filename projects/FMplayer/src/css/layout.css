@@ -19,9 +19,9 @@ html{
 	margin:50px auto;
 	border-radius: 1.5rem;
 	box-shadow: 0 0 1rem rgba(102, 89, 89, 0.4), -0.3rem -0.3rem 1rem rgba(102, 89, 89, 0.4);
-	border:1px dashed red;
+	/* border:1px dashed red; */
 	box-sizing: border-box;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 header{
 	position: relative;
@@ -144,9 +144,8 @@ nav{
 }
 section{
 	width: 100%;
-	margin: 0;
-	padding:18px;
-	/* border: 1px dashed goldenrod; */
+	margin-top: 40px;
+	padding:30px;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -219,21 +218,32 @@ section{
 	right:-2.2rem;
 	top:-0.4rem;
 }
+#lrcCt{
+	position: absolute;
+	left: 50%;
+	top:100px;
+	transform: translateX(-50%);
+	width: 320px;
+	height: 60px;
+	padding: auto 0;
+	/* border: 1px solid red; */
+}
 .lyric{
-	height: 3rem;
-	width: 100%;
+	height: 60px;
+	width: 320px;
 	display: inline-block;
 	font-size: 1.5rem;
-	color: red;
-	/* border: 1px dashed green; */
+	line-height: 60px;
+	font-weight: bold;
+	color: #1261D2;
+	margin:auto;
 	overflow: hidden;
 	text-align: center;
-	padding: 0 1.5rem;
+	/* border: 1px solid blue; */
 }
 .play-wrap{
 	height: 3rem;
 	width: 100%;
-	/* border: 1px dashed green; */
 }
 
 /* 弹窗 */
@@ -241,24 +251,44 @@ section{
 	position: absolute;
 	left:0;
 	top	: 2px;
-	bottom: 0;
-	/* width: 200px; */
+	bottom: 2px;
 	display: none;
+
 	transition: width 0.3s;
 	width: 0;
-	height:220px;
+	/* width: 200px; */
 	border-radius: .5rem;
-	background-color: rgba(149, 29, 29, 0.90);
+	background-color: rgba(204, 93, 93, 0.90);
 	box-shadow: 5px 3px 7px rgba(149, 14, 14, 0.5);
 }
+.panel-ct{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 5px;
+
+}
+.panel-ct>li{
+	width: 100%;
+	margin:5px 5px;
+	font-size:1.4rem;
+	font-weight: bold;
+	line-height:2.5rem;
+	border-bottom: 1px dashed #345332;
+	text-align: left;
+	display: block;
+	color: #345332;
+	cursor: pointer;
+}
+
 
 #musicList{
 	position: absolute;
 	bottom: 4px;
 	right: 4px;
 	left:4px;
-	/* height: 130px; */
 	height: 0;
+	/* height:100px; */
 	display: none;
 	transition: height 0.3s;
 	background:rgba(203, 49, 49, 0.80);
@@ -273,7 +303,7 @@ section{
 @media (max-width: 500px) {
 	.container{
 		width: 320px;
-		height:568px;
+		/* height:568px; */
 		margin:auto;
 		border-radius:none;
 	}
@@ -285,8 +315,8 @@ section{
 	}
 	#img-ct,
 	#img-show{
-		width: 150px;
-		height:150px;
+		width: 180px;
+		height:180px;
 	}
 	#play-ct{
 		width: 80%;
@@ -296,20 +326,19 @@ section{
 		width: 100%;
 		height: 434px;
 		margin: 0;
-		padding:18px;
+		padding:30px 10px;
 		border-radius: 0 0 1.5rem 1.5rem;
 		display: flex;
-		justify-content: space-around;
 		flex-direction: column;
 		align-items: center;
-		background:rgba(51, 51, 51, 0.72);
+		background:rgba(110, 100, 100, 0.72);
 	}
-
 
 	.loginCt{
 		left: 0;
 		top	: 0;
-		/* width: 85%; */
+		bottom: 0;
+		/* width: 30%; */
 		width: 0;
 		height:100%;
 
@@ -318,9 +347,14 @@ section{
 		left:2px;
 		bottom:0;
 		right:2px;
-		/* height:60%; */
 		height: 0;
-		/* border-bottom-left-radius: none;
-		border-bottom-right-radius: none; */
+	}
+	#lrcCt{
+		top:360px;
+		width: 280px;
+	}
+	.lyric{
+		width: 280px;
+		line-height: 60px;
 	}
 }

@@ -6,14 +6,13 @@ var Music = function(){
 	this.bind()
 }
 var proto =  Music.prototype
-
-
 proto.init = function(){
 	this.container = document.querySelector('.container')
 	this.loginbtn = document.querySelector('#loginbtn')
 	this.avatar = document.querySelector('#avatar')
-	this.volume = document.querySelector('#volume')
+	this.volumes = document.querySelector('#volume>i')
 	this.loginCt = document.querySelector('.loginCt')
+	this.panelItem = document.querySelector('.panel-item')
 
 	this.thumb = document.querySelector('#thumb-btn')
 	this.collect = document.querySelector('#collect-btn')
@@ -37,13 +36,14 @@ proto.bind = function(){
 		_loginCt = this.loginCt,
 		_musicList = this.musicList,
 		_container = this.container;
+		_panelItem = this.panelItem
+	var that = this
 
 	this.addEvent(_loginBtn, 'click', function(e){
 		e.stopPropagation();
 		_musicList.style.display ='none';
 		_loginCt.style.display = 'block';
-		_loginCt.style.width = '80%';
-
+		_loginCt.style.width = '120px';
 	})
 	this.addEvent(_listShowBtn, 'click', function(e){
 		e.stopPropagation();
@@ -51,8 +51,12 @@ proto.bind = function(){
 		_musicList.style.display = 'block';
 		_musicList.style.height = '65%';
 	})
-
 	this.addEvent(_loginCt, 'click', function(e){
+		e.stopPropagation();
+		_loginCt.style.display = 'none';
+		return ;
+	})
+	this.addEvent(_panelItem, 'click', function(e){
 		e.stopPropagation();
 		return;
 	})
@@ -60,11 +64,16 @@ proto.bind = function(){
 		e.stopPropagation();
 		return;
 	})
-
 	this.addEvent(_container, 'click', function(e){
 		e.stopPropagation();
 		_loginCt.style.display = 'none';
 		_musicList.style.display = 'none';
+	})
+
+	// 改变icon
+	this.addEvent(this.thumbs, 'click', function(){
+
+		that.thumbs.classList.add('vol-hide')
 	})
 }
 
@@ -82,7 +91,6 @@ proto.addEvent = function (node, type, handler) {
 		return true;
 	}
 	return false;
-
 
 }
 new Music(document.querySelector('.container'))
