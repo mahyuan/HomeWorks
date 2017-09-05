@@ -5,6 +5,8 @@
 	var songItem =  document.querySelector('.songCt>li')
 	var  lrcCt = document.querySelector('.lrcCt')
 
+	var pause = document.querySelector('#pause')
+
 	var music = new Audio()
 
 	getChannels()
@@ -87,6 +89,12 @@
 	function play(url) {
 		music.src = url
 		music.play()
+	}
+
+	function PlaySong(){
+		pause.addEventListener('click',function(){
+			music.play()
+		},true)
 	}
 
 	function $(selector) {
