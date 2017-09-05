@@ -19,6 +19,9 @@ html{
 	margin:50px auto;
 	border-radius: 1.5rem;
 	box-shadow: 0 0 1rem rgba(102, 89, 89, 0.4), -0.3rem -0.3rem 1rem rgba(102, 89, 89, 0.4);
+	border:1px dashed red;
+	box-sizing: border-box;
+	/* overflow: hidden; */
 }
 header{
 	position: relative;
@@ -234,33 +237,36 @@ section{
 }
 
 /* 弹窗 */
-.loginct{
+.loginCt{
 	position: absolute;
 	left:0;
-	top	: 5px;
+	top	: 2px;
 	bottom: 0;
-	width: 200px;
+	/* width: 200px; */
+	display: none;
+	transition: width 0.3s;
+	width: 0;
 	height:220px;
 	border-radius: .5rem;
 	background-color: rgba(149, 29, 29, 0.90);
 	box-shadow: 5px 3px 7px rgba(149, 14, 14, 0.5);
-	display: none;
 }
 
-aside{
-	display: none;
+#musicList{
 	position: absolute;
 	bottom: 4px;
 	right: 4px;
 	left:4px;
-	height: 130px;
+	/* height: 130px; */
+	height: 0;
+	display: none;
+	transition: height 0.3s;
 	background:rgba(203, 49, 49, 0.80);
 	box-shadow: 5px 3px 7px rgba(149, 14, 14, 0.5), -5px -1px 7px rgba(149, 14, 14, 0.5);
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: .5rem;
 	border-bottom-left-radius: 1.5rem;
 	border-bottom-right-radius: 1.5rem;
-
 }
 
 
@@ -300,19 +306,21 @@ aside{
 	}
 
 
-	.loginct{
-		left:0;
+	.loginCt{
+		left: 0;
 		top	: 0;
-		width: 85%;
+		/* width: 85%; */
+		width: 0;
 		height:100%;
+
 	}
-	aside{
-		height: 200px;
-		left:0;
+	#musicList{
+		left:2px;
 		bottom:0;
-		right:0;
-		height:60%;
-		border-bottom-left-radius: none;
-		border-bottom-right-radius: none;
+		right:2px;
+		/* height:60%; */
+		height: 0;
+		/* border-bottom-left-radius: none;
+		border-bottom-right-radius: none; */
 	}
 }
