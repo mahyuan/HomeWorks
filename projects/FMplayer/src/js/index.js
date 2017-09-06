@@ -12,7 +12,7 @@ proto.init = function(){
 	this.avatar = document.querySelector('#avatar')
 	this.volumes = document.querySelector('#volume>i')
 	this.loginCt = document.querySelector('.loginCt')
-	this.panelItem = document.querySelector('.panel-item')
+	this.panelItem = document.querySelector('.panel-ct li')
 
 	this.thumb = document.querySelector('#thumb-btn')
 	this.collect = document.querySelector('#collect-btn')
@@ -41,24 +41,18 @@ proto.bind = function(){
 
 	this.addEvent(_loginBtn, 'click', function(e){
 		e.stopPropagation();
-		_musicList.style.display ='none';
-		_loginCt.style.display = 'block';
-		_loginCt.style.width = '120px';
+		_musicList.style.bottom = '-62%';
+		_loginCt.style.left = '0';
 	})
 	this.addEvent(_listShowBtn, 'click', function(e){
 		e.stopPropagation();
-		_loginCt.styledisplay == 'none';
-		_musicList.style.display = 'block';
-		_musicList.style.height = '65%';
+		_loginCt.style.left = '-62%';
+		_musicList.style.bottom = '0';
 	})
+
 	this.addEvent(_loginCt, 'click', function(e){
 		e.stopPropagation();
-		_loginCt.style.display = 'none';
 		return ;
-	})
-	this.addEvent(_panelItem, 'click', function(e){
-		e.stopPropagation();
-		return;
 	})
 	this.addEvent(_musicList, 'click', function(e){
 		e.stopPropagation();
@@ -66,8 +60,8 @@ proto.bind = function(){
 	})
 	this.addEvent(_container, 'click', function(e){
 		e.stopPropagation();
-		_loginCt.style.display = 'none';
-		_musicList.style.display = 'none';
+		_loginCt.style.left = '-62%';
+		_musicList.style.bottom = '-62%';
 	})
 
 	// 改变icon
@@ -75,6 +69,7 @@ proto.bind = function(){
 
 		that.thumbs.classList.add('vol-hide')
 	})
+
 }
 
 proto.addEvent = function (node, type, handler) {

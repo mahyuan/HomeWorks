@@ -12,6 +12,9 @@ html{
 	display: inline-block;
 	clear: both;
 }
+body{
+	position: relative;
+}
 .container{
 	position: relative;
 	width: 400px;
@@ -22,6 +25,18 @@ html{
 	/* border:1px dashed red; */
 	box-sizing: border-box;
 	overflow: hidden;
+	/* z-index: -1; */
+}
+.container::before{
+	/* content: ''; */
+	display: block;
+	background:rgba(18, 46, 142, 0.20);
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	bottom: 0;
 }
 header{
 	position: relative;
@@ -46,6 +61,7 @@ header>span{
   	display: block;
 	  cursor: pointer;
 	  height:3rem;
+
 }
 
 #avatar{
@@ -244,23 +260,24 @@ section{
 /* 弹窗 */
 .loginCt{
 	position: absolute;
-	left:0;
-	top	: 2px;
-	bottom: 2px;
-	display: none;
-
-	transition: width 0.3s;
-	width: 0;
-	/* width: 200px; */
+	left:-45%;
+	top	: 0px;
+	bottom: 0px;
+	display: block;
+	transition: all 0.3s;
+	/* width: 0; */
+	width: 40%;
 	border-radius: .5rem;
-	background-color: rgba(204, 93, 93, 0.90);
-	box-shadow: 5px 3px 7px rgba(149, 14, 14, 0.5);
+	z-index: 2;
+	background-color: rgba(15, 87, 119, 0.90);
+	box-shadow: 2px 3px 7px rgba(17, 71, 179, 0.8);
 }
 .panel-ct{
 	width: 100%;
 	height: 100%;
 	overflow: auto;
 	padding: 5px;
+
 
 }
 .panel-ct>li{
@@ -272,22 +289,24 @@ section{
 	border-bottom: 1px dashed #345332;
 	text-align: left;
 	display: block;
-	color: #345332;
+	color: #fff;
 	cursor: pointer;
 }
 
 
 #musicList{
 	position: absolute;
-	bottom: 4px;
-	right: 4px;
-	left:4px;
-	height: 0;
-	/* height:100px; */
-	display: none;
-	transition: height 0.3s;
-	background:rgba(203, 49, 49, 0.80);
-	box-shadow: 5px 3px 7px rgba(149, 14, 14, 0.5), -5px -1px 7px rgba(149, 14, 14, 0.5);
+	bottom: -62%;
+	right: 0px;
+	left:0px;
+	/* height: 180px; */
+	height: 60%;
+	z-index: 2;
+	display: block;
+	color: #fff;
+	transition: all 0.3s;
+	background:rgba(3, 74, 104, 0.90);;
+	box-shadow: -2px -3px 7px rgba(14, 15, 45, 0.8);;
 	border-top-left-radius: 0.5rem;
 	border-top-right-radius: .5rem;
 	border-bottom-left-radius: 1.5rem;
@@ -330,23 +349,40 @@ section{
 	}
 
 	.loginCt{
-		left: 0;
+		left: -62%;
 		top	: 0;
 		bottom: 0;
-		/* width: 30%; */
-		width: 0;
-		height:100%;
-
+		width: 60%;
 	}
 	#musicList{
-		left:2px;
-		bottom:0;
-		right:2px;
-		height: 0;
+		left:0px;
+		bottom:-62%;
+		right:0px;
+		height: 60%;
 	}
 
 	.lrcCt{
 		top:300px;
 		width: 280px;
 	}
+}
+
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+	width:8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset006pxrgba(0,0,0,0.3);
+	border-radius:5px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+	border-radius:5px;
+	background:rgba(212, 194, 194, 0.90);
+	-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background:rgba(74, 84, 75, 0.40);
 }
