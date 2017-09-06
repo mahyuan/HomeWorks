@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background</title>
+    <style type="text/css">
+        html,body{
+            padding: 0;
+            margin: 0;
+        }
+        .cover{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left:0;
+            right: 0;
+            border:1px dotted red;
+            background: url(../../images/bg.jpg) center center no-repeat ;
+            background-size: cover;
+        }
+        .cover::before{
+            content:'';
+            display: block;
+            position: absolute;
+            left:0;
+            top:0;
+            bottom: 0;
+            width: 50%;
+            background: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(255,0,0,1));
+
+        }
+        .cover::after{
+            content:'';
+            display: block;
+            position: absolute;
+            right:0;
+            top:0;
+            bottom: 0;
+            width: 50%;
+            background:  linear-gradient(to bottom left, rgba(255,0,0,0), rgb(187, 61, 187));
+
+        }
+    </style>
+</head>
+<body>
+    <div class="cover"></div>
+</body>
+</html>
