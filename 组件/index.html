@@ -6,57 +6,124 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>组件</title>
 	<style>
-		ul{
+		ol{
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
 			width: 600px;
 			margin: 20px auto;
 			border: 1px solid #ccc;
-			box-shadow: 1px 1px 1px 1px rgba(114, 101, 101, 0.5),-1px -1px 1px 1px rgba(114, 101, 101, 0.5);
+			padding-bottom: 15px;
+			box-shadow: 1px 1px 1px 1px rgba(231, 222, 222, 0.5),-1px -1px 1px 1px rgba(231, 222, 222, 0.5);
+		}
+		ol>h2{
+			display: block;
+			margin: 40px auto ;
+			font-size: 30px;
+			color:#3523D4;
+			line-height: 30px;
+			height: 30px;
+			text-align: center;
+		}
+		.brf{
+			display: block;
+			margin-left: auto;
+			margin-right: 30px;
+			font-style: italic;
+			color: rgb(154, 157, 173);
+		}
+		li{
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px;
+			display: block;
+			padding: 10px;
+			/* margin-top: 10px; */
+			list-style:none;
+		}
+		li:hover{
+			background:#F5EEEE;
+			border-radius: 5px;
+		}
+		li>span{
+			display: inline-block;
+			width: 440px;
+			text-align: left;
+			font-size: 20px;
+			font-weight: bold;
+			color: #439030;
+
+			position: relative;
+		}
+		li>span::before{
+			content: '';
+			position: absolute;
+			left: -20px;
+			top:50%;
+			transform: translate(-50%,-50%);
+			width: 10px;
+			height:10px;
+			background: #56E633;
+			border: 1px solid #56E633;
+			border-radius: 50%;
+
+		}
+		li>a{
+			display: inline-block;
+			font-size: 18px;
+			width: 50px;
+			text-align: center;
+			color:#3210e5;
+		}
+		li>a:hover{
+			color: #DD6616;
+			font-weight: bold;
+			font-size: 20px;
 		}
 	</style>
 </head>
 <body>
-	<ul>
+	<ol>
 		<h2>组件</h2>
-		<li>
-			所有代码开源，方便阅读
-		</li>
+
 		<li>
 			<span>Tab组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/tab/index.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/tab/index.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/tab/index.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/tab/index.html" target="_blank">预览</a>
 		</li>
 		<li>
 			<span>Datepicker 组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/datepicker/index.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/datepicker/index.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/datepicker/index.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/datepicker/index.html" target="_blank">预览</a>
 		</li>
 
 		<li>
 			<span> Modal组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/Modal/index.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/Modal/index.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/Modal/index.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/Modal/index.html" target="_blank">预览</a>
 		</li>
 		<li>
 			<span> pager 组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/wheels/demos/pager.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/wheels/demos/pager.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/wheels/demos/pager.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/wheels/demos/pager.html" target="_blank">预览</a>
 		</li>
 		<li>
 			<span>FullPage 组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/wheels/demos/fullpage.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/wheels/demos/fullpage.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/wheels/demos/fullpage.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/wheels/demos/fullpage.html" target="_blank">预览</a>
 		</li>
 
 		<li>
-			<span>瀑布流</span>
-			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E8%BF%9B%E9%98%B6/task18-waterfull/003.html"></a>
-			<a href="https://mhy-web.github.io/HomeWorks/进阶/task18-waterfull/003.html"></a>
+			<span>瀑布流组件 + 懒加载 </span>
+			<a href="https://github.com/mhy-web/HomeWorks/blob/master/%E8%BF%9B%E9%98%B6/task18-waterfull/003.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/进阶/task18-waterfull/003.html" target="_blank">预览</a>
 		</li>
 		<li>
 			<span>Lazyload 组件</span>
-			<a href="https://github.com/mhy-web/HomeWorks/tree/master/进阶/task15-jquery-ajax/index15-8.html">代码</a>
-			<a href="https://mhy-web.github.io/HomeWorks/进阶/task15-jquery-ajax/index15-8.html">预览</a>
+			<a href="https://github.com/mhy-web/HomeWorks/tree/master/进阶/task16-lazyload/task16-6/index.html" target="_blank">代码</a>
+			<a href="https://mhy-web.github.io/HomeWorks/进阶/task16-lazyload/task16-6/index.html" target="_blank">预览</a>
 		</li>
-	</ul>
+		<p class="brf">所有代码开源，方便阅读</p>
+	</ol>
 </body>
 </html>
