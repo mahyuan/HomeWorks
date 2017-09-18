@@ -11,7 +11,8 @@
     <div class="content">
         <div class="mainbody">
             <div class="topbar">
-                    <input type="text" placeholder="请输入城市" id="inp-city">
+                <input type="text" placeholder="请输入城市" id="inp-city">
+                <ul id="city-chose"></ul>
                 <ul class="info">
                     <li class="location">
                         <i class="icon iconfont">&#xe614;</i>
@@ -24,17 +25,19 @@
                 </ul>
                 <div id="today">
                     <div id="t-temp-today">
-                        <div id="t-temp">26℃</div>
+                        <div id="t-temp">30℃</div>
+                        <div id="t-text">晴</div>
                         <div id="t-temp-diff">27℃/18℃</div>
                     </div>
                     <div id="t-temp-wind">
                         <div id="t-img-ct">
                             <img id="t-img" src="https://weixin.jirengu.com/images/weather/code/3.png" alt="weather" >
                         </div>
-                        <div id="t-wind">9mph</div>
+                        <div id="t-wind-d">风向</div>
+                        <div id="t-wind">风力</div>
                     </div>
                 </div>
-                <!-- <ul class="navbar">
+                <ul class="navbar">
                     <li class="nav-weather">
                         <i class="icon iconfont">&#xe606;</i>
                         <a href="" id="nav-weather">weather</a>
@@ -47,41 +50,41 @@
                         <i class="icon iconfont">&#xe618;</i>
                         <a href="" id="nav-gallery">gallery</a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
             <div id="future">
                 <div class="f-forecast">
                     <div class="f-date">Tue</div>
                     <div class="f-img-ct">
-                        <img src="https://weixin.jirengu.com/images/weather/code/10.png" alt="" class="f-img">
+                        <img src="https://weixin.jirengu.com/images/weather/code/1.png" alt="" class="f-img">
                     </div>
                     <div class="f-temp">27℃/18℃</div>
                 </div>
                 <div class="f-forecast">
                     <div class="f-date">Tue</div>
                     <div class="f-img-ct">
-                        <img src="https://weixin.jirengu.com/images/weather/code/8.png" alt="" class="f-img">
+                        <img src="https://weixin.jirengu.com/images/weather/code/1.png" alt="" class="f-img">
                     </div>
                     <div class="f-temp">27℃/18℃</div>
                 </div>
                 <div class="f-forecast">
                     <div class="f-date">Tue</div>
                     <div class="f-img-ct">
-                        <img src="https://weixin.jirengu.com/images/weather/code/5.png" alt="" class="f-img">
+                        <img src="https://weixin.jirengu.com/images/weather/code/1.png" alt="" class="f-img">
                     </div>
                     <div class="f-temp">27℃/18℃</div>
                 </div>
                 <div class="f-forecast">
                     <div class="f-date">Tue</div>
                     <div class="f-img-ct">
-                        <img src="https://weixin.jirengu.com/images/weather/code/4.png" alt="" class="f-img">
+                        <img src="https://weixin.jirengu.com/images/weather/code/1.png" alt="" class="f-img">
                     </div>
                     <div class="f-temp">27℃/18℃</div>
                 </div>
                 <div class="f-forecast">
                     <div class="f-date">Tue</div>
                     <div class="f-img-ct">
-                        <img src="https://weixin.jirengu.com/images/weather/code/2.png" alt="" class="f-img">
+                        <img src="https://weixin.jirengu.com/images/weather/code/1.png" alt="" class="f-img">
                     </div>
                     <div class="f-temp">27℃/18℃</div>
                 </div>
@@ -95,11 +98,26 @@
             </div>
         </div>
     </div>
-
-<script src="../jquery/jquery-2.1.1.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-<script>
-</script>
-
+    <footer>
+        <div class="guide">
+            <h4>使用指南：</h4>
+            <span>1. 请在上方输入您所在的城市名的 <strong>拼音</strong> ，按回车键；</span>
+            <span>2. 根据弹出的选型选择你所在的城市，即可显示您需要的天气信息。</span>
+        </div>
+        <ul class="tech">
+            <h4>获取天气</h4>
+            <li>1. 接口: http(s)://weixin.jirengu.com/weather</li>
+            <li>2. 请求类型: GET</li>
+        </ul>
+        <div class="auther">
+            <h4>联系我</h4>
+            <!-- <p>auther：<span>mhyuan</span></p> -->
+            <p>blog: <a href="http://mhynet.cn" target="_blank">http://mhynet.cn</a></p>
+            <p>github: <a href="https://github.com/mhy-web" target="_blank">https://github.com/mhy-web</a></p>
+            <p>email: <a href="">dsz9258@163.com</a></p>
+        </div>
+    </footer>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

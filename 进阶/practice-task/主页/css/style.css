@@ -13,7 +13,7 @@
 	margin:0;
 	font-family: "微软雅黑"；
 }
-	
+
 .contaner{
 	min-width:960px;
 }
@@ -26,10 +26,10 @@
 /*navbar*/
 nav{
 	background: #000;
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index:100;
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index:100;
 }
 .to-top a{
 	font-family: "iconfont";
@@ -139,7 +139,7 @@ header button{
 	text-align:center;
 	margin-top:30px;
 	text-transform:uppercase;
-	cursor:pointer;	
+	cursor:pointer;
 }
 .box-h a,.ser-h a,.pro-h a,.abt-h a,.team-h a,.cont-h a{
 	text-decoration:none;
@@ -211,7 +211,7 @@ header button{
 	align-content:flex-start;
 	width:1080px;
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;
 	list-style:none;
 	text-decoration:none;
 
@@ -231,7 +231,7 @@ header button{
 .pro-1 p{
 	display:inline-block;
 	line-height:1.5em;
-	font-size:16px;	
+	font-size:16px;
 }
 
 .list-cover img{
@@ -241,7 +241,7 @@ header button{
 	left: 50%;
 	transform: translatex(-50%);
     z-index: 10;
-    
+
 }
 .list-cover img:hover{
    opacity:0.2;
@@ -259,7 +259,7 @@ header button{
 }
 .cover-icon::before {
     content: "\e61f";
-  
+
 }
 
 
@@ -269,7 +269,7 @@ header button{
 	padding-left:auto;
 	padding-right:auto;
 	padding-top:30px;
-	padding-bottom:120px;	
+	padding-bottom:120px;
 /*	position:relative;*/
 }
 .abt-h{
@@ -287,7 +287,7 @@ header button{
 	margin-right:auto;
 	margin-bottom:150px;
 	list-style:none;
-	
+
 }
 
 #timeline li{
@@ -308,7 +308,7 @@ header button{
 	display:block;
 	border:5px solid #ccc;
 	border-radius: 100%;
-}	
+}
 #timeline li::before {
    	left: 50%;
     top: 0;
@@ -376,7 +376,7 @@ header button{
 	padding-left:auto;
 	padding-right:auto;
 	padding-top:30px;
-	padding-bottom:120px;	
+	padding-bottom:120px;
 }
 .team-h{
 	margin:50px 100px;
@@ -391,13 +391,13 @@ header button{
 .team-per{
 	display: flex;
 	justify-content: space-between;
-	background:#ececec; 
+	background:#ececec;
 
 }
 
 .team-1 .img{
 	position: relative;
-	
+
 }
 .team-1 img{
 	width:235px;
@@ -431,7 +431,7 @@ header button{
   background: -moz-linear-gradient(bottom right, red, blue); /* Firefox 3.6 - 15 */
   background: linear-gradient(to bottom right, red , blue); /* 标准的语法 */
 	padding-top:30px;
-	padding-bottom:120px;	
+	padding-bottom:120px;
 }
 .contact-main{
 	width:1000px;
@@ -449,7 +449,7 @@ header button{
 	margin-top:30px;
 	margin-bottom:15px;
 	display: flex;
-	justify-content: space-around; 
+	justify-content: space-around;
 }
 
 .cont-inf1{
@@ -457,7 +457,7 @@ header button{
 	width: 480px;
 	display: flex;
 	flex-direction:column;
-	justify-content: space-between; 
+	justify-content: space-between;
 }
 .cont-inf1 input{
 	height: 50px;
@@ -482,7 +482,7 @@ header button{
 .cont-form input[placeholder]{
 	text-align: left;
 	font-size: 16px;
-	
+
 }
 .cont-form .cont-inf2[placeholder]{
 	text-align: left;
@@ -573,7 +573,7 @@ footer{
 }
 .ftr-3 a:hover{
 	color:#F08080;
-}	
+}
 
 .icon-ftr,.icon-team{
 	font-family: 'iconfont';
