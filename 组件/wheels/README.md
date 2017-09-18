@@ -39,7 +39,7 @@ https://frankfang.github.io/wheels/
 
 # 运行
 
-1. `git clone https://github.com/FrankFang/wheels.git`
+1. `git clone https://github.com/FrankFang/wheels.git `
 2. `cd wheels`
 3. 用浏览器打开 index.html
 
@@ -47,7 +47,7 @@ https://frankfang.github.io/wheels/
 
 - 图片占位符
 - 图片懒加载
-- 自制 template 
+- 自制 template
 - 下拉刷新
 - Typeahead
 - 表单验证

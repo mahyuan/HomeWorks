@@ -57,6 +57,6 @@
 
 ## 运行
 
-- git clone git@github.com:mhy-web/HomeWorks.git
+- `git clone git@github.com:mhy-web/HomeWorks.git`
 - cd 组件
 - 用浏览器打开 index.html
