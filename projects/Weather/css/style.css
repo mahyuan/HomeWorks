@@ -29,11 +29,11 @@ ul,li{
     margin:30px  auto;
     padding-top: 30px;
     background: url(../images/3.jpg) center center no-repeat;
-    filter: brightness(0.7);
+    filter: brightness(0.9);
     background-size: cover;
     /* overflow: hidden; */
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 .mainbody{
     /* position: relative; */
