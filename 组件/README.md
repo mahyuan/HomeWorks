@@ -8,16 +8,22 @@
 
 1. [源码](https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/tab/js/tab_components.js)
 2. [预览](http:mhynet.cn/HomeWorks/组件/tab/index.html)
-3. tab组件有多种实现方式：
+3. Tab组件有多种实现方式：
     - 面向对象 + jquery方式
     - 面向对象 + 原生js方式
     - 面向对象 + 原生js方式，html结构由js拼接完成
+
+### 轮播组件
+
+1. [源码](https://github.com/mhy-web/HomeWorks/tree/master/%E7%BB%84%E4%BB%B6/carousel/index.html)
+2. [预览](https://mhy-web.github.io/HomeWorks/%E7%BB%84%E4%BB%B6/carousel/index.html)
+3.  应用了jquery库和面向对象。
 
 ### Datepicker 组件
 
 1. [源码](https://github.com/mhy-web/HomeWorks/blob/master/%E7%BB%84%E4%BB%B6/datepicker/js/main.js)
 2. [预览](http:mhynet.cn/HomeWorks/组件/datepicker/index.html)
-3. 技术细节
+3. 技术细节：
    - 应用了jquery库
    - html结构由js拼接完成，代码简洁逻辑清晰，便于引用和维护
 
