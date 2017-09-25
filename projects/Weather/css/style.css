@@ -259,7 +259,7 @@ ul,li{
     text-align: center;
     margin: 0 auto;
 }
-footer{
+aside{
     position: absolute;
     bottom:20px;
     width: 100%;
@@ -280,7 +280,7 @@ footer{
     border-bottom:1px solid #ccc;
     color:#666;
 }
-footer a{
+aside a{
     color: #3333B8;
     text-decoration: none;
     font-weight: bold;
