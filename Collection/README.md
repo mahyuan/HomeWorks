@@ -1,6 +1,7 @@
 # 收藏夹
 
 ## 学习类
+
 - [Github](https://github.com/)
 - [掘金](https://juejin.im/)
 - [MDN](https://developer.mozilla.org/zh-CN/)
@@ -24,6 +25,7 @@
 - [阿里云](https://www.aliyun.com/solution/all)
 
 ## 工具类
+
 - [jQuery插件](http://www.jq22.com/jquery-info7073)
 - [极简图床](https://jiantuku.com/#/)
 - [饥人谷图片API](http://cdn.jirengu.com/book.jirengu.com/)
@@ -35,13 +37,13 @@
 - [VSCode快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 - [常用颜色MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/color_value)
 - [常用颜色菜鸟教程](http://www.runoob.com/html/html-colornames.html)
-
 - [LintCode](http://www.lintcode.com/zh-cn/problem/)
 - [牛客网](https://www.nowcoder.com/7216906)
 - [Codepen](https://codepen.io/)
 - [JS Bin](http://js.jirengu.com/?html)
 
 ## 教程类
+
 - [自学IT网站知乎帖子](https://www.zhihu.com/question/33248790)
 - [常见排序算法之JavaScript实现](https://zhuanlan.zhihu.com/p/28130533)
 - [布局篇-Grid布局](http://blog.csdn.net/iamsupercola/article/details/7039439)
