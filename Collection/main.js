@@ -77,8 +77,6 @@ function render(obj){
 	// 	console.log('key: ' + key + ' ,value: ' + obj[key]);
 	// });
 
-
-
 	// Array.prototype.map.call(obj, function(val,index){
 	// 	let str = '<li><a href="'+val+'">'+index+'</a></li>'.join('');
 
@@ -87,18 +85,13 @@ function render(obj){
 	// 	console.log('str is :' +str)
 	// 	ulNode.appendChild(str)
 	// })
-	return html;
+	// return html;
 }
 
 learnCt.appendChild(render(learnData))
 
-
-
-
 // toolCt.appendChild(render(toolData))
 // guideCt.appendChild(render(guideData))
-
-
 	// Array.prototype.map.call(arr,function(val,index,arr){
 	// 	strLearn = `<li class="item"><a href="${arr[val]}">${arr[key]}</a></li>`
 	// })
