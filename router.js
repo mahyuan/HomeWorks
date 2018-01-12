@@ -7,7 +7,7 @@
  * 发送JSON格式的响应数据 {name: 'ruoyu'}
  */
 router.get('/getInfo', function(req, res) {
-  res.send({name: 'ruoyu'})  
+  res.send({name: 'ruoyu'})
   // info = require(./db.json)
   // res.send(info)
 })
@@ -16,13 +16,13 @@ router.get('/getInfo', function(req, res) {
 
 /**
  * 当 http://localhost:8080/getFriends 的GET请求到来时被下面匹配到进行处理
- * 通过req.query获取请求的参数对象 
+ * 通过req.query获取请求的参数对象
  * 通过 req.send发送响应
  */
 router.get('/getFriends', function(req, res) {
 	var username = req.query.username // 通过 req.query获取请求参数
 	var friends
-  
+
   //根据请求参数mock数据
   switch (username){
   	case 'ruoyu':
@@ -40,7 +40,7 @@ router.get('/getFriends', function(req, res) {
 
 /**
  * 当 http://localhost:8080/comment 的GET请求到来时被下面匹配到进行处理
- * 通过req.body获取post请求的参数对象 
+ * 通过req.body获取post请求的参数对象
  * 通过 req.send发送响应
  */
 router.post('/comment', function(req, res) {
@@ -66,3 +66,13 @@ router.use('/hi', (req, res)=>{
   res.send('world')
 })
 
+
+/**
+ * render()
+ */
+router.get('./order', (req, res)=>{
+  let _html = `
+    <div> {{this.price}}</div>
+  `
+  render('store/order', _html)
+})
