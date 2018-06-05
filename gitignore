@@ -1,6 +1,7 @@
 node_modules
-npm-debug.log
+*.log
 .idea
 .vscode
-_config.yml
-router.js
+.cache
+dist
+
