@@ -1,4 +1,4 @@
-let data = [
+[
 	{
 		"desc": "学习类",
 		"list":  [
@@ -61,50 +61,4 @@ let data = [
 		]
 	}
 
-];
-
-let parents = document.querySelector('.container');
-console.log(parents)
-// console.log(data)
-
-// let template = `<li></li>`
-// parents
-
-
-Array.prototype.forEach.call(data, function(it, index, data) {
-	// let len = parents
-	console.log(it)
-	let childNode = document.createElement('figure')
-	let 
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-// var learnCt = document.querySelector('#learn')
-// var toolCt = document.querySelector('#tool')
-// var guideCt = document.querySelector('#guide')
-
-// function render(obj){
-// 	let ulNode = document.createElement('ul')
-
-
-// 	for(let key in obj){
-// 		str = `<li><a href="'${key}">${obj[key]}</a></li>`
-// 		return str;
-// 	}
-// 	let html = ulNode.appendChild(str.join(''))
-
-// }
-
-// learnCt.appendChild(render(learnData))
-
+]

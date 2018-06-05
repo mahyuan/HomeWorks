@@ -1,4 +1,5 @@
 
+
 function Data(){
 	learnData: {
 		"Github" : "https://github.com/",
